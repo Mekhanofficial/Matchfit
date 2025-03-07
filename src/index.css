@@ -2,7 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+.icon-container {
+  display: inline-block;
+  position: relative;
+}
 
+.icon-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(251, 191, 36, 0.3); /* Amber-300 with opacity */
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.group:hover .icon-container::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient 5s ease infinite;
+}
+
+.overlay {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
 
 /* Keyframes for Fade In and Out (for image only) */
 @keyframes fadeInOutImage {
@@ -122,18 +173,10 @@
   background-color: #fff; /* Active dot color */
 }
 
-@media (max-width: 375px) { /* For small devices like iPhone SE */
+@media (max-width: 375px) {
+  /* For small devices like iPhone SE */
   .your-container-class {
     padding: 1rem; /* Reduce padding */
     font-size: 0.875rem; /* Smaller text */
   }
 }
-
-
-
-
-
-
-
-
-
