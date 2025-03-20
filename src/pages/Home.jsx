@@ -1,4 +1,4 @@
-import FooterPage from "../components/Footer";
+// import FooterPage from "../components/Footer";
 import HomeHeroSection from "./home/Hero";
 
 export default function HomePage(){

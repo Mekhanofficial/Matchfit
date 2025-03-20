@@ -315,53 +315,35 @@ const HomeHeroSection = () => {
             backgroundAttachment: "fixed",
           }}
         >
-          {/* Carousel Content */}
+          {/* Content */}
           <div className="absolute inset-0 flex justify-start items-center">
             <div className="flex flex-col items-start pl-[20px] sm:pl-[50px] md:pl-[100px] space-y-4 sm:space-y-8">
-              {/* Image with Fade and Blur Effect */}
+              {/* Image */}
               <div className="relative w-[250px] h-[300px] sm:w-[350px] sm:h-[400px] md:w-[450px] md:h-[550px]">
-                {carouselData.map((item, index) => (
-                  <img
-                    key={item.id}
-                    src={item.image}
-                    alt="Collection"
-                    className={`absolute inset-0 w-full h-full object-cover rounded-lg shadow-2xl transition-opacity duration-1000 ${
-                      currentIndex === index ? "opacity-100" : "opacity-0"
-                    } ${currentIndex === index ? "blur-none" : "blur-sm"}`}
-                  />
-                ))}
+                <img
+                  src={carouselData[0].image} // Display the first image from the carousel data
+                  alt="Collection"
+                  className="w-full h-full object-cover rounded-lg shadow-2xl"
+                />
               </div>
 
               {/* Text */}
               <div className="text-white text-left max-w-[300px] sm:max-w-[400px] md:max-w-[450px]">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-                  {carouselData[currentIndex].title} <br />
+                  {carouselData[0].title} <br />
                   <span className="text-[#16bb7c]">
-                    {carouselData[currentIndex].highlight}
+                    {carouselData[0].highlight}
                   </span>
                 </h1>
 
                 {/* Button */}
                 <button className="w-[180px] sm:w-[220px] py-2 sm:py-3 rounded-lg bg-[#16bb7c] text-white font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-[#128a5f] hover:scale-105 transition-all duration-300 shadow-lg">
                   <a href="#" className="no-underline">
-                    {carouselData[currentIndex].buttonText}
+                    {carouselData[0].buttonText}
                   </a>
                 </button>
               </div>
             </div>
-          </div>
-
-          {/* Navigation Dots */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {carouselData.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full ${
-                  currentIndex === index ? "bg-[#16bb7c]" : "bg-gray-400"
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              ></button>
-            ))}
           </div>
         </div>
         <h1 className="m-10 text-center text-5xl font-semibold bg-gradient-to-r from-teal-900 via-purple-500 to-gray-900 text-transparent bg-clip-text animate-gradient bg-300% hover:animate-pulse">
