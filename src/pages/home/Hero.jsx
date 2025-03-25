@@ -53,6 +53,7 @@ const HomeHeroSection = () => {
   // Slider settings
   const settings = {
     dots: true,
+    arrows:false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -154,12 +155,9 @@ const HomeHeroSection = () => {
             {/* Product Slider */}
             <Slider {...settings}>
               {popularItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative px-2 group transition-transform hover:scale-105"
-                >
-                  {/* Product Image */}
-                  <div className="relative overflow-hidden rounded-lg shadow-md">
+                <div key={index} className="px-2">
+                  {/* Product Image Container - Hover effects applied here only */}
+                  <div className="relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
                     <img
                       className="w-full h-[350px] object-cover"
                       src={item.src}
@@ -167,14 +165,14 @@ const HomeHeroSection = () => {
                     />
 
                     {/* Quick View Button (Visible on Hover) */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
                       <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300">
                         Quick View
                       </button>
                     </div>
                   </div>
 
-                  {/* Product Details */}
+                  {/* Product Details - No hover effects */}
                   <div className="mt-4 text-left">
                     <h3 className="text-base font-medium">{item.name}</h3>
                     <div className="flex items-center mt-1">
