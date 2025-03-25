@@ -30,7 +30,7 @@ export default function HeaderPage() {
   return (
     <>
       {/* Header */}
-      <header className="flex justify-between items-center p-4 text-white absolute w-full top-0 z-50">
+      <header className="flex justify-between items-center p-10 text-white absolute w-full top-0 z-50">
         {/* Navigation Links (Desktop) */}
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-gray-400 transition-colors">

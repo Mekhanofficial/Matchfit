@@ -110,7 +110,7 @@ const HomeHeroSection = () => {
       <HeaderPage />
       <section className="overflow-x-hidden ">
         <div
-          className="w-full h-screen bg-cover bg-center bg-fixed flex flex-col justify-center items-center"
+          className="w-full h-screen bg-cover bg-center lg:bg-fixed flex flex-col justify-center items-center"
           style={{ backgroundImage: `url(${bg5})` }}
         >
           {/* Semi-transparent black overlay */}
