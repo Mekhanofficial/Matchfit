@@ -197,32 +197,30 @@ const HomeHeroSection = () => {
           </div>
         </div>
         <div
-          className="relative w-full h-[800px] sm:h-[1000px] bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: `url(${px20})`, // Static background image
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
+          className="relative w-full h-[800px] sm:h-[1000px] bg-cover bg-center bg-scroll lg:bg-fixed"
+          style={{ backgroundImage: `url(${px20})` }}
         >
-          {/* Content */}
-          <div className="absolute inset-0 flex flex-col justify-center items-end text-center p-4 space-y-6">
-            {/* Image */}
-            <div className="w-[250px] h-[300px] sm:w-[350px] sm:h-[400px] md:w-[450px] md:h-[550px]">
+          {/* Semi-transparent overlay */}
+          <div className="absolute inset-0 bg-black/30"></div>
+
+          {/* Content Container - responsive alignment */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center lg:items-end p-4 space-y-6 lg:pr-12 xl:pr-24">
+            {/* Image - responsive sizing */}
+            <div className="w-[300px] h-[350px] sm:w-[350px] sm:h-[400px] md:w-[400px] md:h-[450px] lg:w-[350px] lg:h-[400px] xl:w-[450px] xl:h-[550px]">
               <img
-                src={px18} // Display an image above the text
+                src={px18}
                 alt="Collection"
-                className="w-full h-full object-cover  shadow-2xl"
+                className="w-full h-full object-cover shadow-2xl"
               />
             </div>
 
-            {/* Text */}
-            <div className="text-white max-w-[600px]">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold mb-6">
+            {/* Text Container - responsive sizing */}
+            <div className="text-white max-w-[90%] lg:max-w-[600px] text-center lg:text-right">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-semibold mb-6">
                 Explore Our Exquisite <br />
                 <span className="text-[#16bb7c]">Jacket Collection</span>
               </h1>
-              <button className="px-6 py-3  border border-gray-300 text-white font-bold text-sm uppercase tracking-wide hover:bg-[#128a6098] hover:scale-105 transition-all duration-300 shadow-lg">
+              <button className="px-8 py-3.5 text-sm md:text-base border border-gray-300 text-white font-bold uppercase tracking-wide hover:bg-[#128a6098] hover:scale-105 transition-all duration-300 shadow-lg">
                 <a href="#" className="no-underline">
                   VIEW COLLECTION
                 </a>
@@ -265,18 +263,13 @@ const HomeHeroSection = () => {
           </div>
         </div>
         <div
-          className="relative w-full h-[800px] sm:h-[1000px] bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: `url(${px21})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
+          className="relative w-full h-[800px] sm:h-[1000px] bg-cover bg-center bg-scroll lg:bg-fixed"
+          style={{ backgroundImage: `url(${px21})` }}
         >
-          {/* Content Container - positioned top-left */}
-          <div className="absolute -top-36 left-0 p-4 sm:p-10 flex flex-col items-start">
-            {/* Image Container */}
-            <div className="w-[250px] h-[300px] sm:w-[350px] sm:h-[400px] md:w-[450px] md:h-[500px] mb-4 sm:mb-6">
+          {/* Content Container */}
+          <div className="absolute lg:-top-36 lg:left-0 top-1/2 left-1/2 lg:translate-x-0 lg:translate-y-0 -translate-x-1/2 -translate-y-1/2 p-4 sm:p-10 flex flex-col items-center lg:items-start">
+            {/* Image - Slightly larger on desktop */}
+            <div className="w-[280px] h-[330px] sm:w-[350px] sm:h-[400px] md:w-[400px] md:h-[450px] lg:w-[380px] lg:h-[430px] xl:w-[400px] xl:h-[450px] mb-4 sm:mb-6">
               <img
                 src={fx3}
                 alt="Collection"
@@ -284,16 +277,16 @@ const HomeHeroSection = () => {
               />
             </div>
 
-            {/* Text Content - same width as image */}
-            <div className="w-[250px] sm:w-[350px] md:w-[450px] text-white text-left">
-              <h1 className="text-xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4">
+            {/* Text Content - Subtle scaling */}
+            <div className="w-[280px] sm:w-[350px] md:w-[400px] lg:w-[380px] xl:w-[400px] text-white text-center lg:text-left">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-[32px] font-semibold mb-2 sm:mb-4">
                 Discover the allure of fashion reinvented!
               </h1>
-              <p className="text-xs sm:text-sm md:text-base text-[#16bb7c] mb-4 sm:mb-6">
+              <p className="text-xs sm:text-sm md:text-[15px] lg:text-[15px] text-[#16bb7c] mb-4 sm:mb-6">
                 Dive into a world of style with our latest collection! Shop now
                 and redefine your wardrobe narrative!
               </p>
-              <button className="px-4 py-2 sm:px-6 sm:py-3 border border-gray-300 text-white font-bold text-xs sm:text-sm uppercase tracking-wide hover:bg-[#128a5f] hover:scale-105 transition-all duration-300 shadow-lg">
+              <button className="px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm border border-gray-300 text-white font-bold uppercase tracking-wide hover:bg-[#128a5f] hover:scale-105 transition-all duration-300 shadow-lg">
                 <a href="#" className="no-underline">
                   VIEW COLLECTION
                 </a>
@@ -329,7 +322,7 @@ const HomeHeroSection = () => {
         <div>
           {/* Brand Testimonial Section */}
           <div
-            className="mt-24 w-full min-h-screen bg-cover bg-center bg-fixed flex flex-col justify-center items-center"
+            className="mt-24 w-full min-h-screen bg-cover bg-center bg-scroll lg:bg-fixed flex flex-col justify-center items-center"
             style={{ backgroundImage: `url(${jk9})` }}
           >
             {/* Star Rating */}
@@ -475,7 +468,7 @@ const HomeHeroSection = () => {
           </div>
         </div>
         <div
-          className="check mt-24 w-full h-[500px] bg-cover bg-center bg-fixed flex flex-col items-end justify-center"
+          className="check mt-24 w-full h-[500px] bg-cover bg-center bg-scroll lg:bg-fixed flex flex-col items-end justify-center"
           style={{ backgroundImage: `url(${jk6})` }}
         >
           <div className="checktext text-white p-6 lg:p-12">

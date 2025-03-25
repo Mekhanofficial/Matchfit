@@ -89,12 +89,16 @@ export default function HeaderPage() {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-gray-800 text-white z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 w-72 bg-gray-800 text-white z-50 transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:hidden`}
       >
         <div className="p-4">
-          <h2 className="text-2xl font-bold mb-6">MATCHFIT</h2>
+          <div className="logo left-1/2  text-center text-xs font-bold">
+            <h1>MATCHFIT</h1>
+            <h2 className="text-2xl font-semibold">Wardrobe</h2>
+            <div className="bg-white w-5 h-1 mx-auto"></div>
+          </div>
           <nav className="flex flex-col space-y-4">
             <Link
               to="/"
@@ -130,7 +134,7 @@ export default function HeaderPage() {
 
       {/* Cart Panel */}
       <div
-        className={`fixed inset-y-0 right-0 w-80 bg-gray-800 text-white z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 right-0 w-80 bg-gray-900 text-white z-50 transform transition-transform duration-300 ease-in-out ${
           isCartOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
