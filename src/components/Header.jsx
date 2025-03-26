@@ -33,16 +33,19 @@ export default function HeaderPage() {
       <header className="flex justify-between items-center p-10 text-white absolute w-full top-0 z-50">
         {/* Navigation Links (Desktop) */}
         <nav className="hidden md:flex space-x-6">
-          <Link to="/" className="hover:text-gray-400 transition-colors">
+          <Link to="/" className="hover:text-[#16bb7c] transition-colors">
             Home
           </Link>
-          <Link to="/Shop" className="hover:text-gray-400 transition-colors">
+          <Link to="/Shop" className="hover:text-[#16bb7c] transition-colors">
             Shop
           </Link>
-          <Link to="/About" className="hover:text-gray-400 transition-colors">
+          <Link to="/About" className="hover:text-[#16bb7c]transition-colors">
             About Us
           </Link>
-          <Link to="/Contact" className="hover:text-gray-400 transition-colors">
+          <Link
+            to="/Contact"
+            className="hover:text-[#16bb7c] transition-colors"
+          >
             Contact Us
           </Link>
         </nav>
@@ -59,7 +62,7 @@ export default function HeaderPage() {
           {/* User Icon - Hidden on mobile */}
           <div className="hidden md:block">
             <FontAwesomeIcon
-              className="text-xl hover:text-gray-400 transition-colors cursor-pointer"
+              className="text-xl hover:text-[#16bb7c] transition-colors cursor-pointer"
               icon={faUserAlt}
             />
           </div>
@@ -70,7 +73,7 @@ export default function HeaderPage() {
             onClick={toggleCart}
           >
             <FontAwesomeIcon
-              className="text-xl hover:text-gray-400 transition-colors"
+              className="text-xl hover:text-[#16bb7c] transition-colors"
               icon={faCartShopping}
             />
             <div className="countbox absolute top-[-10px] right-[-10px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -80,7 +83,7 @@ export default function HeaderPage() {
 
           {/* Mobile Menu Toggle Button - Always visible on mobile */}
           <FontAwesomeIcon
-            className="text-xl hover:text-gray-400 transition-colors cursor-pointer md:hidden"
+            className="text-xl hover:text-[#16bb7c] transition-colors cursor-pointer md:hidden"
             icon={isSidebarOpen ? faTimes : faBars}
             onClick={toggleSidebar}
           />
@@ -102,28 +105,28 @@ export default function HeaderPage() {
           <nav className="flex flex-col space-y-4">
             <Link
               to="/"
-              className="hover:text-gray-400 transition-colors"
+              className="hover:text-[#16bb7c] transition-colors"
               onClick={closeAllPanels}
             >
               Home
             </Link>
             <Link
               to="/Shop"
-              className="hover:text-gray-400 transition-colors"
+              className="hover:text-[#16bb7c] transition-colors"
               onClick={closeAllPanels}
             >
               Shop
             </Link>
             <Link
               to="/About"
-              className="hover:text-gray-400 transition-colors"
+              className="hover:text-[#16bb7c] transition-colors"
               onClick={closeAllPanels}
             >
               About Us
             </Link>
             <Link
               to="/Contact"
-              className="hover:text-gray-400 transition-colors"
+              className="hover:text-[#16bb7c] transition-colors"
               onClick={closeAllPanels}
             >
               Contact Us
@@ -143,13 +146,13 @@ export default function HeaderPage() {
             <h2 className="text-2xl font-bold">Your Cart</h2>
             <FontAwesomeIcon
               icon={faTimes}
-              className="text-xl cursor-pointer hover:text-gray-400"
+              className="text-xl cursor-pointer hover:text-[#16bb7c]"
               onClick={toggleCart}
             />
           </div>
           <div className="flex-grow overflow-y-auto">
             {/* Cart items would go here */}
-            <p className="text-center text-gray-400 mt-10">
+            <p className="text-center text-[#16bb7c] mt-10">
               Your cart is empty
             </p>
           </div>

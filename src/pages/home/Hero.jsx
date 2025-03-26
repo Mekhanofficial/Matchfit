@@ -7,7 +7,7 @@ import fx4 from "../../pictures/hue/fx4.jpg";
 import fx5 from "../../pictures/hue/fx5.webp";
 import fx6 from "../../pictures/hue/fx6.webp";
 import pic4 from "../../pictures/wall/pic4.webp";
-import px21 from "../../pictures/hue/px21.png"
+import px21 from "../../pictures/hue/px21.webp"
 import jk6 from "../../pictures/wall/jk6.jpg";
 import jk9 from "../../pictures/wall/jk9.jpg";
 import px1 from "../../pictures/hue/px1.jpg";
@@ -24,7 +24,8 @@ import px15 from "../../pictures/hue/px15.jpg";
 import px16 from "../../pictures/hue/px16.jpg";
 import px18 from "../../pictures/hue/px18.jpg";
 import px19 from "../../pictures/hue/px19.png";
-import px20 from "../../pictures/hue/px20.png";
+import px20 from "../../pictures/hue/px20.jpg";
+import px29 from "../../pictures/hue/px29.jpg";
 import { useState,useEffect } from "react";
 import HeaderPage from "../../components/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -140,7 +141,7 @@ const HomeHeroSection = () => {
             {/* Call-to-Action Button */}
             <a
               href="#"
-              className="inline-block px-8 py-3 text-sm border border-white text-white font-semibold  hover:bg-white hover:text-black transition-all duration-300 "
+              className="inline-block px-8 py-3 text-sm border border-white text-white font-semibold hover:text-[#16bb7c] "
             >
               VIEW COLLECTION
             </a>
@@ -150,7 +151,7 @@ const HomeHeroSection = () => {
           <div className="text-center mx-[70px]">
             {/* Section Heading */}
             <h1 className="text-2xl font-semibold">Our Featured Products</h1>
-            <hr className="w-[70px] h-[3px] mx-auto my-5 bg-orange-500 border-none" />
+            <hr className="w-[70px] h-[3px] mx-auto my-5 bg-[#16bb7c] border-none" />
 
             {/* Product Slider */}
             <Slider {...settings}>
@@ -194,11 +195,14 @@ const HomeHeroSection = () => {
             </Slider>
           </div>
         </div>
-        <div
-          className="relative w-full h-[800px] sm:h-[1000px] bg-cover bg-center bg-scroll lg:bg-fixed"
-          style={{ backgroundImage: `url(${px20})` }}
-        >
-          {/* Semi-transparent overlay */}
+        <div className="relative w-full h-[800px] sm:h-[1000px] bg-zinc-950">
+          {/* Background Image with Opacity */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-scroll lg:bg-fixed opacity-30"
+            style={{ backgroundImage: `url(${px20})` }}
+          ></div>
+
+          {/* Semi-transparent overlay - now with 30% opacity over the already 70% opaque image */}
           <div className="absolute inset-0 bg-black/30"></div>
 
           {/* Content Container - responsive alignment */}
@@ -213,12 +217,12 @@ const HomeHeroSection = () => {
             </div>
 
             {/* Text Container - responsive sizing */}
-            <div className="text-white max-w-[90%] lg:max-w-[600px] text-center lg:text-right">
+            <div className="text-white max-w-[90%] lg:max-w-[600px] text-center ">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-semibold mb-6">
                 Explore Our Exquisite <br />
-                <span className="text-[#16bb7c]">Jacket Collection</span>
+                <span className="text-[#16bb7c]">Bag Collection</span>
               </h1>
-              <button className="px-8 py-3.5 text-sm md:text-base border border-gray-300 text-white font-bold uppercase tracking-wide hover:bg-[#128a6098] hover:scale-105 transition-all duration-300 shadow-lg">
+              <button className="px-8 py-3.5 text-sm md:text-base border border-gray-300 text-white font-bold uppercase tracking-wide hover:text-[#16bb7c]">
                 <a href="#" className="no-underline">
                   VIEW COLLECTION
                 </a>
@@ -229,28 +233,27 @@ const HomeHeroSection = () => {
         {/* Blazer Section */}
         <div className="flex flex-col lg:flex-row items-center justify-center ">
           {/* Text Content */}
-          <div className="text-center lg:text-left lg:max-w-[600px] lg:mr-[50px] ml-10">
-            <h1 className="text-sm font-semibold text-[#292828] mb-2 uppercase tracking-widest">
+          <div className="w-full lg:w-1/2 text-center lg:text-left lg:pr-8 xl:pr-12 p-10">
+            <h1 className="text-xs sm:text-sm font-semibold text-[#292828] mb-2 uppercase tracking-widest">
               Work & Office Attire
             </h1>
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.7rem] text-black mb-4 font-bold leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.7rem] text-black mb-4 font-bold leading-tight">
               Professional Pinstripe Blazers Collection
             </h2>
-            <p className="text- sm:text-xl font-semibold  text-gray-700 mb-6">
+            <p className="text-base sm:text-lg md:text-xl font-semibold text-gray-700 mb-6">
               Elevate your workwear with our Professional Pinstripe Blazers
               Collection, where tailored sophistication meets modern confidence
               for a powerfully polished office look.
             </p>
-            <button className="w-[150px] py-3 rounded-sm bg-transparent border-[1.9px] border-gray-900 hover:bg-gray-100 transition-colors">
+            <button className="w-full sm:w-[150px] py-2 sm:py-3 rounded-sm bg-transparent border-[1.9px] border-gray-900  transition-colors duration-300">
               <a
                 href="#"
-                className="no-underline text-gray-900 font-semibold text-sm uppercase"
+                className="no-underline text-gray-900 hover:text-[#16bb7c] font-semibold text-xs sm:text-sm uppercase"
               >
                 Shop Now
               </a>
             </button>
           </div>
-
           {/* Image */}
           <div className="mt-8 lg:mt-0">
             <img
@@ -260,16 +263,19 @@ const HomeHeroSection = () => {
             />
           </div>
         </div>
-        <div
-          className="relative w-full h-[800px] sm:h-[1000px] bg-cover bg-center bg-scroll lg:bg-fixed"
-          style={{ backgroundImage: `url(${px21})` }}
-        >
+        <div className="relative w-full h-[800px] sm:h-[1000px] bg-zinc-950">
+          {/* Background Image with Opacity */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-scroll lg:bg-fixed opacity-30"
+            style={{ backgroundImage: `url(${px21})` }}
+          ></div>
+
           {/* Content Container */}
           <div className="absolute lg:-top-36 lg:left-0 top-1/2 left-1/2 lg:translate-x-0 lg:translate-y-0 -translate-x-1/2 -translate-y-1/2 p-4 sm:p-10 flex flex-col items-center lg:items-start">
             {/* Image - Slightly larger on desktop */}
             <div className="w-[280px] h-[330px] sm:w-[350px] sm:h-[400px] md:w-[400px] md:h-[450px] lg:w-[380px] lg:h-[430px] xl:w-[400px] xl:h-[450px] mb-4 sm:mb-6">
               <img
-                src={fx3}
+                src={px29}
                 alt="Collection"
                 className="w-full h-full object-cover shadow-2xl"
               />
@@ -356,7 +362,7 @@ const HomeHeroSection = () => {
                 <img
                   src={image.src}
                   alt={`Image ${index + 1}`}
-                  className="w-full h-auto rounded-lg  object-cover"
+                  className="w-full h-auto  object-cover"
                 />
                 {/* Text Below Image */}
                 <p className="mt-5 text-lg font-medium text-gray-800">
