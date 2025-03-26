@@ -167,7 +167,7 @@ const HomeHeroSection = () => {
 
                     {/* Quick View Button (Visible on Hover) */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
-                      <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-orange-500 hover:text-white transition-all duration-300">
+                      <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-[#16bb7c] hover:text-white transition-all duration-300">
                         Quick View
                       </button>
                     </div>
