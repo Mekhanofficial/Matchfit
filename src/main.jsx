@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import AboutPage from "./pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ShopSidebar from "./pages/Shop";
 // import BlogPage from "./pages/Blog";
 // import ContactPage from "./pages/Contact";
 // import MenuPage from "./pages/Menu";
@@ -29,10 +30,10 @@ const proRouter = createBrowserRouter([
   //   path: "/Contact",
   //   element: <ContactPage />,
   // },
-  // {
-  //   path: "/Menu",
-  //   element: <MenuPage />,
-  // },
+  {
+    path: "/Shop",
+    element: <ShopSidebar />,
+  },
 ]);
 
 root.render(
