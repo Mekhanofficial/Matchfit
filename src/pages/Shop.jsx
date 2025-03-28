@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   allProducts,
   menProducts,
@@ -49,12 +50,31 @@ import {
   winter23,
 } from "../components/Product";
 import HeaderPage from "../components/Header";
+// import ProductCard from "../components/ProductCard";
 
 const ShopSidebar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [openDropdowns, setOpenDropdowns] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [activeFilter, setActiveFilter] = useState("All Products");
-  const [priceRange, setPriceRange] = useState([0, 500]); // Default price range
+  const [priceRange, setPriceRange] = useState([0, 500]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Handle search from URL
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const search = searchParams.get("search");
+
+    if (search) {
+      setSearchQuery(search);
+      const results = allProducts.filter((product) =>
+        product.name.toLowerCase().includes(search.toLowerCase())
+      );
+      setFilteredProducts(results);
+      setActiveFilter(`Search: "${search}"`);
+    }
+  }, [location.search]);
 
   const toggleDropdown = (dropdownId) => {
     setOpenDropdowns((prev) =>
@@ -119,6 +139,19 @@ const ShopSidebar = () => {
   const isDropdownOpen = (dropdownId) => {
     return openDropdowns.includes(dropdownId);
   };
+
+    const handleSearch = (query) => {
+      if (query.trim()) {
+        const results = allProducts.filter((product) =>
+          product.name.toLowerCase().includes(query.toLowerCase())
+        );
+        setFilteredProducts(results);
+        setActiveFilter(`Search: "${query}"`);
+      } else {
+        setFilteredProducts(allProducts);
+        setActiveFilter("All Products");
+      }
+    };
 
   const categories = {
     "Product Type": {
@@ -280,8 +313,8 @@ const ShopSidebar = () => {
       <HeaderPage />
 
       <div className="flex flex-col mt-24 md:flex-row min-h-screen bg-gray-50">
-        {/* Sidebar */}
-        <div className="w-full md:w-72 bg-white p-5 border-r border-gray-200">
+        {/* Sidebar - Fixed with scroll */}
+        <div className="w-full md:w-72 bg-white p-5 border-r border-gray-200 lg:fixed h-screen overflow-y-auto">
           <div className="mb-6">
             <h2 className="text-xl font-bold mb-4 text-gray-800">Shop</h2>
             <button
@@ -361,8 +394,23 @@ const ShopSidebar = () => {
           })}
         </div>
 
-        {/* Main Content */}
-        <div className="flex-1 p-6">
+        {/* Main Content - Adjusted for fixed sidebar */}
+        <div className="flex-1 p-6 md:ml-72 mt-0">
+          {searchQuery && (
+            <div className="mb-4">
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  navigate("/Shop");
+                  setFilteredProducts(allProducts);
+                  setActiveFilter("All Products");
+                }}
+                className="text-blue-600 hover:text-blue-800"
+              >
+                ← Back to all products
+              </button>
+            </div>
+          )}
           <h2 className="text-2xl font-bold mb-6 text-gray-800">
             {activeFilter}{" "}
             <span className="text-gray-500 font-normal">
@@ -373,8 +421,22 @@ const ShopSidebar = () => {
           {filteredProducts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-gray-500">
-                No products found in this category.
+                No products found{" "}
+                {searchQuery ? `for "${searchQuery}"` : "in this category"}.
               </p>
+              {searchQuery && (
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    navigate("/Shop");
+                    setFilteredProducts(allProducts);
+                    setActiveFilter("All Products");
+                  }}
+                  className="mt-4 text-blue-600 hover:text-blue-800"
+                >
+                  View all products
+                </button>
+              )}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
