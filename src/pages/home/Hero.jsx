@@ -4,8 +4,8 @@ import fx1 from "../../pictures/hue/fx1.jpg";
 import fx2 from "../../pictures/hue/fx2.jpg";
 import fx3 from "../../pictures/hue/fx3.jpg";
 import fx4 from "../../pictures/hue/fx4.jpg";
-import fx5 from "../../pictures/hue/fx5.webp";
-import fx6 from "../../pictures/hue/fx6.webp";
+import fx5 from "../../pictures/hue/fx5.jpg";
+import fx6 from "../../pictures/hue/pd61.jpg";
 import pic4 from "../../pictures/wall/pic4.webp";
 import px21 from "../../pictures/hue/px21.webp"
 import jk6 from "../../pictures/wall/jk6.jpg";

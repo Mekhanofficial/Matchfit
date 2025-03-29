@@ -50,7 +50,6 @@ import {
   winter23,
 } from "../components/Product";
 import HeaderPage from "../components/Header";
-// import ProductCard from "../components/ProductCard";
 
 const ShopSidebar = () => {
   const location = useLocation();
