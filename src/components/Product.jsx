@@ -1,114 +1,114 @@
-import pd1 from "../pictures/hue/pd1.jpg";
-import pd2 from "../pictures/hue/pd2.jpg";
-import pd3 from "../pictures/hue/pd3.avif";
-import pd4 from "../pictures/hue/pd4.avif";
-import pd5 from "../pictures/hue/pd5.jpg";
-import pd6 from "../pictures/hue/pd6.jpg";
-import pd7 from "../pictures/hue/pd7.jpg";
-import pd8 from "../pictures/hue/pd8.jpg";
-import pd9 from "../pictures/hue/pd9.jpg";
-import pd10 from "../pictures/hue/pd10.jpg";
-import pd11 from "../pictures/hue/pd11.jpg";
-import pd12 from "../pictures/hue/pd12.avif";
-import pd13 from "../pictures/hue/pd13.jpg";
-import pd14 from "../pictures/hue/pd14.jpg";
-import pd15 from "../pictures/hue/pd15.jpg";
-import pd16 from "../pictures/hue/pd16.avif";
-import pd17 from "../pictures/hue/pd17.avif";
-import pd18 from "../pictures/hue/pd18.avif";
-import pd19 from "../pictures/hue/pd19.avif";
-import pd20 from "../pictures/hue/pd20.jpg";
-import pd21 from "../pictures/hue/pd21.jpg";
-import pd22 from "../pictures/hue/pd22.jpg";
-import pd23 from "../pictures/hue/pd23.jpg";
-import pd24 from "../pictures/hue/pd24.jpg";
-import pd25 from "../pictures/hue/pd25.jpg";
-import pd26 from "../pictures/hue/pd26.jpg";
-import pd27 from "../pictures/hue/pd27.avif";
-import pd28 from "../pictures/hue/pd28.avif";
-import pd29 from "../pictures/hue/pd29.avif";
-import pd30 from "../pictures/hue/pd30.jpg";
-import pd31 from "../pictures/hue/pd31.jpg";
-import pd32 from "../pictures/hue/pd32.jpg";
-import pd33 from "../pictures/hue/pd33.avif";
-import pd34 from "../pictures/hue/pd34.avif";
-import pd35 from "../pictures/hue/pd35.avif";
-import pd36 from "../pictures/hue/pd36.avif";
-import pd37 from "../pictures/hue/pd37.jpg";
-import pd38 from "../pictures/hue/pd38.avif";
-import pd39 from "../pictures/hue/pd39.jpg";
-import pd40 from "../pictures/hue/pd40.jpg";
-import pd41 from "../pictures/hue/pd41.jpg";
-import pd42 from "../pictures/hue/pd42.avif";
-import pd43 from "../pictures/hue/pd43.jpg";
-import pd44 from "../pictures/hue/pd44.jpg";
-import pd45 from "../pictures/hue/pd45.jpg";
-import pd46 from "../pictures/hue/pd46.jpg";
-import pd47 from "../pictures/hue/pd47.jpg";
-import pd48 from "../pictures/hue/pd48.jpg";
-import pd49 from "../pictures/hue/pd49.avif";
-import pd50 from "../pictures/hue/pd50.jpg";
-import pd51 from "../pictures/hue/pd51.jpg";
-import pd52 from "../pictures/hue/pd52.jpg";
-import pd53 from "../pictures/hue/pd53.jpg";
-import pd54 from "../pictures/hue/pd54.avif";
-import pd55 from "../pictures/hue/pd55.avif";
-import pd56 from "../pictures/hue/pd56.jpg";
-import pd57 from "../pictures/hue/pd57.jpg";
-import pd58 from "../pictures/hue/pd58.avif";
-import pd59 from "../pictures/hue/pd59.jpg";
-import pd60 from "../pictures/hue/pd60.jpg";
-import pd61 from "../pictures/hue/pd61.jpg";
-import pd62 from "../pictures/hue/pd62.jpg";
-import pd63 from "../pictures/hue/pd63.avif";
-import pd64 from "../pictures/hue/pd64.jpg";
-import pd65 from "../pictures/hue/pd65.jpg";
-import pd66 from "../pictures/hue/pd66.avif";
-import pd67 from "../pictures/hue/pd67.avif";
-import pd68 from "../pictures/hue/pd68.jpg";
-import pd69 from "../pictures/hue/pd69.jpg";
-import pd70 from "../pictures/hue/pd70.jpg";
-import pd71 from "../pictures/hue/pd71.avif";
-import pd72 from "../pictures/hue/pd72.jpg";
-import pd73 from "../pictures/hue/pd73.jpg";
-import pd74 from "../pictures/hue/pd74.avif";
-import pd75 from "../pictures/hue/pd75.avif";
-import pd76 from "../pictures/hue/pd76.jpg";
-import pd77 from "../pictures/hue/pd77.jpg";
-import pd78 from "../pictures/hue/pd78.jpg";
-import pd79 from "../pictures/hue/pd79.jpg";
-import pd80 from "../pictures/hue/pd80.jpg";
-import pd81 from "../pictures/hue/pd81.avif";
-import pd82 from "../pictures/hue/pd82.jpg";
-import pd83 from "../pictures/hue/pd83.jpg";
-import pd84 from "../pictures/hue/pd84.avif";
-import pd85 from "../pictures/hue/pd85.jpg";
-import pd86 from "../pictures/hue/pd86.jpg";
-import pd87 from "../pictures/hue/pd87.avif";
-import pd88 from "../pictures/hue/pd88.avif";
-import pd89 from "../pictures/hue/pd89.avif";
-import pd90 from "../pictures/hue/pd90.avif";
-import pd91 from "../pictures/hue/pd91.avif";
-import pd92 from "../pictures/hue/pd92.avif";
-import pd93 from "../pictures/hue/pd93.avif";
-import pd94 from "../pictures/hue/pd94.avif";
-import pd95 from "../pictures/hue/pd95.avif";
-import pd96 from "../pictures/hue/pd96.avif";
-import pd97 from "../pictures/hue/pd97.avif";
-import pd98 from "../pictures/hue/pd98.avif";
-import pd99 from "../pictures/hue/pd99.avif";
-import pd100 from "../pictures/hue/pd100.jpg";
-import pd101 from "../pictures/hue/pd101.avif";
-import pd102 from "../pictures/hue/pd102.avif";
-import pd103 from "../pictures/hue/pd103.avif";
-import pd104 from "../pictures/hue/pd104.jpg";
-import pd105 from "../pictures/hue/pd105.avif";
-import pd106 from "../pictures/hue/pd106.jpg";
-import pd107 from "../pictures/hue/pd107.avif";
-import pd108 from "../pictures/hue/pd108.jpg";
-import pd109 from "../pictures/hue/pd109.avif";
-import pd110 from "../pictures/hue/pd110.avif";
-import pd111 from "../pictures/hue/pd111.avif";
+import ex1 from "../pictures/hue/ex1.png";
+import ex2 from "../pictures/hue/ex2.jpg";
+import ex3 from "../pictures/hue/ex3.jpg";
+import ex4 from "../pictures/hue/ex4.jpg";
+import ex5 from "../pictures/hue/ex5.webp";
+import ex6 from "../pictures/hue/ex6.jpg";
+import ex7 from "../pictures/hue/ex7.webp";
+import ex8 from "../pictures/hue/ex8.webp";
+import ex9 from "../pictures/hue/ex9.avif";
+import ex10 from "../pictures/hue/ex10.jpg";
+import ex11 from "../pictures/hue/ex11.avif";
+import ex12 from "../pictures/hue/ex12.jpg";
+import ex13 from "../pictures/hue/ex13.jpg";
+import ex14 from "../pictures/hue/ex14.webp";
+import ex15 from "../pictures/hue/ex15.webp";
+import ex16 from "../pictures/hue/ex16.png";
+import ex17 from "../pictures/hue/ex17.webp";
+import ex18 from "../pictures/hue/ex18.webp";
+import ex19 from "../pictures/hue/ex19.gif";
+import ex20 from "../pictures/hue/ex20.webp";
+import ex21 from "../pictures/hue/ex21.webp";
+import ex22 from "../pictures/hue/ex22.jpg";
+import ex23 from "../pictures/hue/ex23.webp";
+import ex24 from "../pictures/hue/ex24.avif";
+import ex25 from "../pictures/hue/ex25.avif";
+import ex26 from "../pictures/hue/ex26.jpeg";
+import ex27 from "../pictures/hue/ex27.jpg";
+import ex28 from "../pictures/hue/ex28.jpg";
+import ex29 from "../pictures/hue/ex29.jpg";
+import ex30 from "../pictures/hue/ex30.webp";
+import ex31 from "../pictures/hue/ex31.jpg";
+import ex32 from "../pictures/hue/ex32.webp";
+import ex33 from "../pictures/hue/ex33.avif";
+import ex34 from "../pictures/hue/ex34.jpeg";
+import ex35 from "../pictures/hue/ex35.webp";
+import ex36 from "../pictures/hue/ex36.jpg";
+import ex37 from "../pictures/hue/ex37.jpg";
+import ex38 from "../pictures/hue/ex38.webp";
+import ex39 from "../pictures/hue/ex39.jpg";
+import ex40 from "../pictures/hue/ex40.webp";
+import ex41 from "../pictures/hue/ex41.jpg";
+import ex42 from "../pictures/hue/ex42.avif";
+import ex43 from "../pictures/hue/ex43.avif";
+import ex44 from "../pictures/hue/ex44.jpg";
+import ex45 from "../pictures/hue/ex45.jpg";
+import ex46 from "../pictures/hue/ex46.webp";
+import ex47 from "../pictures/hue/ex47.webp";
+import ex48 from "../pictures/hue/ex48.jpg";
+import ex49 from "../pictures/hue/ex49.jpg";
+import ex50 from "../pictures/hue/ex50.jpg";
+import ex51 from "../pictures/hue/ex51.jpg";
+import ex52 from "../pictures/hue/ex52.webp";
+import ex53 from "../pictures/hue/ex53.webp";
+import ex54 from "../pictures/hue/ex54.jpg";
+import ex55 from "../pictures/hue/ex55.jpg";
+import ex56 from "../pictures/hue/ex56.webp";
+import ex57 from "../pictures/hue/ex57.jpg";
+import ex58 from "../pictures/hue/ex58.jpg";
+import ex59 from "../pictures/hue/ex59.jpg";
+import ex60 from "../pictures/hue/ex60.jpg";
+import ex61 from "../pictures/hue/ex61.jpg";
+import ex62 from "../pictures/hue/ex62.avif";
+import ex63 from "../pictures/hue/ex63.webp";
+import ex64 from "../pictures/hue/ex64.webp";
+import ex65 from "../pictures/hue/ex65.webp";
+import ex66 from "../pictures/hue/ex66.jpg";
+import ex67 from "../pictures/hue/ex67.jpg";
+import ex68 from "../pictures/hue/ex68.jpg";
+import ex69 from "../pictures/hue/ex69.jpg";
+import ex70 from "../pictures/hue/ex70.webp";
+import ex71 from "../pictures/hue/ex71.avif";
+import ex72 from "../pictures/hue/ex72.jpg";
+import ex73 from "../pictures/hue/ex73.jpg";
+import ex74 from "../pictures/hue/ex74.avif";
+import ex75 from "../pictures/hue/ex75.jpg";
+import ex76 from "../pictures/hue/ex76.webp";
+import ex77 from "../pictures/hue/ex77.webp";
+import ex78 from "../pictures/hue/ex78.jpg";
+import ex79 from "../pictures/hue/ex79.avif";
+import ex80 from "../pictures/hue/ex8.webp";
+import ex81 from "../pictures/hue/ex81.webp";
+import ex82 from "../pictures/hue/ex82.jpg";
+import ex83 from "../pictures/hue/ex83.avif";
+import ex84 from "../pictures/hue/ex84.jpg";
+import ex85 from "../pictures/hue/ex85.webp";
+import ex86 from "../pictures/hue/ex86.jpg";
+import ex87 from "../pictures/hue/ex87.webp";
+import ex88 from "../pictures/hue/ex88.jpg";
+import ex89 from "../pictures/hue/ex89.webp";
+import ex90 from "../pictures/hue/ex90.webp";
+import ex91 from "../pictures/hue/ex91.webp";
+import ex92 from "../pictures/hue/ex92.jpg";
+import ex93 from "../pictures/hue/ex93.jpg";
+// import ex94 from "../pictures/hue/ex94.avif";
+// import ex95 from "../pictures/hue/ex95.avif";
+// import ex96 from "../pictures/hue/ex96.avif";
+// import ex97 from "../pictures/hue/ex97.avif";
+// import ex98 from "../pictures/hue/ex98.avif";
+// import ex99 from "../pictures/hue/ex99.avif";
+// import ex100 from "../pictures/hue/ex100.jpg";
+// import ex101 from "../pictures/hue/ex101.avif";
+// import ex102 from "../pictures/hue/ex102.avif";
+// import ex103 from "../pictures/hue/ex103.avif";
+// import ex104 from "../pictures/hue/ex104.jpg";
+// import ex105 from "../pictures/hue/ex105.avif";
+// import ex106 from "../pictures/hue/ex106.jpg";
+// import ex107 from "../pictures/hue/ex107.avif";
+// import ex108 from "../pictures/hue/ex108.jpg";
+// import ex109 from "../pictures/hue/ex109.avif";
+// import ex110 from "../pictures/hue/ex110.avif";
+// import ex111 from "../pictures/hue/ex111.avif";
 
 // products.js
 export const allProducts = [
@@ -121,7 +121,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Belts",
     collection: "Minimalism and fantasy",
-    image: pd1,
+    image: ex1,
     inStock: true,
     colors: ["Black", "Brown"],
     sizes: ["S", "M", "L"],
@@ -134,7 +134,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Belts",
     collection: "Winter 23",
-    image: pd2,
+    image: ex2,
     inStock: true,
     colors: ["Black/Brown", "Tan/Black"],
     sizes: ["S", "M", "L", "XL"],
@@ -147,7 +147,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Belts",
     collection: "Minimalism and fantasy",
-    image: pd3,
+    image: ex1,
     inStock: true,
     colors: ["Black", "Brown"],
     sizes: ["S", "M", "L"],
@@ -160,7 +160,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Belts",
     collection: "Winter 23",
-    image: pd1,
+    image: ex1,
     inStock: true,
     colors: ["Black/Brown", "Tan/Black"],
     sizes: ["S", "M", "L", "XL"],
@@ -175,7 +175,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    image: pd5,
+    image: ex5,
     inStock: true,
   },
   {
@@ -186,7 +186,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    image: pd6,
+    // image: ex6,
     inStock: true,
   },
   {
@@ -197,7 +197,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    image: pd7,
+    // image: ex7,
     inStock: true,
   },
   {
@@ -208,7 +208,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    image: pd30,
+    // image: ex30,
     inStock: true,
   },
   {
@@ -219,7 +219,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    image: pd100,
+    // image: ex100,
     inStock: true,
   },
   {
@@ -230,7 +230,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    image: pd104,
+    // image: ex104,
     inStock: true,
   },
 
@@ -243,7 +243,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    image: pd5,
+    // image: ex5,
     inStock: true,
   },
   {
@@ -254,7 +254,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    image: pd6,
+    // image: ex6,
     inStock: true,
   },
   {
@@ -265,7 +265,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    image: pd7,
+    // image: ex7,
     inStock: true,
   },
   {
@@ -276,7 +276,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    image: pd6,
+    // image: ex6,
     inStock: true,
   },
   {
@@ -287,7 +287,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    image: pd6,
+    // image: ex6,
     inStock: true,
   },
   {
@@ -298,7 +298,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    image: pd7,
+    // image: ex7,
     inStock: true,
   },
 
@@ -311,10 +311,9 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Pocket Squares",
     collection: "Pre Fall 23",
-    image: pd1,
+    image: ex3,
     inStock: true,
   },
-
 
   // Men's Accessories - Ties
   {
@@ -325,7 +324,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Ties",
     collection: "Winter 23",
-    image: pd10,
+    image: ex4,
     inStock: true,
   },
   {
@@ -336,7 +335,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Ties",
     collection: "Winter 23",
-    image: pd10,
+    image: ex4,
     inStock: true,
   },
   {
@@ -347,7 +346,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Ties",
     collection: "Winter 23",
-    image: pd10,
+    image: ex7,
     inStock: true,
   },
   {
@@ -358,7 +357,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Ties",
     collection: "Winter 23",
-    image: pd10,
+    image: ex8,
     inStock: true,
   },
   {
@@ -369,7 +368,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Ties",
     collection: "Winter 23",
-    image: pd10,
+    image: ex9,
     inStock: true,
   },
 
@@ -382,7 +381,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Bow Ties",
     collection: "Winter 23",
-    image: pd8,
+    image: ex10,
     inStock: true,
   },
   {
@@ -393,7 +392,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Bow Ties",
     collection: "Winter 23",
-    image: pd9,
+    image: ex11,
     inStock: true,
   },
 
@@ -406,7 +405,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Suits",
     collection: "Winter 23",
-    image: pd11,
+    image: ex12,
     inStock: true,
     sizes: ["38", "40", "42", "44"],
   },
@@ -418,7 +417,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Suits",
     collection: "Winter 23",
-    image: pd12,
+    image: ex12,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -430,7 +429,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Suits",
     collection: "Winter 23",
-    image: pd13,
+    image: ex13,
     inStock: true,
     sizes: ["38", "40", "42", "44"],
   },
@@ -442,7 +441,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Suits",
     collection: "Winter 23",
-    image: pd12,
+    image: ex12,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -456,7 +455,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jeans",
     collection: "Summer 24",
-    image: pd14,
+    image: ex14,
     inStock: true,
     sizes: ["28", "30", "32", "34"],
   },
@@ -468,7 +467,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jeans",
     collection: "Summer 24",
-    image: pd15,
+    image: ex15,
     inStock: true,
     sizes: ["30", "32", "34", "36"],
   },
@@ -480,7 +479,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jeans",
     collection: "Summer 24",
-    image: pd19,
+    image: ex16,
     inStock: true,
     sizes: ["28", "30", "32", "34"],
   },
@@ -492,7 +491,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jeans",
     collection: "Summer 24",
-    image: pd20,
+    image: ex17,
     inStock: true,
     sizes: ["30", "32", "34"],
   },
@@ -506,7 +505,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Pants",
     collection: "Summer 24",
-    // image: pd33,
+    image: ex18,
     inStock: true,
     sizes: ["30", "32", "34", "36"],
   },
@@ -518,7 +517,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Pants",
     collection: "Winter 23",
-    // image: pd34,
+    image: ex19,
     inStock: true,
     sizes: ["30", "32", "34", "36"],
   },
@@ -530,7 +529,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Pants",
     collection: "Summer 24",
-    // image: pd35,
+    image: ex20,
     inStock: true,
     sizes: ["30", "32", "34"],
   },
@@ -542,7 +541,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Pants",
     collection: "Summer 24",
-    // image: pd36,
+    // image: ex36,
     inStock: true,
     sizes: ["30", "32", "34", "36"],
   },
@@ -556,7 +555,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Polos",
     collection: "Summer 24",
-    image: pd33,
+    image: ex21,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -568,7 +567,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Polos",
     collection: "Summer 24",
-    image: pd34,
+    image: ex22,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -580,7 +579,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Polos",
     collection: "Summer 24",
-    image: pd21,
+    image: ex23,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -592,7 +591,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Polos",
     collection: "Summer 24",
-    image: pd22,
+    image: ex24,
     inStock: true,
     sizes: ["S", "M", "L"],
   },
@@ -604,7 +603,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Polos",
     collection: "Summer 24",
-    image: pd21,
+    image: ex25,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -618,7 +617,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts",
     collection: "Winter 23",
-    image: pd23,
+    image: ex26,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -630,7 +629,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts",
     collection: "Winter 23",
-    image: pd24,
+    image: ex27,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -644,7 +643,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Sweatshirts & Hoodies",
     collection: "Winter 23",
-    image: pd29,
+    image: ex28,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -656,7 +655,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Sweatshirts & Hoodies",
     collection: "Winter 23",
-    image: pd30,
+    image: ex29,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -668,7 +667,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Sweatshirts & Hoodies",
     collection: "Winter 23",
-    image: pd31,
+    image: ex30,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -680,7 +679,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Sweatshirts & Hoodies",
     collection: "Winter 23",
-    image: pd32,
+    image: ex31,
     inStock: true,
     sizes: ["S", "M", "L"],
   },
@@ -692,7 +691,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Sweatshirts & Hoodies",
     collection: "Winter 23",
-    image: pd30,
+    image: ex32,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -706,7 +705,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "T-Shirts",
     collection: "Summer 24",
-    // image: pd49,
+    image: ex33,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -718,7 +717,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "T-Shirts",
     collection: "Summer 24",
-    // image: pd50,
+    image: ex34,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -732,7 +731,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Tuxedos",
     collection: "Winter 23",
-    image: pd35,
+    // image: ex35,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -744,7 +743,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Tuxedos",
     collection: "Winter 23",
-    image: pd36,
+    // image: ex36,
     inStock: true,
     sizes: ["38", "40", "42", "44"],
   },
@@ -756,7 +755,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Tuxedos",
     collection: "Winter 23",
-    image: pd37,
+    // image: ex37,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -770,7 +769,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Waistcoats",
     collection: "Winter 23",
-    // image: pd54,
+    image: ex36,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -782,7 +781,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Waistcoats",
     collection: "Winter 23",
-    // image: pd55,
+    image: ex37,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -794,7 +793,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Waistcoats",
     collection: "Winter 23",
-    // image: pd56,
+    image: ex38,
     inStock: true,
     sizes: ["S", "M", "L", "XL"],
   },
@@ -808,7 +807,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Eyewear",
     collection: "Summer 24",
-    // image: pd57,
+    image: ex39,
     inStock: true,
   },
   {
@@ -819,7 +818,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Eyewear",
     collection: "Summer 24",
-    // image: pd58,
+    image: ex40,
     inStock: true,
   },
   {
@@ -830,7 +829,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Eyewear",
     collection: "Summer 24",
-    // image: pd59,
+    image: ex41,
     inStock: true,
   },
   {
@@ -841,7 +840,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Eyewear",
     collection: "Summer 24",
-    // image: pd60,
+    image: ex42,
     inStock: true,
   },
 
@@ -854,7 +853,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for her",
     collection: "Ready to wear",
-    // image: pd46,
+    image: ex43,
     inStock: true,
   },
   {
@@ -865,7 +864,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for her",
     collection: "Ready to wear",
-    // image: pd68,
+    image: ex44,
     inStock: true,
   },
   {
@@ -876,7 +875,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for her",
     collection: "Ready to wear",
-    // image: pd46,
+    image: ex45,
     inStock: true,
   },
   {
@@ -887,7 +886,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Gifts for her",
     collection: "Ready to wear",
-    // image: pd68,
+    image: ex46,
     inStock: true,
   },
 
@@ -900,7 +899,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hats & Scarves",
     collection: "Summer 24",
-    image: pd46,
+    image: ex47,
     inStock: true,
   },
   {
@@ -911,7 +910,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hats & Scarves",
     collection: "Winter 23",
-    image: pd51,
+    image: ex48,
     inStock: true,
   },
   {
@@ -922,7 +921,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hats & Scarves",
     collection: "Winter 23",
-    // image: pd67,
+    image: ex49,
     inStock: true,
   },
   {
@@ -933,7 +932,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hats & Scarves",
     collection: "Summer 24",
-    // image: pd46,
+    image: ex50,
     inStock: true,
   },
   {
@@ -944,7 +943,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hats & Scarves",
     collection: "Winter 23",
-    // image: pd69,
+    image: ex51,
     inStock: true,
   },
 
@@ -957,7 +956,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hosiery",
     collection: "Winter 23",
-    image: pd54,
+    image: ex52,
     inStock: true,
     sizes: ["S/M", "L/XL"],
   },
@@ -969,7 +968,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hosiery",
     collection: "Winter 23",
-    image: pd55,
+    image: ex53,
     inStock: true,
     sizes: ["S/M", "L/XL"],
   },
@@ -981,7 +980,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Hosiery",
     collection: "Winter 23",
-    image: pd56,
+    image: ex54,
     inStock: true,
     sizes: ["S/M", "L/XL"],
   },
@@ -995,7 +994,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd58,
+    image: ex55,
     inStock: true,
   },
   {
@@ -1006,7 +1005,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd59,
+    image: ex56,
     inStock: true,
   },
   {
@@ -1017,7 +1016,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd60,
+    image: ex57,
     inStock: true,
   },
   {
@@ -1028,7 +1027,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd61,
+    image: ex58,
     inStock: true,
   },
   {
@@ -1039,7 +1038,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd62,
+    image: ex59,
     inStock: true,
   },
   {
@@ -1050,7 +1049,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd61,
+    image: ex60,
     inStock: true,
   },
 
@@ -1063,7 +1062,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Dresses",
     collection: "Summer 24",
-    // image: pd63,
+    image: ex61,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1075,7 +1074,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Dresses",
     collection: "Pre Fall 23",
-    image: pd68,
+    image: ex62,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1087,7 +1086,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Dresses",
     collection: "Summer 24",
-    image: pd69,
+    image: ex63,
     inStock: true,
     sizes: ["S", "M", "L"],
   },
@@ -1099,7 +1098,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Dresses",
     collection: "Summer 24",
-    image: pd70,
+    image: ex64,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1113,7 +1112,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Denim",
     collection: "Summer 24",
-    image: pd73,
+    image: ex65,
     inStock: true,
     sizes: ["24", "26", "28", "30"],
   },
@@ -1125,7 +1124,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Denim",
     collection: "Summer 24",
-    image: pd74,
+    image: ex66,
     inStock: true,
     sizes: ["26", "28", "30"],
   },
@@ -1137,7 +1136,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Denim",
     collection: "Summer 24",
-    // image: pd75,
+    image: ex67,
     inStock: true,
     sizes: ["24", "26", "28", "30"],
   },
@@ -1149,7 +1148,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Denim",
     collection: "Summer 24",
-    // image: pd76,
+    image: ex68,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1163,7 +1162,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Gowns",
     collection: "Pre Fall 23",
-    image: pd82,
+    image: ex69,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1175,7 +1174,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Gowns",
     collection: "Pre Fall 23",
-    image: pd82,
+    image: ex70,
     inStock: true,
     sizes: ["S", "M", "L"],
   },
@@ -1189,7 +1188,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jackets & Coats",
     collection: "Winter 23",
-    // image: pd89,
+    image: ex71,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1201,7 +1200,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jackets & Coats",
     collection: "Winter 23",
-    // image: pd90,
+    image: ex72,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1213,7 +1212,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jackets & Coats",
     collection: "Winter 23",
-    // image: pd91,
+    image: ex73,
     inStock: true,
     sizes: ["S", "M", "L"],
   },
@@ -1225,7 +1224,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jackets & Coats",
     collection: "Winter 23",
-    // image: pd92,
+    image: ex74,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1239,7 +1238,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Knitwear",
     collection: "Winter 23",
-    // image: pd93,
+    image: ex75,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1249,9 +1248,9 @@ export const allProducts = [
     price: 89.99,
     category: "Women",
     subcategory: "Clothing",
-    // type: "Knitwear",
+    type: "Knitwear",
     collection: "Winter 23",
-    image: pd94,
+    // image: ex76,
     inStock: true,
     sizes: ["S", "M", "L"],
   },
@@ -1265,7 +1264,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts & Tops",
     collection: "Summer 24",
-    // image: pd95,
+    image: ex76,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1277,7 +1276,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts & Tops",
     collection: "Summer 24",
-    // image: pd96,
+    image: ex77,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1289,7 +1288,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts & Tops",
     collection: "Summer 24",
-    // image: pd97,
+    image: ex78,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1301,7 +1300,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts & Tops",
     collection: "Summer 24",
-    // image: pd98,
+    image: ex79,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1315,7 +1314,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Skirts",
     collection: "Summer 24",
-    // image: pd99,
+    image: ex81,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1327,7 +1326,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Skirts",
     collection: "Summer 24",
-    // image: pd100,
+    image: ex82,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1339,7 +1338,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Skirts",
     collection: "Summer 24",
-    // image: pd101,
+    image: ex83,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1353,7 +1352,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "T-Shirts & Sweatshirts",
     collection: "Summer 24",
-    // image: pd102,
+    image: ex84,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1365,7 +1364,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "T-Shirts & Sweatshirts",
     collection: "Winter 23",
-    // image: pd103,
+    image: ex85,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1377,7 +1376,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "T-Shirts & Sweatshirts",
     collection: "Summer 24",
-    // image: pd104,
+    image: ex86,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1389,7 +1388,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "T-Shirts & Sweatshirts",
     collection: "Winter 23",
-    // image: pd105,
+    image: ex87,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1403,7 +1402,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Trousers",
     collection: "Winter 23",
-    // image: pd106,
+    image: ex88,
     inStock: true,
     sizes: ["XS", "S", "M", "L"],
   },
@@ -1415,7 +1414,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Trousers",
     collection: "Winter 23",
-    // image: pd107,
+    image: ex89,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1429,7 +1428,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Dresses",
     collection: "Minimalism and fantasy",
-    image: pd108,
+    image: ex90,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1441,7 +1440,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Shirts & Tops",
     collection: "Minimalism and fantasy",
-    image: pd109,
+    image: ex91,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
@@ -1453,7 +1452,7 @@ export const allProducts = [
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Minimalism and fantasy",
-    image: pd110,
+    image: ex92,
     inStock: true,
   },
   {
@@ -1464,7 +1463,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Jackets & Coats",
     collection: "Pre Fall 23",
-    image: pd111,
+    image: ex93,
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
