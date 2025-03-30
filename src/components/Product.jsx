@@ -91,6 +91,12 @@ import ex90 from "../pictures/hue/ex90.webp";
 import ex91 from "../pictures/hue/ex91.webp";
 import ex92 from "../pictures/hue/ex92.jpg";
 import ex93 from "../pictures/hue/ex93.jpg";
+import pd12 from "../pictures/hue/pd12.avif";
+import pd13 from "../pictures/hue/pd13.jpg";
+import pd37 from "../pictures/hue/pd37.jpg";
+import pd35 from "../pictures/hue/pd35.avif";
+import pd36 from "../pictures/hue/pd36.avif";
+
 // import ex94 from "../pictures/hue/ex94.avif";
 // import ex95 from "../pictures/hue/ex95.avif";
 // import ex96 from "../pictures/hue/ex96.avif";
@@ -141,29 +147,29 @@ export const allProducts = [
   },
   {
     id: 3,
-    name: "Classic Leather Belt",
-    price: 49.99,
-    category: "Men",
-    subcategory: "Accessories",
-    type: "Belts",
-    collection: "Minimalism and fantasy",
-    image: ex1,
-    inStock: true,
-    colors: ["Black", "Brown"],
-    sizes: ["S", "M", "L"],
-  },
-  {
-    id: 4,
-    name: "Reversible Dress Belt",
-    price: 59.99,
+    name: "Reversible Italian Leather Belt",
+    price: 89.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Belts",
     collection: "Winter 23",
-    image: ex1,
+    // image: ex2,
     inStock: true,
     colors: ["Black/Brown", "Tan/Black"],
     sizes: ["S", "M", "L", "XL"],
+  },
+  {
+    id: 4,
+    name: "Braided Leather Belt",
+    price: 59.99,
+    category: "Men",
+    subcategory: "Accessories",
+    type: "Belts",
+    collection: "Summer 24",
+    // image: ex3,
+    inStock: true,
+    colors: ["Brown", "Navy"],
+    sizes: ["S", "M", "L"],
   },
 
   // Men's Accessories - Gifts for him
@@ -180,8 +186,8 @@ export const allProducts = [
   },
   {
     id: 6,
-    name: "Leather Wallet Set",
-    price: 79.99,
+    name: "Personalized Cufflinks Set",
+    price: 149.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Gifts for him",
@@ -191,25 +197,26 @@ export const allProducts = [
   },
   {
     id: 7,
-    name: "Leather Wallet Set",
-    price: 79.99,
+    name: "Premium Whiskey Decanter Set",
+    price: 199.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    // image: ex7,
+    image: ex7,
     inStock: true,
   },
   {
     id: 8,
-    name: "Leather Wallet Set",
-    price: 79.99,
+    name: "Leather Travel Wallet",
+    price: 129.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Gifts for him",
     collection: "Ready to wear",
-    // image: ex30,
+    // image: ex5,
     inStock: true,
+    colors: ["Black", "Brown"],
   },
   {
     id: 9,
@@ -248,37 +255,38 @@ export const allProducts = [
   },
   {
     id: 12,
-    name: "Silver Cufflinks",
-    price: 89.99,
+    name: "Titanium Signet Ring",
+    price: 179.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    // image: ex6,
+    // image: ex8,
     inStock: true,
   },
   {
     id: 13,
-    name: "Silver Cufflinks",
-    price: 89.99,
+    name: "Black Onyx Bracelet",
+    price: 129.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Jewelry",
     collection: "Pre Fall 23",
-    // image: ex7,
+    // image: ex9,
     inStock: true,
   },
   {
     id: 14,
-    name: "Silver Cufflinks",
+    name: "Minimalist Silver Chain",
     price: 89.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Jewelry",
-    collection: "Pre Fall 23",
-    // image: ex6,
+    collection: "Minimalism and fantasy",
+    // image: ex10,
     inStock: true,
   },
+
   {
     id: 15,
     name: "Silver Cufflinks",
@@ -329,13 +337,13 @@ export const allProducts = [
   },
   {
     id: 19,
-    name: "Silk Necktie",
-    price: 59.99,
+    name: "Geometric Print Skinny Tie",
+    price: 79.99,
     category: "Men",
     subcategory: "Accessories",
     type: "Ties",
     collection: "Winter 23",
-    image: ex4,
+    // image: ex12,
     inStock: true,
   },
   {
@@ -417,7 +425,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Suits",
     collection: "Winter 23",
-    image: ex12,
+    image: pd12,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -441,7 +449,7 @@ export const allProducts = [
     subcategory: "Clothing",
     type: "Suits",
     collection: "Winter 23",
-    image: ex12,
+    image: pd13,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -729,9 +737,9 @@ export const allProducts = [
     price: 599.99,
     category: "Men",
     subcategory: "Clothing",
-    type: "Tuxedos",
-    collection: "Winter 23",
-    // image: ex35,
+    type: "Tuxedos", // ✅ Correct type
+    collection: "Summer 24",
+    image: pd35,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
@@ -741,9 +749,9 @@ export const allProducts = [
     price: 649.99,
     category: "Men",
     subcategory: "Clothing",
-    type: "Tuxedos",
+    type: "Tuxedos", 
     collection: "Winter 23",
-    // image: ex36,
+    image: pd37,
     inStock: true,
     sizes: ["38", "40", "42", "44"],
   },
@@ -753,13 +761,12 @@ export const allProducts = [
     price: 699.99,
     category: "Men",
     subcategory: "Clothing",
-    type: "Tuxedos",
+    type: "Tuxedos", 
     collection: "Winter 23",
-    // image: ex37,
+    image: pd36,
     inStock: true,
     sizes: ["38", "40", "42", "44", "46"],
   },
-
   // Men's Clothing - WAISTCOATS
   {
     id: 54,
@@ -1467,6 +1474,31 @@ export const allProducts = [
     inStock: true,
     sizes: ["XS", "S", "M"],
   },
+  // Add these to your allProducts array:
+  {
+    id: 112,
+    name: "Women's Tailored Suit",
+    price: 299.99,
+    category: "Women",
+    subcategory: "Clothing",
+    type: "Suits",
+    collection: "Winter 23",
+    // image: ex93,
+    inStock: true,
+    sizes: ["XS", "S", "M", "L"],
+  },
+  {
+    id: 113,
+    name: "Women's Pantsuit",
+    price: 279.99,
+    category: "Women",
+    subcategory: "Clothing",
+    type: "Suits",
+    collection: "Winter 23",
+    // image: ex94,
+    inStock: true,
+    sizes: ["XS", "S", "M"],
+  },
 ];
 
 // Filter functions for all categories
@@ -1555,7 +1587,7 @@ export const womenClothing = womenProducts.filter(
   (product) => product.subcategory === "Clothing"
 );
 export const womenSuits = womenClothing.filter(
-  (product) => product.type === "womenSuits"
+  (product) => product.type === "Suits"
 );
 export const womenDresses = womenClothing.filter(
   (product) => product.type === "Dresses"

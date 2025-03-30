@@ -83,14 +83,16 @@ const ShopSidebar = () => {
     );
   };
 
-  const handleFilter = (products, filterName) => {
-    const filtered = products.filter(
-      (product) =>
-        product.price >= priceRange[0] && product.price <= priceRange[1]
-    );
-    setFilteredProducts(filtered);
-    setActiveFilter(filterName);
-  };
+ const handleFilter = (products, filterName) => {
+   console.log(`Filtering by: ${filterName}`, products); // Debug log
+   const filtered = products.filter(
+     (product) =>
+       product.price >= priceRange[0] && product.price <= priceRange[1]
+   );
+   setFilteredProducts(filtered);
+   setActiveFilter(filterName);
+ };
+ 
 
   const clearFilters = () => {
     setFilteredProducts(allProducts);
@@ -139,131 +141,141 @@ const ShopSidebar = () => {
     return openDropdowns.includes(dropdownId);
   };
 
-    const handleSearch = (query) => {
-      if (query.trim()) {
-        const results = allProducts.filter((product) =>
-          product.name.toLowerCase().includes(query.toLowerCase())
-        );
-        setFilteredProducts(results);
-        setActiveFilter(`Search: "${query}"`);
-      } else {
-        setFilteredProducts(allProducts);
-        setActiveFilter("All Products");
-      }
-    };
-
-  const categories = {
-    "Product Type": {
-      "All Products": { products: allProducts, name: "All Products" },
-      Men: {
-        products: menProducts,
-        name: "Men",
-        subcategories: {
-          Accessories: {
-            products: menAccessories,
-            name: "Men's Accessories",
-            subcategories: {
-              Belts: { products: menBelts, name: "Men's Belts" },
-              "Gifts for him": {
-                products: menGiftsForHim,
-                name: "Gifts for Him",
-              },
-              Jewelry: { products: menJewelry, name: "Men's Jewelry" },
-              "Pocket Squares": {
-                products: menPocketSquares,
-                name: "Pocket Squares",
-              },
-              Ties: { products: menTies, name: "Men's Ties" },
-              "Bow Ties": { products: menBowTies, name: "Bow Ties" },
-            },
-          },
-          Clothing: {
-            products: menClothing,
-            name: "Men's Clothing",
-            subcategories: {
-              Suits: { products: menSuits, name: "Men's Suits" },
-              Jeans: { products: menJeans, name: "Men's Jeans" },
-              Pants: { products: menPants, name: "Men's Pants" },
-              Polos: { products: menPolos, name: "Men's Polos" },
-              Shirts: { products: menShirts, name: "Men's Shirts" },
-              "Sweatshirts & Hoodies": {
-                products: menSweatshirts,
-                name: "Men's Sweatshirts",
-              },
-              "T-Shirts": { products: menTShirts, name: "Men's T-Shirts" },
-              Tuxedos: { products: menTuxedos, name: "Men's Tuxedos" },
-              Waistcoats: { products: menWaistcoats, name: "Waistcoats" },
-            },
-          },
-        },
-      },
-      Women: {
-        products: womenProducts,
-        name: "Women",
-        subcategories: {
-          Accessories: {
-            products: womenAccessories,
-            name: "Women's Accessories",
-            subcategories: {
-              Eyewear: { products: womenEyewear, name: "Women's Eyewear" },
-              Gifts: { products: womenGifts, name: "Women's Gifts" },
-              "Hats & Scarves": { products: womenHats, name: "Hats & Scarves" },
-              Hosiery: { products: womenHosiery, name: "Hosiery" },
-              Jewellery: { products: womenJewellery, name: "Jewellery" },
-            },
-          },
-          Clothing: {
-            products: womenClothing,
-            name: "Women's Clothing",
-            subcategories: {
-              "Women Suits": { products: womenSuits, name: "Women's Suits" },
-              Dresses: { products: womenDresses, name: "Dresses" },
-              Denim: { products: womenDenim, name: "Women's Denim" },
-              Gowns: { products: womenGowns, name: "Gowns" },
-              "Jackets & Coats": {
-                products: womenJackets,
-                name: "Jackets & Coats",
-              },
-              Knitwear: { products: womenKnitwear, name: "Knitwear" },
-              "Shirts & Tops": { products: womenShirts, name: "Shirts & Tops" },
-              Skirts: { products: womenSkirts, name: "Skirts" },
-              "T-Shirts & Sweatshirts": {
-                products: womenSweatshirts,
-                name: "T-Shirts & Sweatshirts",
-              },
-              Tailoring: { products: womenTailoring, name: "Tailoring" },
-              Trousers: { products: womenTrousers, name: "Trousers" },
-            },
-          },
-        },
-      },
-    },
-    Collections: {
-      "Minimalism and fantasy": {
-        products: minimalismFantasy,
-        name: "Minimalism & Fantasy",
-      },
-      "Pre Fall 23": { products: preFall23, name: "Pre Fall 23" },
-      "Pre-Spring 23": { products: preSpring23, name: "Pre-Spring 23" },
-      "Pre-Spring 24": { products: preSpring24, name: "Pre-Spring 24" },
-      "Ready to wear": { products: readyToWear, name: "Ready to Wear" },
-      "Summer 23": { products: summer23, name: "Summer 23" },
-      "Summer 24": { products: summer24, name: "Summer 24" },
-      "Winter 22": { products: winter22, name: "Winter 22" },
-      "Winter 23": { products: winter23, name: "Winter 23" },
-    },
+  const handleSearch = (query) => {
+    if (query.trim()) {
+      const results = allProducts.filter((product) =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredProducts(results);
+      setActiveFilter(`Search: "${query}"`);
+    } else {
+      setFilteredProducts(allProducts);
+      setActiveFilter("All Products");
+    }
   };
+
+const categories = {
+  "Product Type": {
+    "All Products": { products: allProducts, name: "All Products" },
+    Men: {
+      products: menProducts,
+      name: "Men",
+      subcategories: {
+        Accessories: {
+          products: menAccessories,
+          name: "Men's Accessories",
+          subcategories: {
+            Belts: { products: menBelts, name: "Men's Belts" },
+            "Gifts for him": {
+              products: menGiftsForHim,
+              name: "Gifts for Him",
+            },
+            Jewelry: { products: menJewelry, name: "Men's Jewelry" },
+            "Pocket Squares": {
+              products: menPocketSquares,
+              name: "Pocket Squares",
+            },
+            Ties: { products: menTies, name: "Men's Ties" },
+            "Bow Ties": { products: menBowTies, name: "Bow Ties" },
+          },
+        },
+        Clothing: {
+          products: menClothing,
+          name: "Men's Clothing",
+          subcategories: {
+            Suits: { products: menSuits, name: "Men's Suits" },
+            Jeans: { products: menJeans, name: "Men's Jeans" },
+            Pants: { products: menPants, name: "Men's Pants" },
+            Polos: { products: menPolos, name: "Men's Polos" },
+            Shirts: { products: menShirts, name: "Men's Shirts" },
+            "Sweatshirts & Hoodies": {
+              products: menSweatshirts,
+              name: "Men's Sweatshirts",
+            },
+            "T-Shirts": { products: menTShirts, name: "Men's T-Shirts" },
+            Tuxedos: {
+              products: menTuxedos,
+              name: "Men's Tuxedos",
+              products: menTuxedos,
+            },
+            Waistcoats: { products: menWaistcoats, name: "Waistcoats" },
+          },
+        },
+      },
+    },
+    Women: {
+      products: womenProducts,
+      name: "Women",
+      subcategories: {
+        Accessories: {
+          products: womenAccessories,
+          name: "Women's Accessories",
+          subcategories: {
+            Eyewear: { products: womenEyewear, name: "Women's Eyewear" },
+            Gifts: { products: womenGifts, name: "Women's Gifts" },
+            "Hats & Scarves": { products: womenHats, name: "Hats & Scarves" },
+            Hosiery: { products: womenHosiery, name: "Hosiery" },
+            Jewellery: { products: womenJewellery, name: "Jewellery" },
+          },
+        },
+        Clothing: {
+          products: womenClothing,
+          name: "Women's Clothing",
+          subcategories: {
+            Suits: { products: womenSuits, name: "Women's Suits" },
+            Dresses: { products: womenDresses, name: "Dresses" },
+            Denim: { products: womenDenim, name: "Women's Denim" },
+            Gowns: { products: womenGowns, name: "Gowns" },
+            "Jackets & Coats": {
+              products: womenJackets,
+              name: "Jackets & Coats",
+            },
+            Knitwear: { products: womenKnitwear, name: "Knitwear" },
+            "Shirts & Tops": { products: womenShirts, name: "Shirts & Tops" },
+            Skirts: { products: womenSkirts, name: "Skirts" },
+            "T-Shirts & Sweatshirts": {
+              products: womenSweatshirts,
+              name: "T-Shirts & Sweatshirts",
+            },
+            Tailoring: { products: womenTailoring, name: "Tailoring" },
+            Trousers: { products: womenTrousers, name: "Trousers" },
+          },
+        },
+      },
+    },
+  },
+  Collections: {
+    "Minimalism and fantasy": {
+      products: minimalismFantasy,
+      name: "Minimalism & Fantasy",
+    },
+    "Pre Fall 23": { products: preFall23, name: "Pre Fall 23" },
+    "Pre-Spring 23": { products: preSpring23, name: "Pre-Spring 23" },
+    "Pre-Spring 24": { products: preSpring24, name: "Pre-Spring 24" },
+    "Ready to wear": { products: readyToWear, name: "Ready to Wear" },
+    "Summer 23": { products: summer23, name: "Summer 23" },
+    "Summer 24": { products: summer24, name: "Summer 24" },
+    "Winter 22": { products: winter22, name: "Winter 22" },
+    "Winter 23": { products: winter23, name: "Winter 23" },
+  },
+};
 
   const renderCategoryItems = (items, parentId = "") => {
     return Object.entries(items).map(([itemName, itemData]) => {
+      // Skip internal properties
+      if (
+        itemName === "products" ||
+        itemName === "name" ||
+        itemName === "subcategories"
+      ) {
+        return null;
+      }
+
       const itemId = `${parentId}-${itemName}`
         .replace(/\s+/g, "-")
         .toLowerCase();
 
-      // Skip if this is a data property rather than a category
-      if (["products", "name", "subcategories"].includes(itemName)) return null;
-
-      // For simple items without subcategories (like in Collections)
+      // For items with direct products (like in Collections)
       if (itemData.products && !itemData.subcategories) {
         return (
           <div
@@ -306,7 +318,6 @@ const ShopSidebar = () => {
       );
     });
   };
-
   return (
     <>
       <HeaderPage />
