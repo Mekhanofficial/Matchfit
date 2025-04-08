@@ -4,42 +4,44 @@ import HomePage from "./pages/Home";
 import "./index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import AboutPage from "./pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ShopSidebar from "./pages/Shop";
-// import BlogPage from "./pages/Blog";
-// import ContactPage from "./pages/Contact";
-// import MenuPage from "./pages/Menu";
+import { AppWrapper } from "./AppContext";
+import Layout from "./components/Layout";
+import Wishlist from "./pages/Wishlist";
+import Checkout from "./pages/Checkout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const proRouter = createBrowserRouter([
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  // {
-  //   path: "/About",
-  //   element: <AboutPage />,
-  // },
-  // {
-  //   path: "/Blog",
-  //   element: <BlogPage />,
-  // },
-  // {
-  //   path: "/Contact",
-  //   element: <ContactPage />,
-  // },
-  {
-    path: "/Shop",
-    element: <ShopSidebar />,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/Shop",
+        element: <ShopSidebar />,
+      },
+      {
+        path: "/Wishlist",
+        element: <Wishlist />,
+      },
+      {
+        path: "/Checkout",
+        element: <Checkout />,
+      },
+      // Add other routes here
+    ],
   },
 ]);
 
 root.render(
   <React.StrictMode>
-    {/* <CartProvider> */}
-    <RouterProvider router={proRouter} />
-    {/* </CartProvider> */}
+    <AppWrapper>
+      <RouterProvider router={proRouter} />
+    </AppWrapper>
   </React.StrictMode>
 );

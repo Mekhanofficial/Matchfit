@@ -112,11 +112,11 @@ const HomeHeroSection = () => {
       <HeaderPage />
       <section className="overflow-x-hidden ">
         <div
-          className="w-full h-screen bg-cover bg-center lg:bg-fixed flex flex-col justify-center items-center"
+          className="relative w-full h-screen bg-cover bg-center lg:bg-fixed flex flex-col justify-center items-center"
           style={{ backgroundImage: `url(${bg5})` }}
         >
           {/* Semi-transparent black overlay */}
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
           {/* Text Content Container */}
           <div className="text-center text-gray-200 px-4 sm:px-6 md:px-8 max-w-4xl relative z-10">
@@ -141,12 +141,13 @@ const HomeHeroSection = () => {
             {/* Call-to-Action Button */}
             <a
               href="#"
-              className="inline-block px-8 py-3 text-sm border border-white text-white font-semibold hover:text-[#16bb7c] "
+              className="inline-block px-8 py-3 text-sm border border-white text-white font-semibold hover:text-[#16bb7c]"
             >
               VIEW COLLECTION
             </a>
           </div>
         </div>
+
         <div className="bg-zinc-950 text-white py-[120px]">
           <div className="text-center mx-[70px]">
             {/* Section Heading */}
