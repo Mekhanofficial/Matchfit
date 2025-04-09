@@ -14,6 +14,7 @@ import CheckoutPage from "./pages/Checkout";
 import ShopPage from "./pages/Shop";
 // import AboutusPage from "./pages/About";
 import WishlistPage from "./pages/Wishlist";
+import ProductDetails from "./components/ProductDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -37,6 +38,11 @@ const proRouter = createBrowserRouter([
         path: "/Checkout",
         element: <CheckoutPage />,
       },
+      {
+        path: "/product/:id",
+        element: <ProductDetails />,
+      },
+
       // {
       //   path: "/About",
       //   element: <AboutusPage />,

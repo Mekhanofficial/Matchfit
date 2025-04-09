@@ -264,7 +264,10 @@ const ShopHeroSection = () => {
     const isWishlisted = wishlist.some((item) => item.id === product.id);
 
     return (
-      <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+      <div
+        className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
         <div className="relative aspect-square bg-gray-50">
           <img
             src={product.image}
@@ -274,7 +277,10 @@ const ShopHeroSection = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
           <button
-            onClick={() => addToWishlist(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              addToWishlist(product);
+            }}
             className="absolute top-4 right-4 p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:bg-white transition-all duration-300 hover:scale-110"
             aria-label="Add to wishlist"
           >
@@ -295,7 +301,8 @@ const ShopHeroSection = () => {
             ${product.price.toFixed(2)}
           </p>
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               addToCart(product);
               setShowCartAlert(true);
             }}
@@ -480,31 +487,27 @@ const ShopHeroSection = () => {
               </h2>
             </div>
 
-            {filteredProducts.length === 0 ? (
-              <div className="text-center py-20">
-                <p className="text-gray-500 text-lg">
-                  No products found {searchQuery && `for "${searchQuery}"`}
-                </p>
-              </div>
-            ) : (
-              <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                  {filteredProducts.slice(0, itemsToShow).map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {filteredProducts.slice(0, itemsToShow).map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
 
-                {itemsToShow < filteredProducts.length && (
-                  <div className="mt-12 flex justify-center">
-                    <button
-                      onClick={() => setItemsToShow((prev) => prev + 8)}
-                      className="px-8 py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
-                    >
-                      Load More
-                    </button>
-                  </div>
-                )}
-              </>
+            {itemsToShow < filteredProducts.length && (
+              <div className="flex justify-center mt-10">
+                <button
+                  onClick={() => setItemsToShow(itemsToShow + 8)}
+                  className="px-6 py-3 text-sm font-medium bg-gray-900 text-white rounded-xl shadow hover:opacity-90 transition-all duration-300"
+                >
+                  Show More
+                </button>
+              </div>
+            )}
+
+            {filteredProducts.length === 0 && (
+              <div className="text-center py-20 text-gray-500 font-medium">
+                No products found.
+              </div>
             )}
           </div>
         </div>
