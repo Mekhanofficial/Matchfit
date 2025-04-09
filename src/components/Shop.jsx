@@ -6,7 +6,9 @@ import {
   faHeart,
   faTimes,
   faChevronDown,
+  faShoppingBag,
 } from "@fortawesome/free-solid-svg-icons";
+// Import all product arrays
 import {
   allProducts,
   menProducts,
@@ -55,10 +57,11 @@ import {
   summer24,
   winter22,
   winter23,
-} from "../components/Product";
+} from "./Product";
+import FooterPage from "./Footer";
 
-const ShopSidebar = () => {
-  const { addToCart, addToWishlist } = useAppContext();
+const ShopHeroSection = () => {
+  const { addToCart, addToWishlist, wishlist } = useAppContext();
   const location = useLocation();
   const navigate = useNavigate();
   const [openDropdowns, setOpenDropdowns] = useState([]);
@@ -67,6 +70,7 @@ const ShopSidebar = () => {
   const [priceRange, setPriceRange] = useState([0, 500]);
   const [searchQuery, setSearchQuery] = useState("");
   const [itemsToShow, setItemsToShow] = useState(8);
+  const [showCartAlert, setShowCartAlert] = useState(false);
 
   const categories = {
     "Product Type": {
@@ -187,6 +191,13 @@ const ShopSidebar = () => {
     setItemsToShow(8);
   }, [activeFilter, priceRange, location.search]);
 
+  useEffect(() => {
+    if (showCartAlert) {
+      const timer = setTimeout(() => setShowCartAlert(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showCartAlert]);
+
   const toggleDropdown = (dropdownId) => {
     setOpenDropdowns((prev) =>
       prev.includes(dropdownId)
@@ -250,14 +261,10 @@ const ShopSidebar = () => {
   const isDropdownOpen = (dropdownId) => openDropdowns.includes(dropdownId);
 
   const ProductCard = ({ product }) => {
-    const [showOptions, setShowOptions] = useState(false);
+    const isWishlisted = wishlist.some((item) => item.id === product.id);
 
     return (
-      <div
-        className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-        onMouseEnter={() => setShowOptions(true)}
-        onMouseLeave={() => setShowOptions(false)}
-      >
+      <div className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
         <div className="relative aspect-square bg-gray-50">
           <img
             src={product.image}
@@ -274,7 +281,7 @@ const ShopSidebar = () => {
             <FontAwesomeIcon
               icon={faHeart}
               className={`text-sm ${
-                product.wishlisted ? "text-red-500" : "text-gray-600"
+                isWishlisted ? "text-red-500" : "text-gray-600"
               }`}
             />
           </button>
@@ -288,7 +295,10 @@ const ShopSidebar = () => {
             ${product.price.toFixed(2)}
           </p>
           <button
-            onClick={() => addToCart(product)}
+            onClick={() => {
+              addToCart(product);
+              setShowCartAlert(true);
+            }}
             className="w-full mt-2 bg-gradient-to-br from-gray-900 to-gray-800 text-white py-3.5 rounded-xl hover:opacity-95 transition-all duration-300 text-sm font-semibold tracking-wide shadow-md"
           >
             Add to Cart
@@ -343,138 +353,164 @@ const ShopSidebar = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gray-50">
-      <div className="fixed inset-0 bg-[ `url(${bg5})`] bg-cover opacity-10 z-0" />
-
-      <div className="relative flex flex-col md:flex-row z-10">
-        <div className="w-full md:w-80 bg-gradient-to-b from-gray-900 to-gray-800 p-6 border-r border-gray-700 lg:fixed h-screen overflow-y-auto">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold text-white mb-4 font-serif">
-              Matchfit Wardrobe
-            </h2>
-            <button
-              className="text-gray-300 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors duration-300"
-              onClick={clearFilters}
-            >
-              <FontAwesomeIcon icon={faTimes} />
-              Clear Filters
-            </button>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">
-              Price Range
-            </h3>
-            <div className="py-2 px-3 bg-gray-800/50 rounded-xl backdrop-blur-sm">
-              <div className="flex justify-between mb-3">
-                <span className="text-sm text-gray-300">${priceRange[0]}</span>
-                <span className="text-sm text-gray-300">${priceRange[1]}</span>
-              </div>
-              <div className="relative h-2">
-                <div className="absolute h-full w-full bg-gray-700 rounded-full" />
-                <div
-                  className="absolute h-full bg-gradient-to-r from-gray-300 to-white rounded-full"
-                  style={{
-                    left: `${(priceRange[0] / 500) * 100}%`,
-                    right: `${100 - (priceRange[1] / 500) * 100}%`,
-                  }}
-                />
-                <input
-                  type="range"
-                  min="0"
-                  max="500"
-                  value={priceRange[0]}
-                  onChange={(e) =>
-                    handlePriceChange(Number(e.target.value), priceRange[1])
-                  }
-                  className="absolute w-full h-2 opacity-0 cursor-pointer"
-                />
-                <input
-                  type="range"
-                  min="0"
-                  max="500"
-                  value={priceRange[1]}
-                  onChange={(e) =>
-                    handlePriceChange(priceRange[0], Number(e.target.value))
-                  }
-                  className="absolute w-full h-2 opacity-0 cursor-pointer"
-                />
-              </div>
+    <>
+      <div className="relative min-h-screen bg-gray-50 flex flex-col">
+        {/* Cart Alert Notification */}
+        {showCartAlert && (
+          <div className="fixed top-4 right-4 animate-slide-in z-50">
+            <div className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3">
+              <FontAwesomeIcon icon={faShoppingBag} />
+              <span>Item added to cart successfully!</span>
             </div>
           </div>
+        )}
 
-          {Object.entries(categories).map(([category, items]) => {
-            const categoryId = category.toLowerCase().replace(/\s+/g, "-");
-            return (
-              <div key={categoryId} className="mb-6">
-                <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
-                  {category}
-                </h3>
-                <div className="space-y-1">
-                  {renderCategoryItems(items, categoryId)}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {/* Floating Wishlist Button */}
+        <button
+          onClick={() => navigate("/wishlist")}
+          className="fixed bottom-6 right-6 bg-gray-900 text-white p-4 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-40"
+        >
+          <FontAwesomeIcon icon={faHeart} />
+          <span className="bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center">
+            {wishlist.length}
+          </span>
+        </button>
 
-        <div className="flex-1 p-8 md:ml-80">
-          {searchQuery && (
-            <div className="mb-6">
+        <div className="flex-1 flex flex-col md:flex-row">
+          {/* Sidebar Filters */}
+          <div className="w-full md:w-80 bg-gradient-to-b from-gray-900 to-gray-800 p-6 border-r border-gray-700 md:h-[calc(100vh-80px)] md:sticky md:top-20 md:self-start overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-white mb-4 font-serif">
+                Matchfit Wardrobe
+              </h2>
               <button
-                onClick={() => {
-                  setSearchQuery("");
-                  navigate("/Shop");
-                  setFilteredProducts(allProducts);
-                  setActiveFilter("All Products");
-                }}
-                className="text-gray-600 hover:text-gray-900 flex items-center gap-2"
+                className="text-gray-300 hover:text-white text-sm font-medium flex items-center gap-2 transition-colors duration-300"
+                onClick={clearFilters}
               >
                 <FontAwesomeIcon icon={faTimes} />
-                Clear search: "{searchQuery}"
+                Clear Filters
               </button>
             </div>
-          )}
 
-          <div className="mb-10">
-            <h2 className="text-4xl font-bold text-gray-900 font-serif">
-              {activeFilter}
-              <span className="ml-3 text-gray-500 font-normal text-2xl">
-                ({filteredProducts.length})
-              </span>
-            </h2>
+            <div className="mb-8">
+              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">
+                Price Range
+              </h3>
+              <div className="py-2 px-3 bg-gray-800/50 rounded-xl backdrop-blur-sm">
+                <div className="flex justify-between mb-3">
+                  <span className="text-sm text-gray-300">
+                    ${priceRange[0]}
+                  </span>
+                  <span className="text-sm text-gray-300">
+                    ${priceRange[1]}
+                  </span>
+                </div>
+                <div className="relative h-2">
+                  <div className="absolute h-full w-full bg-gray-700 rounded-full" />
+                  <div
+                    className="absolute h-full bg-gradient-to-r from-gray-300 to-white rounded-full"
+                    style={{
+                      left: `${(priceRange[0] / 500) * 100}%`,
+                      right: `${100 - (priceRange[1] / 500) * 100}%`,
+                    }}
+                  />
+                  <input
+                    type="range"
+                    min="0"
+                    max="500"
+                    value={priceRange[0]}
+                    onChange={(e) =>
+                      handlePriceChange(Number(e.target.value), priceRange[1])
+                    }
+                    className="absolute w-full h-2 opacity-0 cursor-pointer"
+                  />
+                  <input
+                    type="range"
+                    min="0"
+                    max="500"
+                    value={priceRange[1]}
+                    onChange={(e) =>
+                      handlePriceChange(priceRange[0], Number(e.target.value))
+                    }
+                    className="absolute w-full h-2 opacity-0 cursor-pointer"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {Object.entries(categories).map(([category, items]) => {
+              const categoryId = category.toLowerCase().replace(/\s+/g, "-");
+              return (
+                <div key={categoryId} className="mb-6">
+                  <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
+                    {category}
+                  </h3>
+                  <div className="space-y-1">
+                    {renderCategoryItems(items, categoryId)}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {filteredProducts.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-gray-500 text-lg">
-                No products found {searchQuery && `for "${searchQuery}"`}
-              </p>
-            </div>
-          ) : (
-            <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {filteredProducts.slice(0, itemsToShow).map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
+          <div className="flex-1 p-8">
+            {searchQuery && (
+              <div className="mb-6">
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    navigate("/Shop");
+                    setFilteredProducts(allProducts);
+                    setActiveFilter("All Products");
+                  }}
+                  className="text-gray-600 hover:text-gray-900 flex items-center gap-2"
+                >
+                  <FontAwesomeIcon icon={faTimes} />
+                  Clear search: "{searchQuery}"
+                </button>
               </div>
+            )}
 
-              {itemsToShow < filteredProducts.length && (
-                <div className="mt-12 flex justify-center">
-                  <button
-                    onClick={() => setItemsToShow((prev) => prev + 8)}
-                    className="px-8 py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
-                  >
-                    Load More
-                  </button>
+            <div className="mb-10">
+              <h2 className="text-4xl font-bold text-gray-900 font-serif">
+                {activeFilter}
+                <span className="ml-3 text-gray-500 font-normal text-2xl">
+                  ({filteredProducts.length})
+                </span>
+              </h2>
+            </div>
+
+            {filteredProducts.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="text-gray-500 text-lg">
+                  No products found {searchQuery && `for "${searchQuery}"`}
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                  {filteredProducts.slice(0, itemsToShow).map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
                 </div>
-              )}
-            </>
-          )}
+
+                {itemsToShow < filteredProducts.length && (
+                  <div className="mt-12 flex justify-center">
+                    <button
+                      onClick={() => setItemsToShow((prev) => prev + 8)}
+                      className="px-8 py-3.5 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                    >
+                      Load More
+                    </button>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default ShopSidebar;
+export default ShopHeroSection;

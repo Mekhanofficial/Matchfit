@@ -1,35 +1,41 @@
 import React from "react";
-import bg5 from "../../pictures/wall/jk12.jpg";
-import fx1 from "../../pictures/hue/fx1.jpg";
-import fx2 from "../../pictures/hue/fx2.jpg";
-import fx3 from "../../pictures/hue/fx3.jpg";
-import fx4 from "../../pictures/hue/fx4.jpg";
-import fx5 from "../../pictures/hue/fx5.jpg";
-import fx6 from "../../pictures/hue/pd61.jpg";
-import pic4 from "../../pictures/wall/pic4.webp";
-import px21 from "../../pictures/hue/px21.webp"
-import jk6 from "../../pictures/wall/jk6.jpg";
-import jk9 from "../../pictures/wall/jk9.jpg";
-import px1 from "../../pictures/hue/px1.jpg";
-import px2 from "../../pictures/hue/px2.jpg";
-import px3 from "../../pictures/hue/px3.jpg";
-import px4 from "../../pictures/hue/px4.jpg";
-import px9 from "../../pictures/hue/px9.webp";
-import px10 from "../../pictures/hue/px10.webp";
-import px11 from "../../pictures/hue/px11.jpg";
-import px12 from "../../pictures/hue/px12.jpg";
-import px13 from "../../pictures/hue/px13.jpg";
-import px14 from "../../pictures/hue/px14.jpg";
-import px15 from "../../pictures/hue/px15.jpg";
-import px16 from "../../pictures/hue/px16.jpg";
-import px18 from "../../pictures/hue/px18.jpg";
-import px19 from "../../pictures/hue/px19.png";
-import px20 from "../../pictures/hue/px20.jpg";
-import px29 from "../../pictures/hue/px29.jpg";
-import { useState,useEffect } from "react";
-import HeaderPage from "../../components/Header";
+import bg5 from "../pictures/wall/jk12.jpg";
+import fx1 from "../pictures/hue/fx1.jpg";
+import fx2 from "../pictures/hue/fx2.jpg";
+import fx3 from "../pictures/hue/fx3.jpg";
+import fx4 from "../pictures/hue/fx4.jpg";
+import fx5 from "../pictures/hue/fx5.jpg";
+import fx6 from "../pictures/hue/pd61.jpg";
+import pic4 from "../pictures/wall/pic4.webp";
+import px21 from "../pictures/hue/px21.webp";
+import jk6 from "../pictures/wall/jk6.jpg";
+import jk9 from "../pictures/wall/jk9.jpg";
+import px1 from "../pictures/hue/px1.jpg";
+import px2 from "../pictures/hue/px2.jpg";
+import px3 from "../pictures/hue/px3.jpg";
+import px4 from "../pictures/hue/px4.jpg";
+import px9 from "../pictures/hue/px9.webp";
+import px10 from "../pictures/hue/px10.webp";
+import px11 from "../pictures/hue/px11.jpg";
+import px12 from "../pictures/hue/px12.jpg";
+import px13 from "../pictures/hue/px13.jpg";
+import px14 from "../pictures/hue/px14.jpg";
+import px15 from "../pictures/hue/px15.jpg";
+import px16 from "../pictures/hue/px16.jpg";
+import px18 from "../pictures/hue/px18.jpg";
+import px19 from "../pictures/hue/px19.png";
+import px20 from "../pictures/hue/px20.jpg";
+import px29 from "../pictures/hue/px29.jpg";
+import { useState, useEffect } from "react";
+import HeaderPage from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRotateBack, faLocationDot, faLock, faStar, faTruck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRotateBack,
+  faLocationDot,
+  faLock,
+  faStar,
+  faTruck,
+} from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -46,15 +52,13 @@ const popularItems = [
 
 const totalStars = 5; // Adjust as needed
 
-
 const HomeHeroSection = () => {
-   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
- 
   // Slider settings
   const settings = {
     dots: true,
-    arrows:false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -87,10 +91,30 @@ const HomeHeroSection = () => {
   };
 
   const images = [
-    { src: px1, cate: "Activewear", text: "Professional Pinstripe Blazer", price: "$250.00" },
-    { src: px2, cate: "Work & Office", text: "Relaxed Fit Joggers", price: "$199.99" },
-    { src: px3, cate: "Evening Dresses", text: "Urban Chic Ensemble", price: "$210.50" },
-    { src: px4, cate: "Image 4", text: "Weekend Wanderlust Wardrobe", price: "$150.34" },
+    {
+      src: px1,
+      cate: "Activewear",
+      text: "Professional Pinstripe Blazer",
+      price: "$250.00",
+    },
+    {
+      src: px2,
+      cate: "Work & Office",
+      text: "Relaxed Fit Joggers",
+      price: "$199.99",
+    },
+    {
+      src: px3,
+      cate: "Evening Dresses",
+      text: "Urban Chic Ensemble",
+      price: "$210.50",
+    },
+    {
+      src: px4,
+      cate: "Image 4",
+      text: "Weekend Wanderlust Wardrobe",
+      price: "$150.34",
+    },
   ];
 
   const images2 = [
@@ -100,11 +124,11 @@ const HomeHeroSection = () => {
 
   const images3 = [
     { src: px11 },
-    { src: px12, },
-    { src: px13,  },
-    { src: px14,  },
-    { src: px15,  },
-    { src: px16,  },
+    { src: px12 },
+    { src: px13 },
+    { src: px14 },
+    { src: px15 },
+    { src: px16 },
   ];
 
   return (

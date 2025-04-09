@@ -5,11 +5,15 @@ import "./index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ShopSidebar from "./pages/Shop";
+import ShopSidebar from "./components/Shop";
 import { AppWrapper } from "./AppContext";
 import Layout from "./components/Layout";
-import Wishlist from "./pages/Wishlist";
-import Checkout from "./pages/Checkout";
+import Wishlist from "./components/Wishlist";
+import Checkout from "./components/Checkout";
+import CheckoutPage from "./pages/Checkout";
+import ShopPage from "./pages/Shop";
+// import AboutusPage from "./pages/About";
+import WishlistPage from "./pages/Wishlist";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,17 +27,20 @@ const proRouter = createBrowserRouter([
       },
       {
         path: "/Shop",
-        element: <ShopSidebar />,
+        element: <ShopPage />,
       },
       {
         path: "/Wishlist",
-        element: <Wishlist />,
+        element: <WishlistPage />,
       },
       {
         path: "/Checkout",
-        element: <Checkout />,
+        element: <CheckoutPage />,
       },
-      // Add other routes here
+      // {
+      //   path: "/About",
+      //   element: <AboutusPage />,
+      // },
     ],
   },
 ]);

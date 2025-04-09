@@ -94,7 +94,7 @@ export default function HeaderPage() {
 
   return (
     <>
-      <header className="flex justify-between items-center p-4 md:p-6 bg-white text-zinc-800 absolute w-full top-0 z-50">
+      <header className="fixed flex justify-between items-center p-4 md:p-6 bg-white text-zinc-800  w-full top-0 z-50">
         {/* Left navigation */}
         <nav className="hidden md:flex space-x-8">
           <Link to="/" className="hover:text-[#16bb7c] transition-colors">

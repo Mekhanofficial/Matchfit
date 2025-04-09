@@ -1,5 +1,5 @@
-import FooterPage from "../components/Footer";
-import HeaderPage from "../components/Header";
+import FooterPage from "./Footer";
+import HeaderPage from "./Header";
 import contactpic from "../pictures/contactpix.jpg";
 import fx22 from "../pictures/fx22.jpg";
 import blogpx from "../pictures/blogpx.jpg";

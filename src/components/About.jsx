@@ -1,5 +1,5 @@
-import HeaderPage from "../components/Header";
-import bg from "../pictures/bg.jpg";
+import HeaderPage from "./Header";
+import bg from "../pictures/";
 import dp1 from "../pictures/dp1.jpg";
 import dp2 from "../pictures/dp2.jpg";
 import dp3 from "../pictures/dp3.jpg";
@@ -15,7 +15,7 @@ import quote from "../pictures/quote.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import FooterPage from "../components/Footer";
+import FooterPage from "./Footer";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
