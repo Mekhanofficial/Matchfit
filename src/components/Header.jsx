@@ -18,6 +18,7 @@ export default function HeaderPage() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -49,6 +50,20 @@ export default function HeaderPage() {
       closeAllPanels();
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    if (isHomepage) {
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      // If not homepage, always show scrolled state
+      setIsScrolled(true);
+    }
+  }, [isHomepage]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -92,94 +107,134 @@ export default function HeaderPage() {
     { path: "/Terms", label: "Terms of Service" },
   ];
 
+  // Updated color handling functions
+  const getTextColorClass = () =>
+    isHomepage && !isScrolled ? "text-white" : "text-gray-900";
+
+  const getBgColorClass = () =>
+    isHomepage
+      ? isScrolled
+        ? "bg-white shadow-sm"
+        : "bg-transparent"
+      : "bg-white shadow-sm";
+
+  const getDividerColorClass = () =>
+    isHomepage && !isScrolled ? "bg-white" : "bg-zinc-800";
+
   return (
     <>
-      <header className="fixed flex justify-between items-center p-4 md:p-6 bg-white text-zinc-800  w-full top-0 z-50">
-        {/* Left navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <Link to="/" className="hover:text-[#16bb7c] transition-colors">
-            Home
-          </Link>
-          <Link to="/Shop" className="hover:text-[#16bb7c] transition-colors">
-            Shop
-          </Link>
-          <Link to="/About" className="hover:text-[#16bb7c] transition-colors">
-            About Us
-          </Link>
-          <Link
-            to="/Contact"
-            className="hover:text-[#16bb7c] transition-colors"
+      <header
+        className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
+          isHomepage
+            ? isScrolled
+              ? "bg-white text-gray-900 shadow-sm h-16"
+              : "bg-transparent text-white h-20"
+            : "bg-white text-gray-900 shadow-sm h-16"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20">
+          {/* Left navigation */}
+          <nav className="hidden md:flex space-x-8">
+            <Link
+              to="/"
+              className={`hover:text-[#16bb7c] transition-colors ${getTextColorClass()}`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/Shop"
+              className={`hover:text-[#16bb7c] transition-colors ${getTextColorClass()}`}
+            >
+              Shop
+            </Link>
+            <Link
+              to="/About"
+              className={`hover:text-[#16bb7c] transition-colors ${getTextColorClass()}`}
+            >
+              About Us
+            </Link>
+            <Link
+              to="/Contact"
+              className={`hover:text-[#16bb7c] transition-colors ${getTextColorClass()}`}
+            >
+              Contact Us
+            </Link>
+          </nav>
+
+          {/* Logo - centered */}
+          <div
+            className={`logo absolute left-1/2 transform -translate-x-1/2 text-center ${getTextColorClass()}`}
           >
-            Contact Us
-          </Link>
-        </nav>
-
-        {/* Logo */}
-        <div className="logo absolute left-1/2 transform -translate-x-1/2 text-center">
-          <h1 className="text-xs font-bold">MATCHFIT</h1>
-          <h2 className="text-2xl font-semibold">Wardrobe</h2>
-          <div className="bg-zinc-800 w-5 h-1 mx-auto" />
-        </div>
-
-
-        <div className="flex items-center space-x-4 ml-auto">
-          <div className="hidden md:block relative search-container">
-            <FontAwesomeIcon
-              icon={faSearch}
-              onClick={toggleSearch}
-              className="text-xl hover:text-[#16bb7c] transition-colors cursor-pointer"
-            />
-            {showSearch && (
-              <form
-                onSubmit={handleSearch}
-                className="absolute right-0 top-full mt-2 w-64 bg-white rounded shadow-lg p-2 z-50"
-              >
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full p-2 border border-gray-300 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#16bb7c]"
-                  autoFocus
-                />
-              </form>
-            )}
+            <h1 className="text-xs font-bold">MATCHFIT</h1>
+            <h2 className="text-xl font-semibold">Wardrobe</h2>
+            <div
+              className={`w-4 h-[0.5px] mx-auto ${getDividerColorClass()} transition-all duration-300 hover:w-8`}
+            />{" "}
           </div>
 
-          <Link to="/Wishlist" className="relative">
-            <FontAwesomeIcon
-              icon={faHeart}
-              className="text-xl hover:text-[#16bb7c] transition-colors"
-            />
-            {wishlistCount > 0 && (
-              <div className="absolute top-[-10px] right-[-10px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {wishlistCount}
-              </div>
-            )}
-          </Link>
+          <div className="flex items-center space-x-4 ml-auto">
+            <div className="hidden md:block relative search-container">
+              <FontAwesomeIcon
+                icon={faSearch}
+                onClick={toggleSearch}
+                className={`text-xl hover:text-[#16bb7c] transition-colors cursor-pointer ${getTextColorClass()}`}
+              />
+              {showSearch && (
+                <form
+                  onSubmit={handleSearch}
+                  className="absolute right-0 top-full mt-2 w-64 bg-white rounded shadow-lg p-2 z-50"
+                >
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search products..."
+                    className="w-full p-2 border border-gray-300 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#16bb7c]"
+                    autoFocus
+                  />
+                </form>
+              )}
+            </div>
 
-          <div className="relative" onClick={toggleCart}>
-            <FontAwesomeIcon
-              icon={faCartShopping}
-              className="text-xl hover:text-[#16bb7c] transition-colors cursor-pointer"
-            />
-            {cartCount > 0 && (
-              <div className="absolute top-[-10px] right-[-10px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {cartCount}
-              </div>
-            )}
+            <Link to="/Wishlist" className="relative">
+              <FontAwesomeIcon
+                icon={faHeart}
+                className={`text-xl hover:text-[#16bb7c] transition-colors ${getTextColorClass()}`}
+              />
+              {wishlistCount > 0 && (
+                <div className="absolute top-[-10px] right-[-10px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {wishlistCount}
+                </div>
+              )}
+            </Link>
+
+            <div className="relative" onClick={toggleCart}>
+              <FontAwesomeIcon
+                icon={faCartShopping}
+                className={`text-xl hover:text-[#16bb7c] transition-colors cursor-pointer ${getTextColorClass()}`}
+              />
+              {cartCount > 0 && (
+                <div className="absolute top-[-10px] right-[-10px] bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {cartCount}
+                </div>
+              )}
+            </div>
+
+            <button
+              onClick={toggleSidebar}
+              className={`md:hidden flex items-center justify-center h-10 w-10 rounded-full transition-colors ${
+                isHomepage && !isScrolled
+                  ? "hover:bg-white hover:bg-opacity-20"
+                  : "hover:bg-gray-100"
+              }`}
+              aria-label="Toggle menu"
+            >
+              <FontAwesomeIcon
+                icon={isSidebarOpen ? faTimes : faBars}
+                className={`text-xl ${getTextColorClass()}`}
+              />
+            </button>
           </div>
-
-          <button
-            onClick={toggleSidebar}
-            className="md:hidden focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <FontAwesomeIcon
-              icon={isSidebarOpen ? faTimes : faBars}
-              className="text-xl hover:text-[#16bb7c] transition-colors"
-            />
-          </button>
         </div>
       </header>
 

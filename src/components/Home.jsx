@@ -6,14 +6,12 @@ import fx3 from "../pictures/hue/fx3.jpg";
 import fx4 from "../pictures/hue/fx4.jpg";
 import fx5 from "../pictures/hue/fx5.jpg";
 import fx6 from "../pictures/hue/pd61.jpg";
-import pic4 from "../pictures/wall/pic4.webp";
 import px21 from "../pictures/hue/px21.webp";
 import jk6 from "../pictures/wall/jk6.jpg";
 import jk9 from "../pictures/wall/jk9.jpg";
 import px1 from "../pictures/hue/px1.jpg";
 import px2 from "../pictures/hue/px2.jpg";
 import px3 from "../pictures/hue/px3.jpg";
-import px4 from "../pictures/hue/px4.jpg";
 import px9 from "../pictures/hue/px9.webp";
 import px10 from "../pictures/hue/px10.webp";
 import px11 from "../pictures/hue/px11.jpg";
@@ -26,11 +24,42 @@ import px18 from "../pictures/hue/px18.jpg";
 import px19 from "../pictures/hue/px19.png";
 import px20 from "../pictures/hue/px20.jpg";
 import px29 from "../pictures/hue/px29.jpg";
+import { motion } from "framer-motion";
+import px22 from "../pictures/hue/px22.avif";
+import px23 from "../pictures/hue/px23.avif";
+import px24 from "../pictures/hue/px24.avif";
+import ex21 from "../pictures/hue/ex21.webp";
+import ex22 from "../pictures/hue/ex22.jpg";
+import ex23 from "../pictures/hue/ex23.webp";
+import ex24 from "../pictures/hue/ex24.avif";
+import ex25 from "../pictures/hue/ex25.avif";
+import ex26 from "../pictures/hue/ex26.jpeg";
+import ex27 from "../pictures/hue/ex27.jpg";
+import ex28 from "../pictures/hue/ex28.jpg";
+import pd13 from "../pictures/hue/pd13.jpg";
+import pd33 from "../pictures/hue/pd36.avif";
+import pd34 from "../pictures/hue/pd37.jpg";
+import pd35 from "../pictures/hue/pd35.avif";
+import ex81 from "../pictures/hue/ex81.webp";
+import ex88 from "../pictures/hue/ex88.jpg";
+import ex90 from "../pictures/hue/ex90.webp";
+import ex92 from "../pictures/hue/ex92.jpg";
+import ex98 from "../pictures/hue/ex98.webp";
+import ex100 from "../pictures/hue/ex100.webp";
+import ex103 from "../pictures/hue/ex103.jpg";
+import ex109 from "../pictures/hue/ex109.jpg";
+import ex86 from "../pictures/hue/ex86.jpg";
+import ex5 from "../pictures/hue/ex5.webp";
+import ex6 from "../pictures/hue/ex6.jpg";
+import ex20 from "../pictures/hue/ex20.webp";
 import { useState, useEffect } from "react";
 import HeaderPage from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faArrowRight,
   faArrowRotateBack,
+  faChevronLeft,
+  faChevronRight,
   faLocationDot,
   faLock,
   faStar,
@@ -40,6 +69,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const popularItems = [
   { src: fx1, name: "Monty jacket", price: "$150.00" },
@@ -54,6 +84,7 @@ const totalStars = 5; // Adjust as needed
 
 const HomeHeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
 
   // Slider settings
   const settings = {
@@ -90,32 +121,434 @@ const HomeHeroSection = () => {
     ],
   };
 
-  const images = [
-    {
-      src: px1,
-      cate: "Activewear",
-      text: "Professional Pinstripe Blazer",
-      price: "$250.00",
-    },
-    {
-      src: px2,
-      cate: "Work & Office",
-      text: "Relaxed Fit Joggers",
-      price: "$199.99",
-    },
-    {
-      src: px3,
-      cate: "Evening Dresses",
-      text: "Urban Chic Ensemble",
-      price: "$210.50",
-    },
-    {
-      src: px4,
-      cate: "Image 4",
-      text: "Weekend Wanderlust Wardrobe",
-      price: "$150.34",
-    },
-  ];
+
+  const [activeCategory, setActiveCategory] = useState("T-Shirts");
+  const [categoryCarouselIndex, setCategoryCarouselIndex] = useState(0);
+
+  const nextCategorySlide = () => {
+    const totalItems = categories[activeCategory].length;
+    if (categoryCarouselIndex < totalItems - 4) {
+      setCategoryCarouselIndex((prev) => prev + 1);
+    }
+  };
+
+  const prevCategorySlide = () => {
+    if (categoryCarouselIndex > 0) {
+      setCategoryCarouselIndex((prev) => prev - 1);
+    }
+  };
+
+  const categories = {
+    "T-Shirts": [
+      {
+        id: 1,
+        image: ex21,
+        alt: "Our Legacy T-shirt",
+        badge: "GOLD CUP",
+        designer: "Our Legacy",
+        price: "N261,000",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 2,
+        image: ex22,
+        alt: "Charles Jeffery T-shirt",
+        designer: "Charles Jeffery",
+        price: "N289,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+      {
+        id: 3,
+        image: ex23,
+        alt: "Chorles Jeffery T-shirt",
+        designer: "Chorles Jeffery",
+        price: "N275,000",
+        status: "quick-buy",
+        sizes: ["M", "L"],
+        repeatCount: 1,
+      },
+      {
+        id: 4,
+        image: ex24,
+        alt: "Premium Cotton T-shirt",
+        badge: "LIMITED",
+        designer: "Premium Cotton",
+        price: "N310,000",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        repeatCount: 1,
+      },
+      {
+        id: 5,
+        image: ex25,
+        alt: "Classic White T-shirt",
+        designer: "Classic White",
+        price: "N240,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+      {
+        id: 6,
+        image: ex26,
+        alt: "Black Edition T-shirt",
+        badge: "EXCLUSIVE",
+        designer: "Black Edition",
+        price: "N330,000",
+        status: "quick-buy",
+        sizes: ["S", "L"],
+        repeatCount: 1,
+      },
+      {
+        id: 7,
+        image: ex27,
+        alt: "Oversized Fit T-shirt",
+        designer: "Oversized Fit",
+        price: "N295,000",
+        status: "quick-buy",
+        sizes: ["L", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 8,
+        image: ex28,
+        alt: "Vintage Wash T-shirt",
+        designer: "Vintage Wash",
+        price: "N265,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+    ],
+
+    Suits: [
+      {
+        id: 1,
+        image: fx1,
+        alt: "Suits Graphic Tee",
+        badge: "EXCLUSIVE",
+        designer: "Suits",
+        price: "N310,000",
+        status: "quick-buy",
+        sizes: ["S", "M", "L"],
+        repeatCount: 1,
+      },
+      {
+        id: 2,
+        image: fx2,
+        alt: "Suits Monogram Tee",
+        designer: "Suits",
+        price: "N290,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+      {
+        id: 3,
+        image: fx4,
+        alt: "Suits Cityscape Tee",
+        badge: "LIMITED",
+        designer: "Suits",
+        price: "N345,000",
+        status: "quick-buy",
+        sizes: ["M", "L", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 4,
+        image: fx5,
+        alt: "Suits Flame Tee",
+        designer: "Suits",
+        price: "N270,000",
+        status: "quick-buy",
+        sizes: ["S", "M"],
+        repeatCount: 1,
+      },
+      {
+        id: 5,
+        image: pd13,
+        alt: "Suits Sporty Tee",
+        designer: "Suits",
+        price: "N250,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+      {
+        id: 6,
+        image: pd33,
+        alt: "Suits Culture Tee",
+        badge: "GOLD CUP",
+        designer: "Suits",
+        price: "N360,000",
+        status: "quick-buy",
+        sizes: ["L", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 7,
+        image: pd34,
+        alt: "Suits Street Art Tee",
+        designer: "Suits",
+        price: "N280,000",
+        status: "quick-buy",
+        sizes: ["M", "L"],
+        repeatCount: 1,
+      },
+      {
+        id: 8,
+        image: pd35,
+        alt: "Suits Signature Tee",
+        designer: "Suits",
+        price: "N320,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+    ],
+    "Wood Wood": [
+      {
+        id: 1,
+        image: px15,
+        alt: "Wood Wood Logo Tee",
+        badge: "LIMITED",
+        designer: "Wood Wood",
+        price: "N290,000",
+        status: "quick-buy",
+        sizes: ["S", "M", "L"],
+        repeatCount: 1,
+      },
+      {
+        id: 2,
+        image: px16,
+        alt: "Wood Wood Statement Tee",
+        designer: "Wood Wood",
+        price: "N265,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+      {
+        id: 3,
+        image: px1,
+        alt: "Wood Wood Artistic Tee",
+        designer: "Wood Wood",
+        price: "N300,000",
+        status: "quick-buy",
+        sizes: ["M", "L", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 4,
+        image: px18,
+        alt: "Wood Wood Bold Tee",
+        badge: "EXCLUSIVE",
+        designer: "Wood Wood",
+        price: "N310,000",
+        status: "quick-buy",
+        sizes: ["S", "M", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 5,
+        image: px19,
+        alt: "Wood Wood Minimal Tee",
+        designer: "Wood Wood",
+        price: "N240,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+      {
+        id: 6,
+        image: px20,
+        alt: "Wood Wood Grid Tee",
+        designer: "Wood Wood",
+        price: "N270,000",
+        status: "quick-buy",
+        sizes: ["L", "XL"],
+        repeatCount: 1,
+      },
+      {
+        id: 7,
+        image: px21,
+        alt: "Wood Wood Vintage Tee",
+        badge: "GOLD CUP",
+        designer: "Wood Wood",
+        price: "N285,000",
+        status: "quick-buy",
+        sizes: ["S", "M", "L"],
+        repeatCount: 1,
+      },
+      {
+        id: 8,
+        image: px3,
+        alt: "Wood Wood Monochrome Tee",
+        designer: "Wood Wood",
+        price: "N295,000",
+        status: "sold-out",
+        repeatCount: 1,
+      },
+    ],
+  };
+
+  const visibleProducts = categories[activeCategory].slice(
+    categoryCarouselIndex,
+    categoryCarouselIndex + 4
+  );
+
+  useEffect(() => {
+    setCategoryCarouselIndex(0);
+  }, [activeCategory]);
+
+  const [currentArrivalsIndex, setCurrentArrivalsIndex] = useState(0);
+  const itemsPerPage = 4;
+
+  const nextArrivalsSlide = () => {
+    if (currentArrivalsIndex < newArrivals.length - itemsPerPage) {
+      setCurrentArrivalsIndex((prev) => prev + 1); // Move by 1 item
+    }
+  };
+
+  const prevArrivalsSlide = () => {
+    if (currentArrivalsIndex > 0) {
+      setCurrentArrivalsIndex((prev) => prev - 1); // Move by 1 item
+    }
+  };
+
+ const newArrivals = [
+   {
+     id: 1,
+     image: ex81,
+     alt: "Premium Cotton T-Shirt",
+     badge: "NEW",
+     designer: "Premium Cotton",
+     price: "N310,000",
+     status: "quick-buy",
+     sizes: ["S", "M", "L", "XL", "XXL"],
+   },
+   {
+     id: 2,
+     image: ex88,
+     alt: "Vintage Wash T-Shirt",
+     designer: "Vintage Wash",
+     price: "N265,000",
+     status: "sold-out",
+   },
+   {
+     id: 3,
+     image: ex90,
+     alt: "Suits Graphic Tee",
+     badge: "LIMITED",
+     designer: "Suits",
+     price: "N345,000",
+     status: "quick-buy",
+     sizes: ["M", "L", "XL"],
+   },
+   {
+     id: 4,
+     image: ex92,
+     alt: "Suits Monogram Tee",
+     designer: "Suits",
+     price: "N290,000",
+     status: "quick-buy",
+     sizes: ["S", "M"],
+   },
+   {
+     id: 5,
+     image: ex98,
+     alt: "Classic White T-Shirt",
+     badge: "NEW",
+     designer: "Classic White",
+     price: "N240,000",
+     status: "quick-buy",
+     sizes: ["S", "M", "L"],
+   },
+   {
+     id: 6,
+     image: ex100,
+     alt: "Black Edition T-Shirt",
+     badge: "EXCLUSIVE",
+     designer: "Black Edition",
+     price: "N330,000",
+     status: "quick-buy",
+     sizes: ["S", "L"],
+   },
+   {
+     id: 7,
+     image: ex103,
+     alt: "Oversized Fit T-Shirt",
+     designer: "Oversized Fit",
+     price: "N295,000",
+     status: "sold-out",
+   },
+   {
+     id: 8,
+     image: ex109,
+     alt: "Wood Wood Logo Tee",
+     badge: "NEW",
+     designer: "Wood Wood",
+     price: "N290,000",
+     status: "quick-buy",
+     sizes: ["S", "M", "L"],
+   },
+   {
+     id: 9,
+     image: ex86,
+     alt: "Suits Cityscape Tee",
+     badge: "LIMITED",
+     designer: "Suits",
+     price: "N345,000",
+     status: "quick-buy",
+     sizes: ["L", "XL"],
+   },
+   {
+     id: 10,
+     image: ex5,
+     alt: "Suits Flame Tee",
+     designer: "Suits",
+     price: "N270,000",
+     status: "quick-buy",
+     sizes: ["M", "L"],
+   },
+   {
+     id: 11,
+     image: ex6,
+     alt: "Wood Wood Bold Tee",
+     badge: "EXCLUSIVE",
+     designer: "Wood Wood",
+     price: "N310,000",
+     status: "quick-buy",
+     sizes: ["S", "M", "XL"],
+   },
+   {
+     id: 12,
+     image: ex20,
+     alt: "Wood Wood Grid Tee",
+     designer: "Wood Wood",
+     price: "N270,000",
+     status: "quick-buy",
+     sizes: ["L", "XL"],
+   },
+ ];
+
+ const visibleArrivals = newArrivals.slice(
+   currentArrivalsIndex,
+   currentArrivalsIndex + itemsPerPage
+ );
+   const images = [
+     {
+       src: px22,
+       text: "Men",
+       subtext: "Step into sophistication.",
+     },
+     {
+       src: px23,
+       text: "Women",
+       subtext: "Confidence you can wear.",
+     },
+     {
+       src: px24,
+       text: "Shoes",
+       subtext: "Walk in comfort & style.",
+     },
+   ];
 
   const images2 = [
     { src: px9, text: "Rowing Blazers x Paddington™" },
@@ -142,8 +575,8 @@ const HomeHeroSection = () => {
           {/* Semi-transparent black overlay */}
           <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
-          {/* Text Content Container */}
-          <div className="text-center text-gray-200 px-4 sm:px-6 md:px-8 max-w-4xl relative z-10">
+          {/* Text Content Container - Added pt-[header height] to account for header */}
+          <div className="text-center text-gray-200 px-4 sm:px-6 md:px-8 max-w-4xl relative z-10 pt-24 md:pt-32">
             {/* Subheading */}
             <h2 className="text-sm sm:text-base lg:text-xs font-bold mb-1 uppercase tracking-widest">
               Casual & Everyday
@@ -163,63 +596,200 @@ const HomeHeroSection = () => {
             </h3>
 
             {/* Call-to-Action Button */}
-            <a
-              href="#"
-              className="inline-block px-8 py-3 text-sm border border-white text-white font-semibold hover:text-[#16bb7c]"
+            <Link
+              to="/Shop"
+              className="inline-block px-8 py-3 text-sm border border-white text-white font-semibold hover:text-[#16bb7c] hover:border-[#16bb7c] transition-colors duration-300"
             >
               VIEW COLLECTION
-            </a>
+            </Link>
           </div>
         </div>
 
-        <div className="bg-zinc-950 text-white py-[120px]">
-          <div className="text-center mx-[70px]">
-            {/* Section Heading */}
-            <h1 className="text-2xl font-semibold">Our Featured Products</h1>
-            <hr className="w-[70px] h-[3px] mx-auto my-5 bg-[#16bb7c] border-none" />
-
-            {/* Product Slider */}
-            <Slider {...settings}>
-              {popularItems.map((item, index) => (
-                <div key={index} className="px-2">
-                  {/* Product Image Container - Hover effects applied here only */}
-                  <div className="relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
-                    <img
-                      className="w-full h-[350px] object-cover"
-                      src={item.src}
-                      alt={item.name}
-                    />
-
-                    {/* Quick View Button (Visible on Hover) */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
-                      <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-[#16bb7c] hover:text-white transition-all duration-300">
-                        Quick View
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Product Details - No hover effects */}
-                  <div className="mt-4 text-left">
-                    <h3 className="text-base font-medium">{item.name}</h3>
-                    <div className="flex items-center mt-1">
-                      {/* Star Rating */}
-                      {Array.from({ length: totalStars }, (_, index) => (
-                        <FontAwesomeIcon
-                          key={index}
-                          className="text-yellow-500 text-base"
-                          icon={faStar}
+        <motion.div
+          className="max-w-7xl mx-auto px-5 py-12 font-sans"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="flex flex-col sm:flex-row items-start sm:items-center border-b border-gray-200 pb-6 mb-8 gap-4 sm:gap-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            {/* Category Buttons - now with proper alignment and no scrollbar */}
+            <div className="w-full relative">
+              <div className="flex space-x-1 overflow-x-auto pb-4 -mb-4 scrollbar-hide">
+                <div className="flex space-x-1 relative">
+                  {Object.keys(categories).map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => {
+                        setActiveCategory(category);
+                        setCategoryCarouselIndex(0);
+                      }}
+                      className={`text-lg px-4 py-2 relative transition-all whitespace-nowrap ${
+                        activeCategory === category
+                          ? "text-black font-medium"
+                          : "text-gray-600 hover:text-gray-800"
+                      }`}
+                    >
+                      {category}
+                      {activeCategory === category && (
+                        <motion.div
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
+                          layoutId="activeCategoryUnderline"
+                          transition={{
+                            type: "spring",
+                            bounce: 0.2,
+                            duration: 0.6,
+                          }}
                         />
-                      ))}
-                    </div>
-                    <h2 className="text-base mt-1 text-gray-300 font-semibold">
-                      {item.price}
-                    </h2>
-                  </div>
+                      )}
+                    </button>
+                  ))}
                 </div>
-              ))}
-            </Slider>
-          </div>
-        </div>
+              </div>
+            </div>
+
+            {/* Navigation Controls */}
+            <div className="flex items-center space-x-4 ml-0 sm:ml-auto w-full sm:w-auto justify-between sm:justify-normal">
+              <div className="flex space-x-4">
+                <button
+                  onClick={prevCategorySlide}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                  disabled={categoryCarouselIndex === 0}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className={`w-4 h-4 ${
+                      categoryCarouselIndex === 0
+                        ? "text-gray-300"
+                        : "text-gray-600"
+                    }`}
+                  />
+                </button>
+                <button
+                  onClick={nextCategorySlide}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                  disabled={
+                    categoryCarouselIndex >=
+                    categories[activeCategory].length - 4
+                  }
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className={`w-4 h-4 ${
+                      categoryCarouselIndex >=
+                      categories[activeCategory].length - 4
+                        ? "text-gray-300"
+                        : "text-gray-600"
+                    }`}
+                  />
+                </button>
+              </div>
+              <button className="text-sm font-medium text-gray-600 hover:text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-all whitespace-nowrap">
+                View all
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Products Grid */}
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            {visibleProducts.map((product) => (
+              <motion.div
+                key={product.id}
+                className="group relative"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                {/* Product Image */}
+                <div className="relative overflow-hidden aspect-square mb-4 rounded-lg bg-gray-50">
+                  <img
+                    src={product.image}
+                    alt={product.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+
+                  {/* Badge */}
+                  {product.badge && (
+                    <div className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 rounded-full font-medium shadow-sm">
+                      {product.badge}
+                    </div>
+                  )}
+
+                  {/* Sold Out Button */}
+                  {product.status === "sold-out" && (
+                    <div className="absolute top-3 right-3 bg-white bg-opacity-80 text-black text-xs px-2 py-1 rounded-full font-medium">
+                      SOLD OUT
+                    </div>
+                  )}
+
+                  {/* Quick Buy Button */}
+                  {product.status === "quick-buy" && (
+                    <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-4">
+                      <div className="bg-white py-2 px-3 rounded-full shadow-md flex items-center">
+                        <select className="bg-transparent border-none text-xs focus:outline-none mr-2">
+                          {product.sizes?.map((size) => (
+                            <option key={size} value={size}>
+                              {size}
+                            </option>
+                          ))}
+                        </select>
+                        <button className="bg-black text-white text-xs px-3 py-1 rounded-full hover:bg-gray-800 transition-colors">
+                          QUICK BUY
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Product Info */}
+                <div className="text-center px-2">
+                  <h2 className="text-md font-medium text-gray-900 mb-1 truncate">
+                    {product.designer}
+                  </h2>
+                  <p className="text-gray-600 text-sm">{product.price}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Slide Indicators */}
+          <motion.div
+            className="flex justify-center mt-8 space-x-2"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            {Array.from({
+              length: Math.ceil(categories[activeCategory].length / 4),
+            }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCategoryCarouselIndex(index * 4)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  categoryCarouselIndex >= index * 4 &&
+                  categoryCarouselIndex < (index + 1) * 4
+                    ? "bg-black w-4"
+                    : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+
         <div className="relative w-full h-[800px] sm:h-[1000px] bg-zinc-950">
           {/* Background Image with Opacity */}
           <div
@@ -288,6 +858,7 @@ const HomeHeroSection = () => {
             />
           </div>
         </div>
+
         <div className="relative w-full h-[800px] sm:h-[1000px] bg-zinc-950">
           {/* Background Image with Opacity */}
           <div
@@ -323,30 +894,216 @@ const HomeHeroSection = () => {
             </div>
           </div>
         </div>
-        <h1 className="m-10 text-center text-5xl font-semibold bg-gradient-to-r from-teal-900 via-purple-500 to-gray-900 text-transparent bg-clip-text animate-gradient bg-300% hover:animate-pulse">
-          Newest Products
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-20 px-4 md:px-6 lg:px-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
           {images.map((image, index) => (
-            <div key={index} className="text-center">
-              {/* Image */}
-              <img
-                src={image.src}
-                alt={`Image ${index + 1}`}
-                className="w-full h-auto shadow-md object-cover"
-              />
+            <motion.div
+              key={index}
+              className="flex flex-col items-center text-center bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              {/* Image with hover zoom */}
+              <div className="w-full overflow-hidden rounded-t-xl">
+                <motion.img
+                  src={image.src}
+                  alt={`Image ${index + 1}`}
+                  className="w-full h-auto object-cover transform transition-transform duration-500 hover:scale-105"
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                />
+              </div>
+
               {/* Text Below Image */}
-              <h2 className="mt-1 text-sm font-semibold text-gray-500">
-                {image.cate}
-              </h2>
-              <p className="text-md font-semibold text-gray-900">
-                {image.text}
-              </p>
-              <h6 className="text-md font-semibold text-gray-600">
-                {image.price}
-              </h6>
-            </div>
+              <div className="p-6">
+                <motion.p
+                  className="text-lg font-semibold text-gray-900"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                  {image.text}
+                </motion.p>
+                <motion.p
+                  className="mt-2 text-sm text-gray-600"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                >
+                  {image.subtext}
+                </motion.p>
+
+                {/* Shop Now Button */}
+                <motion.button
+                  className="mt-5 inline-flex items-center text-sm font-medium text-white bg-black px-4 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.6 }}
+                >
+                  Shop now
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className="ml-2 w-3 h-3 text-white"
+                  />
+                </motion.button>
+              </div>
+            </motion.div>
           ))}
+        </motion.div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 font-sans">
+          {/* Header Section - Improved for mobile */}
+          <div className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-200 pb-6 mb-8 gap-4 sm:gap-0">
+            {/* Title Section - Centered on mobile, left-aligned on larger screens */}
+            <div className="text-center sm:text-left w-full sm:w-auto">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-r from-teal-900 via-teal-500 to-gray-900 text-transparent bg-clip-text animate-gradient bg-300%">
+                New Arrivals
+              </h1>
+              <p className="text-sm sm:text-md font-semibold bg-gradient-to-r from-teal-900 via-teal-500 to-gray-900 text-transparent bg-clip-text animate-gradient bg-300% mt-1">
+                Discover the latest arrivals.
+              </p>
+            </div>
+
+            {/* Navigation Controls - Right-aligned with better mobile spacing */}
+            <div className="flex items-center space-x-2 sm:space-x-4 w-full sm:w-auto justify-center sm:justify-end">
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <button
+                  onClick={prevArrivalsSlide}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                  disabled={currentArrivalsIndex === 0}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className={`w-3 h-3 sm:w-4 sm:h-4 ${
+                      currentArrivalsIndex === 0
+                        ? "text-gray-300"
+                        : "text-gray-600"
+                    }`}
+                  />
+                </button>
+                <button
+                  onClick={nextArrivalsSlide}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                  disabled={
+                    currentArrivalsIndex >= newArrivals.length - itemsPerPage
+                  }
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className={`w-3 h-3 sm:w-4 sm:h-4 ${
+                      currentArrivalsIndex >= newArrivals.length - itemsPerPage
+                        ? "text-gray-300"
+                        : "text-gray-600"
+                    }`}
+                  />
+                </button>
+              </div>
+              <button className="flex items-center text-xs sm:text-sm font-medium text-gray-600 hover:text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-gray-100 transition-all">
+                View all{" "}
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  className="ml-1 sm:ml-2 w-2 h-2 sm:w-3 sm:h-3"
+                />
+              </button>
+            </div>
+          </div>
+
+          {/* Products Grid - Improved responsive columns */}
+          <motion.div
+            className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {visibleArrivals.map((product) => (
+              <motion.div
+                key={product.id}
+                className="group relative"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {/* Product Image */}
+                <div className="relative overflow-hidden aspect-square mb-3 sm:mb-4 rounded-lg bg-gray-50">
+                  <img
+                    src={product.image}
+                    alt={product.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+
+                  {/* Badge */}
+                  {product.badge && (
+                    <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white text-black text-xxs xs:text-xs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium shadow-sm">
+                      {product.badge}
+                    </div>
+                  )}
+
+                  {/* Sold Out Button */}
+                  {product.status === "sold-out" && (
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white bg-opacity-80 text-black text-xxs xs:text-xs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium">
+                      SOLD OUT
+                    </div>
+                  )}
+
+                  {/* Quick Buy Button - Simplified for mobile */}
+                  {product.status === "quick-buy" && (
+                    <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-2 sm:pb-4">
+                      <div className="bg-white py-1 px-2 sm:py-2 sm:px-3 rounded-full shadow-md flex items-center">
+                        <select className="bg-transparent border-none text-xxs xs:text-xs sm:text-xs focus:outline-none mr-1 sm:mr-2">
+                          {product.sizes?.map((size) => (
+                            <option key={size} value={size}>
+                              {size}
+                            </option>
+                          ))}
+                        </select>
+                        <button className="bg-black text-white text-xxs xs:text-xs sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full hover:bg-gray-800 transition-colors">
+                          QUICK BUY
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Product Info */}
+                <div className="text-center px-1 sm:px-2">
+                  <h2 className="text-xs sm:text-sm md:text-md font-medium text-gray-900 mb-0.5 sm:mb-1 truncate">
+                    {product.designer}
+                  </h2>
+                  <p className="text-gray-600 text-xxs xs:text-xs sm:text-sm">
+                    {product.price}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Slide Indicators - Responsive sizing */}
+          {newArrivals.length > itemsPerPage && (
+            <div className="flex justify-center mt-6 sm:mt-8 space-x-1.5 sm:space-x-2">
+              {Array.from({
+                length: Math.ceil(newArrivals.length / itemsPerPage),
+              }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentArrivalsIndex(index * itemsPerPage)}
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
+                    currentArrivalsIndex >= index * itemsPerPage &&
+                    currentArrivalsIndex < (index + 1) * itemsPerPage
+                      ? "bg-black w-3 sm:w-4"
+                      : "bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
         <div>
           {/* Brand Testimonial Section */}
@@ -395,38 +1152,6 @@ const HomeHeroSection = () => {
                 </p>
               </div>
             ))}
-          </div>
-          <div>
-            {/* Heading */}
-            <h1 className="m-10 text-center text-3xl font-semibold bg-gradient-to-r from-teal-900 via-purple-500 to-gray-900 text-transparent bg-clip-text animate-gradient bg-300% hover:animate-pulse">
-              Join The Crew
-            </h1>
-
-            {/* Image Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 p-6">
-              {images3.map((image, index) => (
-                <div
-                  key={index}
-                  className="text-center group relative overflow-hidden"
-                >
-                  {/* Image Container */}
-                  <div className="w-full h-64 rounded-lg shadow-md overflow-hidden relative">
-                    <img
-                      src={image.src}
-                      alt={`Image ${index + 1}`}
-                      className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
-                    />
-                    {/* Instagram Icon (Visible on Hover) */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
-                      <FontAwesomeIcon
-                        icon={faInstagram}
-                        className="text-white text-4xl cursor-pointer"
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Secure Features Section */}
@@ -496,6 +1221,7 @@ const HomeHeroSection = () => {
             </div>
           </div>
         </div>
+
         <div
           className="check mt-24 w-full h-[500px] bg-cover bg-center bg-scroll lg:bg-fixed flex flex-col items-end justify-center"
           style={{ backgroundImage: `url(${jk6})` }}
@@ -521,6 +1247,86 @@ const HomeHeroSection = () => {
                 Shop Now
               </a>
             </button>
+          </div>
+        </div>
+        <div className="bg-zinc-950 text-white py-[120px]">
+          <div className="text-center mx-[70px]">
+            {/* Section Heading */}
+            <h1 className="text-2xl font-semibold">Our Featured Products</h1>
+            <hr className="w-[70px] h-[3px] mx-auto my-5 bg-[#16bb7c] border-none" />
+
+            {/* Product Slider */}
+            <Slider {...settings}>
+              {popularItems.map((item, index) => (
+                <div key={index} className="px-2">
+                  {/* Product Image Container - Hover effects applied here only */}
+                  <div className="relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
+                    <img
+                      className="w-full h-[350px] object-cover"
+                      src={item.src}
+                      alt={item.name}
+                    />
+
+                    {/* Quick View Button (Visible on Hover) */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
+                      <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-[#16bb7c] hover:text-white transition-all duration-300">
+                        Quick View
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Product Details - No hover effects */}
+                  <div className="mt-4 text-left">
+                    <h3 className="text-base font-medium">{item.name}</h3>
+                    <div className="flex items-center mt-1">
+                      {/* Star Rating */}
+                      {Array.from({ length: totalStars }, (_, index) => (
+                        <FontAwesomeIcon
+                          key={index}
+                          className="text-yellow-500 text-base"
+                          icon={faStar}
+                        />
+                      ))}
+                    </div>
+                    <h2 className="text-base mt-1 text-gray-300 font-semibold">
+                      {item.price}
+                    </h2>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+        <div>
+          {/* Heading */}
+          <h1 className="m-10 text-center text-3xl font-semibold bg-gradient-to-r from-teal-900 via-purple-500 to-gray-900 text-transparent bg-clip-text animate-gradient bg-300% hover:animate-pulse">
+            Join The Crew
+          </h1>
+
+          {/* Image Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 p-6">
+            {images3.map((image, index) => (
+              <div
+                key={index}
+                className="text-center group relative overflow-hidden"
+              >
+                {/* Image Container */}
+                <div className="w-full h-64 rounded-lg shadow-md overflow-hidden relative">
+                  <img
+                    src={image.src}
+                    alt={`Image ${index + 1}`}
+                    className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                  />
+                  {/* Instagram Icon (Visible on Hover) */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className="text-white text-4xl cursor-pointer"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

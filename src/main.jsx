@@ -12,7 +12,7 @@ import Wishlist from "./components/Wishlist";
 import Checkout from "./components/Checkout";
 import CheckoutPage from "./pages/Checkout";
 import ShopPage from "./pages/Shop";
-// import AboutusPage from "./pages/About";
+import AboutusPage from "./pages/About";
 import WishlistPage from "./pages/Wishlist";
 import ProductDetails from "./components/ProductDetails";
 
@@ -43,10 +43,10 @@ const proRouter = createBrowserRouter([
         element: <ProductDetails />,
       },
 
-      // {
-      //   path: "/About",
-      //   element: <AboutusPage />,
-      // },
+      {
+        path: "/About",
+        element: <AboutusPage />,
+      },
     ],
   },
 ]);

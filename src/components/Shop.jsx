@@ -7,6 +7,8 @@ import {
   faTimes,
   faChevronDown,
   faShoppingBag,
+  faBars,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 // Import all product arrays
 import {
@@ -71,6 +73,8 @@ const ShopHeroSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [itemsToShow, setItemsToShow] = useState(8);
   const [showCartAlert, setShowCartAlert] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   const categories = {
     "Product Type": {
@@ -175,6 +179,18 @@ const ShopHeroSection = () => {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setShowSidebar(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     const search = searchParams.get("search");
     if (search) {
@@ -213,6 +229,7 @@ const ShopHeroSection = () => {
     );
     setFilteredProducts(filtered);
     setActiveFilter(filterName);
+    if (isMobile) setShowSidebar(false);
   };
 
   const clearFilters = () => {
@@ -222,6 +239,7 @@ const ShopHeroSection = () => {
     setPriceRange([0, 500]);
     setSearchQuery("");
     navigate("/Shop");
+    if (isMobile) setShowSidebar(false);
   };
 
   const handlePriceChange = (min, max) => {
@@ -361,7 +379,7 @@ const ShopHeroSection = () => {
 
   return (
     <>
-      <div className="relative min-h-screen bg-gray-50 flex flex-col">
+      <div className="relative min-h-screen bg-gray-50 flex flex-col mt-10">
         {/* Cart Alert Notification */}
         {showCartAlert && (
           <div className="fixed top-4 right-4 animate-slide-in z-50">
@@ -383,9 +401,27 @@ const ShopHeroSection = () => {
           </span>
         </button>
 
+        {/* Mobile Filter Toggle Button */}
+        {isMobile && (
+          <button
+            onClick={() => setShowSidebar(!showSidebar)}
+            className="fixed top-24 left-4 z-30 bg-gray-900 text-white p-3 rounded-full shadow-lg md:hidden"
+          >
+            <FontAwesomeIcon icon={showSidebar ? faArrowLeft : faBars} />
+          </button>
+        )}
+
         <div className="flex-1 flex flex-col md:flex-row">
           {/* Sidebar Filters */}
-          <div className="w-full md:w-80 bg-gradient-to-b from-gray-900 to-gray-800 p-6 border-r border-gray-700 md:h-[calc(100vh-80px)] md:sticky md:top-20 md:self-start overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+          <div
+            className={`w-full md:w-80 bg-gradient-to-b from-gray-900 to-gray-800 p-6 border-r border-gray-700 md:h-[calc(100vh-80px)] md:sticky md:top-20 md:self-start overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 transition-all duration-300 z-20 ${
+              isMobile
+                ? `fixed top-0 left-0 h-full transform ${
+                    showSidebar ? "translate-x-0" : "-translate-x-full"
+                  }`
+                : ""
+            }`}
+          >
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4 font-serif">
                 Matchfit Wardrobe
@@ -459,6 +495,14 @@ const ShopHeroSection = () => {
               );
             })}
           </div>
+
+          {/* Overlay for mobile sidebar */}
+          {isMobile && showSidebar && (
+            <div
+              className="fixed inset-0 bg-black/50 z-10 md:hidden"
+              onClick={() => setShowSidebar(false)}
+            />
+          )}
 
           <div className="flex-1 p-8">
             {searchQuery && (
