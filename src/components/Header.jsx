@@ -18,7 +18,6 @@ export default function HeaderPage() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -50,20 +49,6 @@ export default function HeaderPage() {
       closeAllPanels();
     }
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    if (isHomepage) {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    } else {
-      // If not homepage, always show scrolled state
-      setIsScrolled(true);
-    }
-  }, [isHomepage]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -107,29 +92,16 @@ export default function HeaderPage() {
     { path: "/Terms", label: "Terms of Service" },
   ];
 
-  // Updated color handling functions
-  const getTextColorClass = () =>
-    isHomepage && !isScrolled ? "text-white" : "text-gray-900";
+  // Color handling functions
+  const getTextColorClass = () => (isHomepage ? "text-white" : "text-gray-900");
 
-  const getBgColorClass = () =>
-    isHomepage
-      ? isScrolled
-        ? "bg-white shadow-sm"
-        : "bg-transparent"
-      : "bg-white shadow-sm";
-
-  const getDividerColorClass = () =>
-    isHomepage && !isScrolled ? "bg-white" : "bg-zinc-800";
+  const getDividerColorClass = () => (isHomepage ? "bg-white" : "bg-zinc-800");
 
   return (
     <>
       <header
-        className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
-          isHomepage
-            ? isScrolled
-              ? "bg-white text-gray-900 shadow-sm h-16"
-              : "bg-transparent text-white h-20"
-            : "bg-white text-gray-900 shadow-sm h-16"
+        className={`w-full top-0 left-0 z-50 ${
+          isHomepage ? "absolute" : "fixed bg-white shadow-sm"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16 md:h-20">
@@ -169,7 +141,7 @@ export default function HeaderPage() {
             <h2 className="text-xl font-semibold">Wardrobe</h2>
             <div
               className={`w-4 h-[0.5px] mx-auto ${getDividerColorClass()} transition-all duration-300 hover:w-8`}
-            />{" "}
+            />
           </div>
 
           <div className="flex items-center space-x-4 ml-auto">
@@ -223,7 +195,7 @@ export default function HeaderPage() {
             <button
               onClick={toggleSidebar}
               className={`md:hidden flex items-center justify-center h-10 w-10 rounded-full transition-colors ${
-                isHomepage && !isScrolled
+                isHomepage
                   ? "hover:bg-white hover:bg-opacity-20"
                   : "hover:bg-gray-100"
               }`}
@@ -261,7 +233,7 @@ export default function HeaderPage() {
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => setSearchQuery(e.value)}
                 placeholder="Search products..."
                 className="w-full p-3 pl-10 bg-gray-700 text-white rounded focus:outline-none focus:ring-2 focus:ring-[#16bb7c]"
                 autoFocus

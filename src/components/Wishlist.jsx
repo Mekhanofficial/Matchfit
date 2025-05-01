@@ -8,12 +8,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Wishlist = () => {
-  const { wishlist, removeFromWishlist, addToCart } = useAppContext();
+  const { wishlist, removeFromWishlist, addToCart, showAlert } =
+    useAppContext();
   const navigate = useNavigate();
 
   const handleMoveToCart = (product) => {
     addToCart(product);
     removeFromWishlist(product.id);
+    showAlert(`${product.name || product.designer || "Item"} moved to cart!`);
   };
 
   return (
@@ -53,7 +55,7 @@ const Wishlist = () => {
                 <div className="relative">
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={product.name || product.designer || "Product"}
                     className="w-full h-64 object-cover rounded-t-lg"
                   />
                   <div className="absolute top-2 right-2 flex space-x-2">
@@ -71,10 +73,10 @@ const Wishlist = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-800">
-                    {product.name}
+                    {product.name || product.designer || "Product"}
                   </h3>
                   <p className="text-lg font-bold text-gray-900 mt-2">
-                    ${product.price.toFixed(2)}
+                    ${product.price?.toFixed(2) || "0.00"}
                   </p>
                   <div className="mt-4 flex space-x-2">
                     <button

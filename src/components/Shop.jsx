@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAppContext } from "../AppContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,6 +9,7 @@ import {
   faShoppingBag,
   faBars,
   faArrowLeft,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 // Import all product arrays
 import {
@@ -60,7 +61,8 @@ import {
   winter22,
   winter23,
 } from "./Product";
-import FooterPage from "./Footer";
+import pd62 from "../pictures/hue/pd62.jpg";
+import { motion } from "framer-motion";
 
 const ShopHeroSection = () => {
   const { addToCart, addToWishlist, wishlist } = useAppContext();
@@ -75,6 +77,7 @@ const ShopHeroSection = () => {
   const [showCartAlert, setShowCartAlert] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [searchInput, setSearchInput] = useState("");
 
   const categories = {
     "Product Type": {
@@ -195,6 +198,7 @@ const ShopHeroSection = () => {
     const search = searchParams.get("search");
     if (search) {
       setSearchQuery(search);
+      setSearchInput(search);
       const results = allProducts.filter((product) =>
         product.name.toLowerCase().includes(search.toLowerCase())
       );
@@ -238,6 +242,7 @@ const ShopHeroSection = () => {
     setOpenDropdowns([]);
     setPriceRange([0, 500]);
     setSearchQuery("");
+    setSearchInput("");
     navigate("/Shop");
     if (isMobile) setShowSidebar(false);
   };
@@ -276,21 +281,29 @@ const ShopHeroSection = () => {
     return null;
   };
 
-  const isDropdownOpen = (dropdownId) => openDropdowns.includes(dropdownId);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchInput.trim()) {
+      navigate(`/Shop?search=${encodeURIComponent(searchInput)}`);
+    }
+  };
 
   const ProductCard = ({ product }) => {
     const isWishlisted = wishlist.some((item) => item.id === product.id);
 
     return (
-      <div
+      <motion.div
         className="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
         onClick={() => navigate(`/product/${product.id}`)}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
       >
         <div className="relative aspect-square bg-gray-50">
           <img
             src={product.image}
             alt={product.name}
             className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
@@ -312,7 +325,7 @@ const ShopHeroSection = () => {
         </div>
 
         <div className="p-5 space-y-3">
-          <h3 className="font-semibold text-gray-900 text-lg leading-tight">
+          <h3 className="font-semibold text-gray-900 text-lg leading-tight line-clamp-2">
             {product.name}
           </h3>
           <p className="text-gray-700 font-bold text-xl">
@@ -324,12 +337,12 @@ const ShopHeroSection = () => {
               addToCart(product);
               setShowCartAlert(true);
             }}
-            className="w-full mt-2 bg-gradient-to-br from-gray-900 to-gray-800 text-white py-3.5 rounded-xl hover:opacity-95 transition-all duration-300 text-sm font-semibold tracking-wide shadow-md"
+            className="w-full mt-2 bg-gradient-to-br from-gray-900 to-gray-800 text-white py-3.5 rounded-xl hover:opacity-95 transition-all duration-300 text-sm font-semibold tracking-wide shadow-md hover:shadow-lg"
           >
             Add to Cart
           </button>
         </div>
-      </div>
+      </motion.div>
     );
   };
 
@@ -379,36 +392,75 @@ const ShopHeroSection = () => {
 
   return (
     <>
-      <div className="relative min-h-screen bg-gray-50 flex flex-col mt-10">
-        {/* Cart Alert Notification */}
-        {showCartAlert && (
-          <div className="fixed top-4 right-4 animate-slide-in z-50">
-            <div className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3">
-              <FontAwesomeIcon icon={faShoppingBag} />
-              <span>Item added to cart successfully!</span>
-            </div>
-          </div>
-        )}
+      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-0" />
+        <img
+          src={pd62}
+          alt="Fashion collection"
+          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+          loading="eager"
+        />
+
+        <motion.div
+          className="relative z-10 px-4 h-full flex flex-col items-center justify-center text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 font-serif tracking-tight">
+            Curated Collections
+          </h1>
+          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-8">
+            Discover timeless pieces crafted for the modern individual
+          </p>
+          <form onSubmit={handleSearch} className="w-full max-w-md relative">
+            <input
+              type="text"
+              placeholder="Search our collection..."
+              className="w-full px-5 py-3 pr-12 rounded-full bg-white/90 backdrop-blur-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-900"
+            >
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </form>
+          <p className="text-teal-400 text-lg md:text-xl mt-4">
+            <Link to="/" className="hover:text-teal-300 transition">
+              Home
+            </Link>{" "}
+            / Shop
+          </p>
+        </motion.div>
+      </div>
+
+      <div className="relative min-h-screen bg-gray-50 flex flex-col">
 
         {/* Floating Wishlist Button */}
-        <button
+        <motion.button
           onClick={() => navigate("/wishlist")}
-          className="fixed bottom-6 right-6 bg-gray-900 text-white p-4 rounded-full shadow-xl hover:scale-105 transition-transform duration-300 flex items-center gap-2 z-40"
+          className="fixed bottom-6 right-6 bg-gray-900 text-white p-4 rounded-full shadow-xl z-40 flex items-center gap-2"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <FontAwesomeIcon icon={faHeart} />
           <span className="bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center">
             {wishlist.length}
           </span>
-        </button>
+        </motion.button>
 
         {/* Mobile Filter Toggle Button */}
         {isMobile && (
-          <button
+          <motion.button
             onClick={() => setShowSidebar(!showSidebar)}
             className="fixed top-24 left-4 z-30 bg-gray-900 text-white p-3 rounded-full shadow-lg md:hidden"
+            whileTap={{ scale: 0.9 }}
           >
             <FontAwesomeIcon icon={showSidebar ? faArrowLeft : faBars} />
-          </button>
+          </motion.button>
         )}
 
         <div className="flex-1 flex flex-col md:flex-row">
@@ -423,7 +475,7 @@ const ShopHeroSection = () => {
             }`}
           >
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4 font-serif">
+              <h2 className="text-2xl font-bold text-white mb-4 font-serif tracking-tight">
                 Matchfit Wardrobe
               </h2>
               <button
@@ -451,7 +503,7 @@ const ShopHeroSection = () => {
                 <div className="relative h-2">
                   <div className="absolute h-full w-full bg-gray-700 rounded-full" />
                   <div
-                    className="absolute h-full bg-gradient-to-r from-gray-300 to-white rounded-full"
+                    className="absolute h-full bg-gradient-to-r from-teal-400 to-blue-500 rounded-full"
                     style={{
                       left: `${(priceRange[0] / 500) * 100}%`,
                       right: `${100 - (priceRange[1] / 500) * 100}%`,
@@ -504,17 +556,18 @@ const ShopHeroSection = () => {
             />
           )}
 
-          <div className="flex-1 p-8">
+          <div className="flex-1 p-6 md:p-8">
             {searchQuery && (
               <div className="mb-6">
                 <button
                   onClick={() => {
                     setSearchQuery("");
+                    setSearchInput("");
                     navigate("/Shop");
                     setFilteredProducts(allProducts);
                     setActiveFilter("All Products");
                   }}
-                  className="text-gray-600 hover:text-gray-900 flex items-center gap-2"
+                  className="text-gray-600 hover:text-gray-900 flex items-center gap-2 transition-colors"
                 >
                   <FontAwesomeIcon icon={faTimes} />
                   Clear search: "{searchQuery}"
@@ -523,34 +576,49 @@ const ShopHeroSection = () => {
             )}
 
             <div className="mb-10">
-              <h2 className="text-4xl font-bold text-gray-900 font-serif">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif tracking-tight">
                 {activeFilter}
-                <span className="ml-3 text-gray-500 font-normal text-2xl">
-                  ({filteredProducts.length})
+                <span className="ml-3 text-gray-500 font-normal text-xl md:text-2xl">
+                  ({filteredProducts.length} items)
                 </span>
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredProducts.slice(0, itemsToShow).map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+            {filteredProducts.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {filteredProducts.slice(0, itemsToShow).map((product) => (
+                    <ProductCard key={product.id} product={product} />
+                  ))}
+                </div>
 
-            {itemsToShow < filteredProducts.length && (
-              <div className="flex justify-center mt-10">
+                {itemsToShow < filteredProducts.length && (
+                  <div className="flex justify-center mt-10">
+                    <motion.button
+                      onClick={() => setItemsToShow(itemsToShow + 8)}
+                      className="px-6 py-3 text-sm font-medium bg-gray-900 text-white rounded-xl shadow hover:opacity-90 transition-all duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Load More
+                    </motion.button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="text-center py-20">
+                <h3 className="text-2xl font-medium text-gray-500 mb-4">
+                  No products found
+                </h3>
+                <p className="text-gray-400 mb-6">
+                  We couldn't find any items matching your criteria
+                </p>
                 <button
-                  onClick={() => setItemsToShow(itemsToShow + 8)}
-                  className="px-6 py-3 text-sm font-medium bg-gray-900 text-white rounded-xl shadow hover:opacity-90 transition-all duration-300"
+                  onClick={clearFilters}
+                  className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
                 >
-                  Show More
+                  Reset Filters
                 </button>
-              </div>
-            )}
-
-            {filteredProducts.length === 0 && (
-              <div className="text-center py-20 text-gray-500 font-medium">
-                No products found.
               </div>
             )}
           </div>

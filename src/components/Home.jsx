@@ -28,6 +28,31 @@ import { motion } from "framer-motion";
 import px22 from "../pictures/hue/px22.avif";
 import px23 from "../pictures/hue/px23.avif";
 import px24 from "../pictures/hue/px24.avif";
+import pd33 from "../pictures/hue/pd36.avif";
+import pd34 from "../pictures/hue/pd37.jpg";
+import pd35 from "../pictures/hue/pd35.avif";
+import pd37 from "../pictures/hue/pd37.jpg";
+
+import ex1 from "../pictures/hue/ex1.png";
+import ex2 from "../pictures/hue/ex2.jpg";
+import ex3 from "../pictures/hue/ex3.jpg";
+import ex4 from "../pictures/hue/ex4.jpg";
+import ex5 from "../pictures/hue/ex5.webp";
+import ex6 from "../pictures/hue/ex6.jpg";
+import ex7 from "../pictures/hue/ex7.webp";
+import ex8 from "../pictures/hue/ex8.webp";
+import ex9 from "../pictures/hue/ex9.avif";
+import ex10 from "../pictures/hue/ex10.jpg";
+import ex11 from "../pictures/hue/ex11.avif";
+import ex12 from "../pictures/hue/ex12.jpg";
+import ex13 from "../pictures/hue/ex13.jpg";
+import ex14 from "../pictures/hue/ex14.webp";
+import ex15 from "../pictures/hue/ex15.webp";
+import ex16 from "../pictures/hue/ex16.png";
+import ex17 from "../pictures/hue/ex17.webp";
+import ex18 from "../pictures/hue/ex18.webp";
+import ex19 from "../pictures/hue/ex19.gif";
+import ex20 from "../pictures/hue/ex20.webp";
 import ex21 from "../pictures/hue/ex21.webp";
 import ex22 from "../pictures/hue/ex22.jpg";
 import ex23 from "../pictures/hue/ex23.webp";
@@ -36,22 +61,90 @@ import ex25 from "../pictures/hue/ex25.avif";
 import ex26 from "../pictures/hue/ex26.jpeg";
 import ex27 from "../pictures/hue/ex27.jpg";
 import ex28 from "../pictures/hue/ex28.jpg";
-import pd13 from "../pictures/hue/pd13.jpg";
-import pd33 from "../pictures/hue/pd36.avif";
-import pd34 from "../pictures/hue/pd37.jpg";
-import pd35 from "../pictures/hue/pd35.avif";
+import ex29 from "../pictures/hue/ex29.jpg";
+import ex30 from "../pictures/hue/ex30.webp";
+import ex31 from "../pictures/hue/ex31.jpg";
+import ex32 from "../pictures/hue/ex32.webp";
+import ex33 from "../pictures/hue/ex33.avif";
+import ex34 from "../pictures/hue/ex34.jpeg";
+import ex35 from "../pictures/hue/ex35.webp";
+import ex36 from "../pictures/hue/ex36.jpg";
+import ex37 from "../pictures/hue/ex37.jpg";
+import ex38 from "../pictures/hue/ex38.webp";
+import ex39 from "../pictures/hue/ex39.jpg";
+import ex40 from "../pictures/hue/ex40.webp";
+import ex41 from "../pictures/hue/ex41.jpg";
+import ex42 from "../pictures/hue/ex42.avif";
+import ex43 from "../pictures/hue/ex43.avif";
+import ex44 from "../pictures/hue/ex44.jpg";
+import ex45 from "../pictures/hue/ex45.jpg";
+import ex46 from "../pictures/hue/ex46.webp";
+import ex47 from "../pictures/hue/ex47.webp";
+import ex48 from "../pictures/hue/ex48.jpg";
+import ex49 from "../pictures/hue/ex49.jpg";
+import ex50 from "../pictures/hue/ex50.jpg";
+import ex51 from "../pictures/hue/ex51.jpg";
+import ex52 from "../pictures/hue/ex52.webp";
+import ex53 from "../pictures/hue/ex53.webp";
+import ex54 from "../pictures/hue/ex54.jpg";
+import ex55 from "../pictures/hue/ex55.jpg";
+import ex56 from "../pictures/hue/ex56.webp";
+import ex57 from "../pictures/hue/ex57.jpg";
+import ex58 from "../pictures/hue/ex58.jpg";
+import ex59 from "../pictures/hue/ex59.jpg";
+import ex60 from "../pictures/hue/ex60.jpg";
+import ex61 from "../pictures/hue/ex61.jpg";
+import ex62 from "../pictures/hue/ex62.avif";
+import ex63 from "../pictures/hue/ex63.webp";
+import ex64 from "../pictures/hue/ex64.webp";
+import ex65 from "../pictures/hue/ex65.webp";
+import ex66 from "../pictures/hue/ex66.jpg";
+import ex67 from "../pictures/hue/ex67.jpg";
+import ex68 from "../pictures/hue/ex68.jpg";
+import ex69 from "../pictures/hue/ex69.jpg";
+import ex70 from "../pictures/hue/ex70.webp";
+import ex71 from "../pictures/hue/ex71.avif";
+import ex72 from "../pictures/hue/ex72.jpg";
+import ex73 from "../pictures/hue/ex73.jpg";
+import ex74 from "../pictures/hue/ex74.avif";
+import ex75 from "../pictures/hue/ex75.jpg";
+import ex76 from "../pictures/hue/ex76.webp";
+import ex77 from "../pictures/hue/ex77.webp";
+import ex78 from "../pictures/hue/ex78.jpg";
+import ex79 from "../pictures/hue/ex79.avif";
+import ex80 from "../pictures/hue/ex8.webp";
 import ex81 from "../pictures/hue/ex81.webp";
-import ex88 from "../pictures/hue/ex88.jpg";
-import ex90 from "../pictures/hue/ex90.webp";
-import ex92 from "../pictures/hue/ex92.jpg";
-import ex98 from "../pictures/hue/ex98.webp";
-import ex100 from "../pictures/hue/ex100.webp";
-import ex103 from "../pictures/hue/ex103.jpg";
-import ex109 from "../pictures/hue/ex109.jpg";
+import ex82 from "../pictures/hue/ex82.jpg";
+import ex83 from "../pictures/hue/ex83.avif";
+import ex84 from "../pictures/hue/ex84.jpg";
+import ex85 from "../pictures/hue/ex85.webp";
 import ex86 from "../pictures/hue/ex86.jpg";
-import ex5 from "../pictures/hue/ex5.webp";
-import ex6 from "../pictures/hue/ex6.jpg";
-import ex20 from "../pictures/hue/ex20.webp";
+import ex87 from "../pictures/hue/ex87.webp";
+import ex88 from "../pictures/hue/ex88.jpg";
+import ex89 from "../pictures/hue/ex89.webp";
+import ex90 from "../pictures/hue/ex90.webp";
+import ex91 from "../pictures/hue/ex91.webp";
+import ex92 from "../pictures/hue/ex92.jpg";
+import ex93 from "../pictures/hue/ex93.jpg";
+import pd12 from "../pictures/hue/pd12.avif";
+import pd13 from "../pictures/hue/pd13.jpg";
+import pd36 from "../pictures/hue/pd36.avif";
+import ex94 from "../pictures/hue/ex94.jpg";
+import ex95 from "../pictures/hue/ex95.jpg";
+import ex96 from "../pictures/hue/ex96.jpg";
+import ex97 from "../pictures/hue/ex97.webp";
+import ex98 from "../pictures/hue/ex98.webp";
+import ex99 from "../pictures/hue/ex99.jpg";
+import ex100 from "../pictures/hue/ex100.webp";
+import ex101 from "../pictures/hue/ex101.jpg";
+import ex102 from "../pictures/hue/ex102.webp";
+import ex103 from "../pictures/hue/ex103.jpg";
+import ex104 from "../pictures/hue/ex104.jpg";
+import ex105 from "../pictures/hue/ex105.webp";
+import ex106 from "../pictures/hue/ex106.webp";
+import ex107 from "../pictures/hue/ex107.jpg";
+import ex108 from "../pictures/hue/ex108.jpg";
+import ex109 from "../pictures/hue/ex109.jpg";
 import { useState, useEffect } from "react";
 import HeaderPage from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -70,6 +163,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../AppContext";
 
 const popularItems = [
   { src: fx1, name: "Monty jacket", price: "$150.00" },
@@ -83,7 +177,10 @@ const popularItems = [
 const totalStars = 5; // Adjust as needed
 
 const HomeHeroSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  const { addToCart } = useAppContext();
+ const [showCartAlert, setShowCartAlert] = useState(false);
+ const [alertMessage, setAlertMessage] = useState("");
 
 
   // Slider settings
@@ -138,256 +235,232 @@ const HomeHeroSection = () => {
     }
   };
 
-  const categories = {
-    "T-Shirts": [
-      {
-        id: 1,
-        image: ex21,
-        alt: "Our Legacy T-shirt",
-        badge: "GOLD CUP",
-        designer: "Our Legacy",
-        price: "N261,000",
-        status: "quick-buy",
-        sizes: ["S", "M", "L", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 2,
-        image: ex22,
-        alt: "Charles Jeffery T-shirt",
-        designer: "Charles Jeffery",
-        price: "N289,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-      {
-        id: 3,
-        image: ex23,
-        alt: "Chorles Jeffery T-shirt",
-        designer: "Chorles Jeffery",
-        price: "N275,000",
-        status: "quick-buy",
-        sizes: ["M", "L"],
-        repeatCount: 1,
-      },
-      {
-        id: 4,
-        image: ex24,
-        alt: "Premium Cotton T-shirt",
-        badge: "LIMITED",
-        designer: "Premium Cotton",
-        price: "N310,000",
-        status: "quick-buy",
-        sizes: ["S", "M", "L", "XL", "XXL"],
-        repeatCount: 1,
-      },
-      {
-        id: 5,
-        image: ex25,
-        alt: "Classic White T-shirt",
-        designer: "Classic White",
-        price: "N240,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-      {
-        id: 6,
-        image: ex26,
-        alt: "Black Edition T-shirt",
-        badge: "EXCLUSIVE",
-        designer: "Black Edition",
-        price: "N330,000",
-        status: "quick-buy",
-        sizes: ["S", "L"],
-        repeatCount: 1,
-      },
-      {
-        id: 7,
-        image: ex27,
-        alt: "Oversized Fit T-shirt",
-        designer: "Oversized Fit",
-        price: "N295,000",
-        status: "quick-buy",
-        sizes: ["L", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 8,
-        image: ex28,
-        alt: "Vintage Wash T-shirt",
-        designer: "Vintage Wash",
-        price: "N265,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-    ],
+const categories = {
+  "T-Shirts": [
+    {
+      id: 49,
+      image: ex33,
+      alt: "Basic T-Shirt",
+      designer: "Basic T-Shirt",
+      price: "$24.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+    },
+    {
+      id: 50,
+      image: ex34,
+      alt: "V-Neck T-Shirt",
+      designer: "V-Neck T-Shirt",
+      price: "$29.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 102,
+      image: ex84,
+      alt: "Oversized T-Shirt",
+      designer: "Oversized T-Shirt",
+      price: "$34.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+    {
+      id: 104,
+      image: ex86,
+      alt: "Graphic Tee",
+      designer: "Graphic Tee",
+      price: "$29.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+    {
+      id: 44,
+      image: ex28,
+      alt: "Zip Hoodie",
+      designer: "Zip Hoodie",
+      price: "$69.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+    },
+    {
+      id: 45,
+      image: ex29,
+      alt: "Pullover Hoodie",
+      designer: "Pullover Hoodie",
+      price: "$59.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 46,
+      image: ex30,
+      alt: "Crewneck Sweatshirt",
+      designer: "Crewneck Sweatshirt",
+      price: "$49.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+    },
+    {
+      id: 47,
+      image: ex31,
+      alt: "Graphic Hoodie",
+      designer: "Graphic Hoodie",
+      price: "$79.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L"],
+    },
+  ],
 
-    Suits: [
-      {
-        id: 1,
-        image: fx1,
-        alt: "Suits Graphic Tee",
-        badge: "EXCLUSIVE",
-        designer: "Suits",
-        price: "N310,000",
-        status: "quick-buy",
-        sizes: ["S", "M", "L"],
-        repeatCount: 1,
-      },
-      {
-        id: 2,
-        image: fx2,
-        alt: "Suits Monogram Tee",
-        designer: "Suits",
-        price: "N290,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-      {
-        id: 3,
-        image: fx4,
-        alt: "Suits Cityscape Tee",
-        badge: "LIMITED",
-        designer: "Suits",
-        price: "N345,000",
-        status: "quick-buy",
-        sizes: ["M", "L", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 4,
-        image: fx5,
-        alt: "Suits Flame Tee",
-        designer: "Suits",
-        price: "N270,000",
-        status: "quick-buy",
-        sizes: ["S", "M"],
-        repeatCount: 1,
-      },
-      {
-        id: 5,
-        image: pd13,
-        alt: "Suits Sporty Tee",
-        designer: "Suits",
-        price: "N250,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-      {
-        id: 6,
-        image: pd33,
-        alt: "Suits Culture Tee",
-        badge: "GOLD CUP",
-        designer: "Suits",
-        price: "N360,000",
-        status: "quick-buy",
-        sizes: ["L", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 7,
-        image: pd34,
-        alt: "Suits Street Art Tee",
-        designer: "Suits",
-        price: "N280,000",
-        status: "quick-buy",
-        sizes: ["M", "L"],
-        repeatCount: 1,
-      },
-      {
-        id: 8,
-        image: pd35,
-        alt: "Suits Signature Tee",
-        designer: "Suits",
-        price: "N320,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-    ],
-    "Wood Wood": [
-      {
-        id: 1,
-        image: px15,
-        alt: "Wood Wood Logo Tee",
-        badge: "LIMITED",
-        designer: "Wood Wood",
-        price: "N290,000",
-        status: "quick-buy",
-        sizes: ["S", "M", "L"],
-        repeatCount: 1,
-      },
-      {
-        id: 2,
-        image: px16,
-        alt: "Wood Wood Statement Tee",
-        designer: "Wood Wood",
-        price: "N265,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-      {
-        id: 3,
-        image: px1,
-        alt: "Wood Wood Artistic Tee",
-        designer: "Wood Wood",
-        price: "N300,000",
-        status: "quick-buy",
-        sizes: ["M", "L", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 4,
-        image: px18,
-        alt: "Wood Wood Bold Tee",
-        badge: "EXCLUSIVE",
-        designer: "Wood Wood",
-        price: "N310,000",
-        status: "quick-buy",
-        sizes: ["S", "M", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 5,
-        image: px19,
-        alt: "Wood Wood Minimal Tee",
-        designer: "Wood Wood",
-        price: "N240,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-      {
-        id: 6,
-        image: px20,
-        alt: "Wood Wood Grid Tee",
-        designer: "Wood Wood",
-        price: "N270,000",
-        status: "quick-buy",
-        sizes: ["L", "XL"],
-        repeatCount: 1,
-      },
-      {
-        id: 7,
-        image: px21,
-        alt: "Wood Wood Vintage Tee",
-        badge: "GOLD CUP",
-        designer: "Wood Wood",
-        price: "N285,000",
-        status: "quick-buy",
-        sizes: ["S", "M", "L"],
-        repeatCount: 1,
-      },
-      {
-        id: 8,
-        image: px3,
-        alt: "Wood Wood Monochrome Tee",
-        designer: "Wood Wood",
-        price: "N295,000",
-        status: "sold-out",
-        repeatCount: 1,
-      },
-    ],
-  };
+  Suits: [
+    {
+      id: 25,
+      image: ex12,
+      alt: "Slim Fit Suit",
+      designer: "Slim Fit Suit",
+      price: "$349.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "38L", "40L", "42L"],
+    },
+    {
+      id: 26,
+      image: pd12,
+      alt: "Business Suit",
+      designer: "Business Suit",
+      price: "$299.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+    },
+    {
+      id: 27,
+      image: ex13,
+      alt: "Tweed Suit",
+      designer: "Tweed Suit",
+      price: "$449.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "38L", "40L"],
+    },
+    {
+      id: 28,
+      image: pd13,
+      alt: "Three-piece Suit",
+      designer: "Three-piece Suit",
+      price: "$499.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+    },
+    {
+      id: 51,
+      image: pd35,
+      alt: "Classic Tuxedo",
+      designer: "Classic Tuxedo",
+      price: "$599.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+    },
+    {
+      id: 52,
+      image: pd37,
+      alt: "Slim Fit Tuxedo",
+      designer: "Slim Fit Tuxedo",
+      price: "$649.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "38L", "40L"],
+    },
+    {
+      id: 53,
+      image: pd36,
+      alt: "Black Tie Tuxedo",
+      designer: "Black Tie Tuxedo",
+      price: "$699.99",
+      status: "quick-buy",
+      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+    },
+    {
+      id: 112,
+      image: ex104,
+      alt: "Women's Tailored Suit",
+      designer: "Women's Tailored Suit",
+      price: "$299.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+  ],
 
+  Dresses: [
+    {
+      id: 79,
+      image: ex61,
+      alt: "Summer Floral Dress",
+      designer: "Summer Floral Dress",
+      price: "$89.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+    {
+      id: 80,
+      image: ex62,
+      alt: "Cocktail Dress",
+      designer: "Cocktail Dress",
+      price: "$119.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M"],
+    },
+    {
+      id: 81,
+      image: ex63,
+      alt: "Maxi Dress",
+      designer: "Maxi Dress",
+      price: "$99.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L"],
+    },
+    {
+      id: 82,
+      image: ex64,
+      alt: "Wrap Dress",
+      designer: "Wrap Dress",
+      price: "$79.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+    {
+      id: 87,
+      image: ex69,
+      alt: "Evening Gown",
+      designer: "Evening Gown",
+      price: "$299.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+    {
+      id: 88,
+      image: ex70,
+      alt: "Bridal Gown",
+      designer: "Bridal Gown",
+      price: "$599.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L"],
+    },
+    {
+      id: 108,
+      image: ex90,
+      alt: "Minimalist Dress",
+      designer: "Minimalist Dress",
+      price: "$119.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M"],
+    },
+    {
+      id: 79,
+      image: ex61,
+      alt: "Summer Floral Dress",
+      designer: "Summer Floral Dress",
+      price: "$89.99",
+      status: "quick-buy",
+      sizes: ["XS", "S", "M", "L"],
+    },
+  ],
+};
   const visibleProducts = categories[activeCategory].slice(
     categoryCarouselIndex,
     categoryCarouselIndex + 4
@@ -691,7 +764,12 @@ const HomeHeroSection = () => {
                 </button>
               </div>
               <button className="text-sm font-medium text-gray-600 hover:text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-all whitespace-nowrap">
-                View all
+                <Link
+                  to="/Shop"
+                  className="text-sm font-medium text-gray-600 hover:text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-all whitespace-nowrap"
+                >
+                  View all
+                </Link>
               </button>
             </div>
           </motion.div>
@@ -705,63 +783,78 @@ const HomeHeroSection = () => {
             viewport={{ once: true }}
           >
             {visibleProducts.map((product) => (
-              <motion.div
+              <Link
+                to={`/product/${product.id}`}
                 key={product.id}
                 className="group relative"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
               >
-                {/* Product Image */}
-                <div className="relative overflow-hidden aspect-square mb-4 rounded-lg bg-gray-50">
-                  <img
-                    src={product.image}
-                    alt={product.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                <motion.div
+                  className="group relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  {/* Product Image */}
+                  <div className="relative overflow-hidden aspect-square mb-4 rounded-lg bg-gray-50">
+                    <img
+                      src={product.image}
+                      alt={product.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
 
-                  {/* Badge */}
-                  {product.badge && (
-                    <div className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 rounded-full font-medium shadow-sm">
-                      {product.badge}
-                    </div>
-                  )}
-
-                  {/* Sold Out Button */}
-                  {product.status === "sold-out" && (
-                    <div className="absolute top-3 right-3 bg-white bg-opacity-80 text-black text-xs px-2 py-1 rounded-full font-medium">
-                      SOLD OUT
-                    </div>
-                  )}
-
-                  {/* Quick Buy Button */}
-                  {product.status === "quick-buy" && (
-                    <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-4">
-                      <div className="bg-white py-2 px-3 rounded-full shadow-md flex items-center">
-                        <select className="bg-transparent border-none text-xs focus:outline-none mr-2">
-                          {product.sizes?.map((size) => (
-                            <option key={size} value={size}>
-                              {size}
-                            </option>
-                          ))}
-                        </select>
-                        <button className="bg-black text-white text-xs px-3 py-1 rounded-full hover:bg-gray-800 transition-colors">
-                          QUICK BUY
-                        </button>
+                    {/* Badge */}
+                    {product.badge && (
+                      <div className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 rounded-full font-medium shadow-sm">
+                        {product.badge}
                       </div>
-                    </div>
-                  )}
-                </div>
+                    )}
 
-                {/* Product Info */}
-                <div className="text-center px-2">
-                  <h2 className="text-md font-medium text-gray-900 mb-1 truncate">
-                    {product.designer}
-                  </h2>
-                  <p className="text-gray-600 text-sm">{product.price}</p>
-                </div>
-              </motion.div>
+                    {/* Sold Out Button */}
+                    {product.status === "sold-out" && (
+                      <div className="absolute top-3 right-3 bg-white bg-opacity-80 text-black text-xs px-2 py-1 rounded-full font-medium">
+                        SOLD OUT
+                      </div>
+                    )}
+
+                    {/* Quick Buy Button */}
+                    {product.status === "quick-buy" && (
+                      <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-4">
+                        <div className="bg-white py-2 px-3 rounded-full shadow-md flex items-center">
+                          <select className="bg-transparent border-none text-xs focus:outline-none mr-2">
+                            {product.sizes?.map((size) => (
+                              <option key={size} value={size}>
+                                {size}
+                              </option>
+                            ))}
+                          </select>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              addToCart(product);
+                              setAlertMessage(`${product.name} added to cart!`);
+                              setShowCartAlert(true);
+                              setTimeout(() => setShowCartAlert(false), 3000);
+                            }}
+                            className="bg-black text-white text-xs px-3 py-1 rounded-full hover:bg-gray-800 transition-colors"
+                          >
+                            ADD TO CART
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="text-center px-2">
+                    <h2 className="text-md font-medium text-gray-900 mb-1 truncate">
+                      {product.designer}
+                    </h2>
+                    <p className="text-gray-600 text-sm">{product.price}</p>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </motion.div>
 
