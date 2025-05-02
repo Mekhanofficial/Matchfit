@@ -392,7 +392,7 @@ const ShopHeroSection = () => {
 
   return (
     <>
-      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-0" />
         <img
           src={pd62}

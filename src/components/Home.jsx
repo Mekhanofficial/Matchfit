@@ -166,22 +166,22 @@ import { Link } from "react-router-dom";
 import { useAppContext } from "../AppContext";
 
 const popularItems = [
-  { src: fx1, name: "Monty jacket", price: "$150.00" },
-  { src: fx2, name: "Monty jacket", price: "$150.00" },
-  { src: fx3, name: "Monty jacket", price: "$150.00" },
-  { src: fx4, name: "Monty jacket", price: "$150.00" },
-  { src: fx5, name: "Monty jacket", price: "$150.00" },
-  { src: fx6, name: "Monty jacket", price: "$150.00" },
+  { src: fx1, name: "Sable Windbreaker", price: "$120.00" },
+  { src: fx2, name: "Astra Denim Jacket", price: "$89.99" },
+  { src: fx3, name: "Echo Bomber", price: "$135.50" },
+  { src: fx4, name: "Lunar Puffer", price: "$160.00" },
+  { src: fx5, name: "Nova Coat", price: "$199.00" },
+  { src: fx6, name: "Vanta Parka", price: "$175.25" },
 ];
+
 
 const totalStars = 5; // Adjust as needed
 
 const HomeHeroSection = () => {
   // const [currentIndex, setCurrentIndex] = useState(0);
   const { addToCart } = useAppContext();
- const [showCartAlert, setShowCartAlert] = useState(false);
- const [alertMessage, setAlertMessage] = useState("");
-
+  const [showCartAlert, setShowCartAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   // Slider settings
   const settings = {
@@ -218,8 +218,7 @@ const HomeHeroSection = () => {
     ],
   };
 
-
-  const [activeCategory, setActiveCategory] = useState("T-Shirts");
+  const [activeCategory, setActiveCategory] = useState("Polo");
   const [categoryCarouselIndex, setCategoryCarouselIndex] = useState(0);
 
   const nextCategorySlide = () => {
@@ -235,232 +234,232 @@ const HomeHeroSection = () => {
     }
   };
 
-const categories = {
-  "T-Shirts": [
-    {
-      id: 49,
-      image: ex33,
-      alt: "Basic T-Shirt",
-      designer: "Basic T-Shirt",
-      price: "$24.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L", "XL", "XXL"],
-    },
-    {
-      id: 50,
-      image: ex34,
-      alt: "V-Neck T-Shirt",
-      designer: "V-Neck T-Shirt",
-      price: "$29.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L", "XL"],
-    },
-    {
-      id: 102,
-      image: ex84,
-      alt: "Oversized T-Shirt",
-      designer: "Oversized T-Shirt",
-      price: "$34.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-    {
-      id: 104,
-      image: ex86,
-      alt: "Graphic Tee",
-      designer: "Graphic Tee",
-      price: "$29.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-    {
-      id: 44,
-      image: ex28,
-      alt: "Zip Hoodie",
-      designer: "Zip Hoodie",
-      price: "$69.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L", "XL", "XXL"],
-    },
-    {
-      id: 45,
-      image: ex29,
-      alt: "Pullover Hoodie",
-      designer: "Pullover Hoodie",
-      price: "$59.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L", "XL"],
-    },
-    {
-      id: 46,
-      image: ex30,
-      alt: "Crewneck Sweatshirt",
-      designer: "Crewneck Sweatshirt",
-      price: "$49.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L", "XL", "XXL"],
-    },
-    {
-      id: 47,
-      image: ex31,
-      alt: "Graphic Hoodie",
-      designer: "Graphic Hoodie",
-      price: "$79.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L"],
-    },
-  ],
+  const categories = {
+    Polo: [
+      {
+        id: 37,
+        image: ex21,
+        alt: "Classic Polo Shirt",
+        designer: "Classic Polo Shirt",
+        price: "$24.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL", "XXL"],
+      },
+      {
+        id: 38,
+        image: ex22,
+        alt: "Performance Polo",
+        designer: "Performance Polo",
+        price: "$29.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL"],
+      },
+      {
+        id: 39,
+        image: ex23,
+        alt: "Polo Shirt Pack",
+        designer: "Polo Shirt Pack",
+        price: "$34.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+      {
+        id: 40,
+        image: ex24,
+        alt: "Linen Polo Shirt",
+        designer: "Linen Polo Shirt",
+        price: "$29.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+      {
+        id: 41,
+        image: ex25,
+        alt: "Designer Polo",
+        designer: "Designer Polo",
+        price: "$69.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL", "XXL"],
+      },
+      {
+        id: 42,
+        image: ex26,
+        alt: "Dress Shirt",
+        designer: "Dress Shirt",
+        price: "$59.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL"],
+      },
+      {
+        id: 43,
+        image: ex27,
+        alt: "Oxford Shirt",
+        designer: "Oxford Shirt",
+        price: "$49.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L", "XL", "XXL"],
+      },
+      {
+        id: 49,
+        image: ex33,
+        alt: "Basic T-Shirt",
+        designer: "Basic T-Shirt",
+        price: "$79.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L"],
+      },
+    ],
 
-  Suits: [
-    {
-      id: 25,
-      image: ex12,
-      alt: "Slim Fit Suit",
-      designer: "Slim Fit Suit",
-      price: "$349.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "38L", "40L", "42L"],
-    },
-    {
-      id: 26,
-      image: pd12,
-      alt: "Business Suit",
-      designer: "Business Suit",
-      price: "$299.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
-    },
-    {
-      id: 27,
-      image: ex13,
-      alt: "Tweed Suit",
-      designer: "Tweed Suit",
-      price: "$449.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "38L", "40L"],
-    },
-    {
-      id: 28,
-      image: pd13,
-      alt: "Three-piece Suit",
-      designer: "Three-piece Suit",
-      price: "$499.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
-    },
-    {
-      id: 51,
-      image: pd35,
-      alt: "Classic Tuxedo",
-      designer: "Classic Tuxedo",
-      price: "$599.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
-    },
-    {
-      id: 52,
-      image: pd37,
-      alt: "Slim Fit Tuxedo",
-      designer: "Slim Fit Tuxedo",
-      price: "$649.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "38L", "40L"],
-    },
-    {
-      id: 53,
-      image: pd36,
-      alt: "Black Tie Tuxedo",
-      designer: "Black Tie Tuxedo",
-      price: "$699.99",
-      status: "quick-buy",
-      sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
-    },
-    {
-      id: 112,
-      image: ex104,
-      alt: "Women's Tailored Suit",
-      designer: "Women's Tailored Suit",
-      price: "$299.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-  ],
+    Suits: [
+      {
+        id: 25,
+        image: ex12,
+        alt: "Slim Fit Suit",
+        designer: "Slim Fit Suit",
+        price: "$349.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "38L", "40L", "42L"],
+      },
+      {
+        id: 26,
+        image: pd12,
+        alt: "Business Suit",
+        designer: "Business Suit",
+        price: "$299.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+      },
+      {
+        id: 27,
+        image: ex13,
+        alt: "Tweed Suit",
+        designer: "Tweed Suit",
+        price: "$449.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "38L", "40L"],
+      },
+      {
+        id: 28,
+        image: pd13,
+        alt: "Three-piece Suit",
+        designer: "Three-piece Suit",
+        price: "$499.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+      },
+      {
+        id: 51,
+        image: pd35,
+        alt: "Classic Tuxedo",
+        designer: "Classic Tuxedo",
+        price: "$599.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+      },
+      {
+        id: 52,
+        image: pd37,
+        alt: "Slim Fit Tuxedo",
+        designer: "Slim Fit Tuxedo",
+        price: "$649.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "38L", "40L"],
+      },
+      {
+        id: 53,
+        image: pd36,
+        alt: "Black Tie Tuxedo",
+        designer: "Black Tie Tuxedo",
+        price: "$699.99",
+        status: "quick-buy",
+        sizes: ["38R", "40R", "42R", "44R", "46R", "38L", "40L", "42L"],
+      },
+      {
+        id: 112,
+        image: ex104,
+        alt: "Women's Tailored Suit",
+        designer: "Women's Tailored Suit",
+        price: "$299.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+    ],
 
-  Dresses: [
-    {
-      id: 79,
-      image: ex61,
-      alt: "Summer Floral Dress",
-      designer: "Summer Floral Dress",
-      price: "$89.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-    {
-      id: 80,
-      image: ex62,
-      alt: "Cocktail Dress",
-      designer: "Cocktail Dress",
-      price: "$119.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M"],
-    },
-    {
-      id: 81,
-      image: ex63,
-      alt: "Maxi Dress",
-      designer: "Maxi Dress",
-      price: "$99.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L"],
-    },
-    {
-      id: 82,
-      image: ex64,
-      alt: "Wrap Dress",
-      designer: "Wrap Dress",
-      price: "$79.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-    {
-      id: 87,
-      image: ex69,
-      alt: "Evening Gown",
-      designer: "Evening Gown",
-      price: "$299.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-    {
-      id: 88,
-      image: ex70,
-      alt: "Bridal Gown",
-      designer: "Bridal Gown",
-      price: "$599.99",
-      status: "quick-buy",
-      sizes: ["S", "M", "L"],
-    },
-    {
-      id: 108,
-      image: ex90,
-      alt: "Minimalist Dress",
-      designer: "Minimalist Dress",
-      price: "$119.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M"],
-    },
-    {
-      id: 79,
-      image: ex61,
-      alt: "Summer Floral Dress",
-      designer: "Summer Floral Dress",
-      price: "$89.99",
-      status: "quick-buy",
-      sizes: ["XS", "S", "M", "L"],
-    },
-  ],
-};
+    Dresses: [
+      {
+        id: 79,
+        image: ex61,
+        alt: "Summer Floral Dress",
+        designer: "Summer Floral Dress",
+        price: "$89.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+      {
+        id: 80,
+        image: ex62,
+        alt: "Cocktail Dress",
+        designer: "Cocktail Dress",
+        price: "$119.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M"],
+      },
+      {
+        id: 81,
+        image: ex63,
+        alt: "Maxi Dress",
+        designer: "Maxi Dress",
+        price: "$99.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L"],
+      },
+      {
+        id: 82,
+        image: ex64,
+        alt: "Wrap Dress",
+        designer: "Wrap Dress",
+        price: "$79.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+      {
+        id: 87,
+        image: ex69,
+        alt: "Evening Gown",
+        designer: "Evening Gown",
+        price: "$299.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+      {
+        id: 88,
+        image: ex70,
+        alt: "Bridal Gown",
+        designer: "Bridal Gown",
+        price: "$599.99",
+        status: "quick-buy",
+        sizes: ["S", "M", "L"],
+      },
+      {
+        id: 108,
+        image: ex90,
+        alt: "Minimalist Dress",
+        designer: "Minimalist Dress",
+        price: "$119.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M"],
+      },
+      {
+        id: 79,
+        image: ex61,
+        alt: "Summer Floral Dress",
+        designer: "Summer Floral Dress",
+        price: "$89.99",
+        status: "quick-buy",
+        sizes: ["XS", "S", "M", "L"],
+      },
+    ],
+  };
   const visibleProducts = categories[activeCategory].slice(
     categoryCarouselIndex,
     categoryCarouselIndex + 4
@@ -485,143 +484,143 @@ const categories = {
     }
   };
 
- const newArrivals = [
-   {
-     id: 1,
-     image: ex81,
-     alt: "Premium Cotton T-Shirt",
-     badge: "NEW",
-     designer: "Premium Cotton",
-     price: "N310,000",
-     status: "quick-buy",
-     sizes: ["S", "M", "L", "XL", "XXL"],
-   },
-   {
-     id: 2,
-     image: ex88,
-     alt: "Vintage Wash T-Shirt",
-     designer: "Vintage Wash",
-     price: "N265,000",
-     status: "sold-out",
-   },
-   {
-     id: 3,
-     image: ex90,
-     alt: "Suits Graphic Tee",
-     badge: "LIMITED",
-     designer: "Suits",
-     price: "N345,000",
-     status: "quick-buy",
-     sizes: ["M", "L", "XL"],
-   },
-   {
-     id: 4,
-     image: ex92,
-     alt: "Suits Monogram Tee",
-     designer: "Suits",
-     price: "N290,000",
-     status: "quick-buy",
-     sizes: ["S", "M"],
-   },
-   {
-     id: 5,
-     image: ex98,
-     alt: "Classic White T-Shirt",
-     badge: "NEW",
-     designer: "Classic White",
-     price: "N240,000",
-     status: "quick-buy",
-     sizes: ["S", "M", "L"],
-   },
-   {
-     id: 6,
-     image: ex100,
-     alt: "Black Edition T-Shirt",
-     badge: "EXCLUSIVE",
-     designer: "Black Edition",
-     price: "N330,000",
-     status: "quick-buy",
-     sizes: ["S", "L"],
-   },
-   {
-     id: 7,
-     image: ex103,
-     alt: "Oversized Fit T-Shirt",
-     designer: "Oversized Fit",
-     price: "N295,000",
-     status: "sold-out",
-   },
-   {
-     id: 8,
-     image: ex109,
-     alt: "Wood Wood Logo Tee",
-     badge: "NEW",
-     designer: "Wood Wood",
-     price: "N290,000",
-     status: "quick-buy",
-     sizes: ["S", "M", "L"],
-   },
-   {
-     id: 9,
-     image: ex86,
-     alt: "Suits Cityscape Tee",
-     badge: "LIMITED",
-     designer: "Suits",
-     price: "N345,000",
-     status: "quick-buy",
-     sizes: ["L", "XL"],
-   },
-   {
-     id: 10,
-     image: ex5,
-     alt: "Suits Flame Tee",
-     designer: "Suits",
-     price: "N270,000",
-     status: "quick-buy",
-     sizes: ["M", "L"],
-   },
-   {
-     id: 11,
-     image: ex6,
-     alt: "Wood Wood Bold Tee",
-     badge: "EXCLUSIVE",
-     designer: "Wood Wood",
-     price: "N310,000",
-     status: "quick-buy",
-     sizes: ["S", "M", "XL"],
-   },
-   {
-     id: 12,
-     image: ex20,
-     alt: "Wood Wood Grid Tee",
-     designer: "Wood Wood",
-     price: "N270,000",
-     status: "quick-buy",
-     sizes: ["L", "XL"],
-   },
- ];
+  const newArrivals = [
+    {
+      id: 99,
+      image: ex81,
+      alt: "Pencil Skirt",
+      badge: "NEW",
+      designer: "Pencil Skirt",
+      price: "$69.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L", "XL", "XXL"],
+    },
+    {
+      id: 106,
+      image: ex88,
+      alt: "Wide Leg Pants",
+      designer: "Wide Leg Pants",
+      price: "$89.99",
+      status: "sold-out",
+    },
+    {
+      id: 108,
+      image: ex90,
+      alt: "Minimalist Dress",
+      badge: "LIMITED",
+      designer: "Minimalist Dress",
+      price: "$119.99",
+      status: "quick-buy",
+      sizes: ["M", "L", "XL"],
+    },
+    {
+      id: 110,
+      image: ex92,
+      alt: "Geometric Earrings",
+      designer: "Suits",
+      price: "$39.99",
+      status: "quick-buy",
+      sizes: ["S", "M"],
+    },
+    {
+      id: 12,
+      image: ex98,
+      alt: "Titanium Signet Ring",
+      badge: "NEW",
+      designer: "Titanium Signet Ring",
+      price: "$179.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L"],
+    },
+    {
+      id: 14,
+      image: ex100,
+      alt: "Minimalist Silver Chain",
+      badge: "EXCLUSIVE",
+      designer: "Minimalist Silver Chain",
+      price: "$89.99",
+      status: "quick-buy",
+      sizes: ["S", "L"],
+    },
+    {
+      id: 94,
+      image: ex103,
+      alt: "Cable Knit Jumper",
+      designer: "Cable Knit Jumper",
+      price: "$89.99",
+      status: "sold-out",
+    },
+    {
+      id: 16,
+      image: ex109,
+      alt: "Matte Black Ring",
+      badge: "NEW",
+      designer: "Matte Black Ring",
+      price: "$99.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "L"],
+    },
+    {
+      id: 104,
+      image: ex86,
+      alt: "Graphic Tee",
+      badge: "LIMITED",
+      designer: "Graphic Tee",
+      price: "$29.99",
+      status: "quick-buy",
+      sizes: ["L", "XL"],
+    },
+    {
+      id: 5,
+      image: ex5,
+      alt: "Leather Wallet Set",
+      designer: "Leather Wallet Set",
+      price: "$79.99",
+      status: "quick-buy",
+      sizes: ["M", "L"],
+    },
+    {
+      id: 11,
+      image: ex6,
+      alt: "Silver Cufflinks",
+      badge: "EXCLUSIVE",
+      designer: "Silver Cufflinks",
+      price: "$89.99",
+      status: "quick-buy",
+      sizes: ["S", "M", "XL"],
+    },
+    {
+      id: 35,
+      image: ex20,
+      alt: "Linen Pants",
+      designer: "Linen Pants",
+      price: "$49.99",
+      status: "quick-buy",
+      sizes: ["L", "XL"],
+    },
+  ];
 
- const visibleArrivals = newArrivals.slice(
-   currentArrivalsIndex,
-   currentArrivalsIndex + itemsPerPage
- );
-   const images = [
-     {
-       src: px22,
-       text: "Men",
-       subtext: "Step into sophistication.",
-     },
-     {
-       src: px23,
-       text: "Women",
-       subtext: "Confidence you can wear.",
-     },
-     {
-       src: px24,
-       text: "Shoes",
-       subtext: "Walk in comfort & style.",
-     },
-   ];
+  const visibleArrivals = newArrivals.slice(
+    currentArrivalsIndex,
+    currentArrivalsIndex + itemsPerPage
+  );
+  const images = [
+    {
+      src: px22,
+      text: "Men",
+      subtext: "Step into sophistication.",
+    },
+    {
+      src: px23,
+      text: "Women",
+      subtext: "Confidence you can wear.",
+    },
+    {
+      src: px24,
+      text: "Shoes",
+      subtext: "Walk in comfort & style.",
+    },
+  ];
 
   const images2 = [
     { src: px9, text: "Rowing Blazers x Paddington™" },
@@ -677,7 +676,6 @@ const categories = {
             </Link>
           </div>
         </div>
-
         <motion.div
           className="max-w-7xl mx-auto px-5 py-12 font-sans"
           initial={{ opacity: 0, y: 30 }}
@@ -882,7 +880,6 @@ const categories = {
             ))}
           </motion.div>
         </motion.div>
-
         <div className="relative w-full h-[800px] sm:h-[1000px] bg-zinc-950">
           {/* Background Image with Opacity */}
           <div
@@ -911,9 +908,9 @@ const categories = {
                 <span className="text-[#16bb7c]">Bag Collection</span>
               </h1>
               <button className="px-8 py-3.5 text-sm md:text-base border border-gray-300 text-white font-bold uppercase tracking-wide hover:text-[#16bb7c]">
-                <a href="#" className="no-underline">
+                <Link to="/Shop" className="no-underline">
                   VIEW COLLECTION
-                </a>
+                </Link>
               </button>
             </div>
           </div>
@@ -934,12 +931,12 @@ const categories = {
               for a powerfully polished office look.
             </p>
             <button className="w-full sm:w-[150px] py-2 sm:py-3 rounded-sm bg-transparent border-[1.9px] border-gray-900  transition-colors duration-300">
-              <a
-                href="#"
+              <Link
+                to="/shop"
                 className="no-underline text-gray-900 hover:text-[#16bb7c] font-semibold text-xs sm:text-sm uppercase"
               >
                 Shop Now
-              </a>
+              </Link>
             </button>
           </div>
           {/* Image */}
@@ -951,7 +948,6 @@ const categories = {
             />
           </div>
         </div>
-
         <div className="relative w-full h-[800px] sm:h-[1000px] bg-zinc-950">
           {/* Background Image with Opacity */}
           <div
@@ -980,9 +976,9 @@ const categories = {
                 and redefine your wardrobe narrative!
               </p>
               <button className="px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm border border-gray-300 text-white font-bold uppercase tracking-wide hover:bg-[#128a5f] hover:scale-105 transition-all duration-300 shadow-lg">
-                <a href="#" className="no-underline">
+                <Link to="/Shop" className="no-underline">
                   VIEW COLLECTION
-                </a>
+                </Link>
               </button>
             </div>
           </div>
@@ -1040,11 +1036,13 @@ const categories = {
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                  Shop now
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="ml-2 w-3 h-3 text-white"
-                  />
+                  <Link to="/Shop">
+                    Shop now
+                    <FontAwesomeIcon
+                      icon={faChevronRight}
+                      className="ml-2 w-3 h-3 text-white"
+                    />
+                  </Link>
                 </motion.button>
               </div>
             </motion.div>
@@ -1099,7 +1097,7 @@ const categories = {
                 </button>
               </div>
               <button className="flex items-center text-xs sm:text-sm font-medium text-gray-600 hover:text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-gray-100 transition-all">
-                View all{" "}
+                <Link to={"/Shop"}>View all</Link>
                 <FontAwesomeIcon
                   icon={faArrowRight}
                   className="ml-1 sm:ml-2 w-2 h-2 sm:w-3 sm:h-3"
@@ -1116,65 +1114,83 @@ const categories = {
             transition={{ duration: 1 }}
           >
             {visibleArrivals.map((product) => (
-              <motion.div
+              <Link
+                to={`/product/${product.id}`}
                 key={product.id}
                 className="group relative"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
               >
-                {/* Product Image */}
-                <div className="relative overflow-hidden aspect-square mb-3 sm:mb-4 rounded-lg bg-gray-50">
-                  <img
-                    src={product.image}
-                    alt={product.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                <motion.div
+                  className="group relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Product Image */}
+                  <div className="relative overflow-hidden aspect-square mb-3 sm:mb-4 rounded-lg bg-gray-50">
+                    <img
+                      src={product.image}
+                      alt={product.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
 
-                  {/* Badge */}
-                  {product.badge && (
-                    <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white text-black text-xxs xs:text-xs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium shadow-sm">
-                      {product.badge}
-                    </div>
-                  )}
-
-                  {/* Sold Out Button */}
-                  {product.status === "sold-out" && (
-                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white bg-opacity-80 text-black text-xxs xs:text-xs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium">
-                      SOLD OUT
-                    </div>
-                  )}
-
-                  {/* Quick Buy Button - Simplified for mobile */}
-                  {product.status === "quick-buy" && (
-                    <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-2 sm:pb-4">
-                      <div className="bg-white py-1 px-2 sm:py-2 sm:px-3 rounded-full shadow-md flex items-center">
-                        <select className="bg-transparent border-none text-xxs xs:text-xs sm:text-xs focus:outline-none mr-1 sm:mr-2">
-                          {product.sizes?.map((size) => (
-                            <option key={size} value={size}>
-                              {size}
-                            </option>
-                          ))}
-                        </select>
-                        <button className="bg-black text-white text-xxs xs:text-xs sm:text-xs px-2 sm:px-3 py-0.5 sm:py-1 rounded-full hover:bg-gray-800 transition-colors">
-                          QUICK BUY
-                        </button>
+                    {/* Badge */}
+                    {product.badge && (
+                      <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-white text-black text-xxs xs:text-xs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium shadow-sm">
+                        {product.badge}
                       </div>
-                    </div>
-                  )}
-                </div>
+                    )}
 
-                {/* Product Info */}
-                <div className="text-center px-1 sm:px-2">
-                  <h2 className="text-xs sm:text-sm md:text-md font-medium text-gray-900 mb-0.5 sm:mb-1 truncate">
-                    {product.designer}
-                  </h2>
-                  <p className="text-gray-600 text-xxs xs:text-xs sm:text-sm">
-                    {product.price}
-                  </p>
-                </div>
-              </motion.div>
+                    {/* Sold Out Button */}
+                    {product.status === "sold-out" && (
+                      <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-white bg-opacity-80 text-black text-xxs xs:text-xs sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full font-medium">
+                        SOLD OUT
+                      </div>
+                    )}
+
+                    {/* Quick Buy Button - Simplified for mobile */}
+                    {product.status === "quick-buy" && (
+                      <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pb-2 sm:pb-4">
+                        <div className="bg-white py-1 px-2 sm:py-2 sm:px-3 rounded-full shadow-md flex items-center">
+                          <select
+                            className="bg-transparent border-none text-xxs xs:text-xs sm:text-xs focus:outline-none mr-1 sm:mr-2"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {product.sizes?.map((size) => (
+                              <option key={size} value={size}>
+                                {size}
+                              </option>
+                            ))}
+                          </select>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              addToCart(product);
+                              setAlertMessage(`${product.name} added to cart!`);
+                              setShowCartAlert(true);
+                              setTimeout(() => setShowCartAlert(false), 3000);
+                            }}
+                            className="bg-black text-white text-xs px-3 py-1 rounded-full hover:bg-gray-800 transition-colors"
+                          >
+                            ADD TO CART
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="text-center px-1 sm:px-2">
+                    <h2 className="text-xs sm:text-sm md:text-md font-medium text-gray-900 mb-0.5 sm:mb-1 truncate">
+                      {product.designer}
+                    </h2>
+                    <p className="text-gray-600 text-xxs xs:text-xs sm:text-sm">
+                      {product.price}
+                    </p>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </motion.div>
 
@@ -1314,7 +1330,6 @@ const categories = {
             </div>
           </div>
         </div>
-
         <div
           className="check mt-24 w-full h-[500px] bg-cover bg-center bg-scroll lg:bg-fixed flex flex-col items-end justify-center"
           style={{ backgroundImage: `url(${jk6})` }}
@@ -1333,12 +1348,12 @@ const categories = {
               Shop now for the epitome of chic sophistication!
             </h3>
             <button className="px-8 py-3 border border-gray-400 rounded-sm hover:bg-white hover:border-white transition-all duration-300">
-              <a
-                href="#"
+              <Link
+                to="/Shop"
                 className="text-white font-semibold text-sm sm:text-base hover:text-gray-800"
               >
                 Shop Now
-              </a>
+              </Link>
             </button>
           </div>
         </div>
@@ -1360,12 +1375,7 @@ const categories = {
                       alt={item.name}
                     />
 
-                    {/* Quick View Button (Visible on Hover) */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300">
-                      <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-[#16bb7c] hover:text-white transition-all duration-300">
-                        Quick View
-                      </button>
-                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black bg-opacity-50 transition-opacity duration-300"></div>
                   </div>
 
                   {/* Product Details - No hover effects */}
@@ -1404,7 +1414,7 @@ const categories = {
                 className="text-center group relative overflow-hidden"
               >
                 {/* Image Container */}
-                <div className="w-full h-64 rounded-lg shadow-md overflow-hidden relative">
+                <div className="w-full h-52 rounded-lg shadow-md overflow-hidden relative">
                   <img
                     src={image.src}
                     alt={`Image ${index + 1}`}

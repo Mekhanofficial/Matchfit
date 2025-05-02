@@ -15,6 +15,7 @@ import ShopPage from "./pages/Shop";
 import AboutusPage from "./pages/About";
 import WishlistPage from "./pages/Wishlist";
 import ProductDetails from "./components/ProductDetails";
+import ContactPage from "./components/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -46,6 +47,10 @@ const proRouter = createBrowserRouter([
       {
         path: "/About",
         element: <AboutusPage />,
+      },
+      {
+        path: "/Contact",
+        element: <ContactPage />,
       },
     ],
   },
